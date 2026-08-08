@@ -1,1492 +1,2723 @@
 {
-  "Al Ritchie": {
-    "total_all_years": 17879,
-    "latest_year": 2018,
-    "latest_incidents": 1344,
-    "prev_incidents": 1441,
-    "yoy_change_pct": -6.7,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 4391.0,
+  "Rosemont North": {
+    "total_incidents": 20,
+    "latest_incidents": 20,
+    "weighted_severity_score": 92.0,
     "crime_breakdown": {
-      "Arson": 7,
-      "Assault": 101,
-      "Attempt Murder": 1,
-      "B&E (Business)": 2,
-      "B&E (Garage)": 60,
-      "B&E (Other)": 3,
-      "B&E (Residence)": 40,
-      "Controlled Drugs": 18,
-      "Crimes Against Property(2150-2166)": 50,
-      "Dangerous Operation": 8,
-      "Deprivation of Freedom": 3,
-      "HWY Traffic Violation": 28,
-      "Impaired Operation": 22,
-      "Mischief": 284,
-      "Offensive Weapons": 21,
-      "Other Crminal Code Traffic": 20,
-      "Other Federal Statute Violations": 10,
-      "Other Theft Over": 1,
-      "Other Theft Under": 60,
-      "OtherCriminalCode (A)": 120,
-      "OtherCriminalCode (B)": 11,
-      "Provincial Statutes": 6,
-      "Sexual Assault": 10,
-      "Shoplift Under": 34,
-      "Special Inq(8510-8640)": 70,
-      "Special Inq(8660-8814)": 85,
-      "Theft From Auto Under": 161,
-      "Theft of Motor Vehicle VA, VT": 78,
-      "Theft of Other Vehicle VM, VO": 2,
-      "Violence/Threat": 28
+      "Break & Enter": 3,
+      "Theft": 3,
+      "Assault": 5,
+      "Mischief": 2,
+      "Robbery": 1,
+      "Theft of Auto": 2,
+      "Theft from Auto": 3,
+      "Impaired Operation of Motor Vehicle": 1
     },
-    "centroid": [
-      50.4372,
-      -104.6097
-    ]
-  },
-  "Albert Park": {
-    "total_all_years": 21258,
-    "latest_year": 2018,
-    "latest_incidents": 2111,
-    "prev_incidents": 1820,
-    "yoy_change_pct": 16.0,
-    "yoy_trend": "increasing",
-    "weighted_severity_score": 5890.5,
-    "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 73,
-      "B&E (Business)": 8,
-      "B&E (Garage)": 26,
-      "B&E (Other)": 17,
-      "B&E (Residence)": 50,
-      "Controlled Drugs": 19,
-      "Crimes Against Property(2150-2166)": 94,
-      "Dangerous Operation": 8,
-      "HWY Traffic Violation": 108,
-      "Impaired Operation": 18,
-      "Mischief": 257,
-      "Offensive Weapons": 11,
-      "Other Crminal Code Traffic": 27,
-      "Other Federal Statute Violations": 6,
-      "Other Theft Over": 4,
-      "Other Theft Under": 162,
-      "OtherCriminalCode (A)": 111,
-      "OtherCriminalCode (B)": 7,
-      "Prostitution": 2,
-      "Provincial Statutes": 3,
-      "Sexual Assault": 8,
-      "Shoplift Under": 509,
-      "Special Inq(8510-8640)": 78,
-      "Special Inq(8660-8814)": 152,
-      "Theft From Auto Under": 225,
-      "Theft of Motor Vehicle VA, VT": 106,
-      "Theft of Other Vehicle VM, VO": 6,
-      "Violence/Threat": 14
+    "crime_group_breakdown": {
+      "Crime Against Property": 13,
+      "Crime Against the Person": 6,
+      "Traffic Offense": 1
     },
+    "person_crimes": 6,
+    "property_crimes": 13,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
-      50.418,
-      -104.636
-    ]
-  },
-  "Argyle Park": {
-    "total_all_years": 9475,
-    "latest_year": 2018,
-    "latest_incidents": 706,
-    "prev_incidents": 729,
-    "yoy_change_pct": -3.2,
-    "yoy_trend": "stable",
-    "weighted_severity_score": 1957.0,
-    "crime_breakdown": {
-      "Assault": 32,
-      "Attempt Murder": 1,
-      "B&E (Business)": 3,
-      "B&E (Garage)": 9,
-      "B&E (Other)": 4,
-      "B&E (Residence)": 14,
-      "B&E Motor Vehicle Firearms": 1,
-      "Controlled Drugs": 6,
-      "Crimes Against Property(2150-2166)": 21,
-      "Dangerous Operation": 5,
-      "HWY Traffic Violation": 26,
-      "Impaired Operation": 11,
-      "Mischief": 84,
-      "Municipal ByLaws": 1,
-      "Offensive Weapons": 5,
-      "Other Crminal Code Traffic": 10,
-      "Other Federal Statute Violations": 3,
-      "Other Theft Over": 1,
-      "Other Theft Under": 30,
-      "OtherCriminalCode (A)": 54,
-      "OtherCriminalCode (B)": 5,
-      "Provincial Statutes": 3,
-      "Sexual Assault": 1,
-      "Shoplift Under": 210,
-      "Special Inq(8510-8640)": 26,
-      "Special Inq(8660-8814)": 38,
-      "Theft From Auto Over": 2,
-      "Theft From Auto Under": 51,
-      "Theft of Motor Vehicle VA, VT": 38,
-      "Theft of Other Vehicle VM, VO": 2,
-      "Violence/Threat": 9
-    },
-    "centroid": [
-      50.435,
-      -104.59
-    ]
-  },
-  "Boothill": {
-    "total_all_years": 3374,
-    "latest_year": 2018,
-    "latest_incidents": 212,
-    "prev_incidents": 263,
-    "yoy_change_pct": -19.4,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 706.0,
-    "crime_breakdown": {
-      "Assault": 12,
-      "B&E (Business)": 1,
-      "B&E (Garage)": 21,
-      "B&E (Residence)": 7,
-      "Controlled Drugs": 4,
-      "Crimes Against Property(2150-2166)": 4,
-      "Dangerous Operation": 1,
-      "Deprivation of Freedom": 1,
-      "HWY Traffic Violation": 7,
-      "Impaired Operation": 3,
-      "Mischief": 31,
-      "Offensive Weapons": 2,
-      "Other Crminal Code Traffic": 2,
-      "Other Theft Under": 22,
-      "OtherCriminalCode (A)": 9,
-      "OtherCriminalCode (B)": 1,
-      "Sexual Assault": 3,
-      "Special Inq(8510-8640)": 9,
-      "Special Inq(8660-8814)": 11,
-      "Theft From Auto Under": 39,
-      "Theft of Motor Vehicle VA, VT": 18,
-      "Theft of Other Vehicle VM, VO": 1,
-      "Violence/Threat": 3
-    },
-    "centroid": [
-      50.441,
-      -104.578
-    ]
-  },
-  "Cathedral": {
-    "total_all_years": 19798,
-    "latest_year": 2018,
-    "latest_incidents": 1511,
-    "prev_incidents": 1495,
-    "yoy_change_pct": 1.1,
-    "yoy_trend": "stable",
-    "weighted_severity_score": 4631.0,
-    "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 83,
-      "B&E (Business)": 8,
-      "B&E (Garage)": 51,
-      "B&E (Other)": 11,
-      "B&E (Residence)": 37,
-      "B&E Motor Vehicle Firearms": 1,
-      "Controlled Drugs": 30,
-      "NA": 1,
-      "Crimes Against Property(2150-2166)": 54,
-      "Dangerous Operation": 21,
-      "Deprivation of Freedom": 1,
-      "HWY Traffic Violation": 50,
-      "Impaired Operation": 20,
-      "Mischief": 238,
-      "Municipal ByLaws": 1,
-      "Offensive Weapons": 19,
-      "Other Crminal Code Traffic": 22,
-      "Other Federal Statute Violations": 9,
-      "Other Theft Over": 1,
-      "Other Theft Under": 166,
-      "OtherCriminalCode (A)": 135,
-      "OtherCriminalCode (B)": 7,
-      "Prostitution": 3,
-      "Provincial Statutes": 5,
-      "Sexual Assault": 9,
-      "Shoplift Under": 104,
-      "Special Inq(8510-8640)": 34,
-      "Special Inq(8660-8814)": 142,
-      "Str Racing Offences": 1,
-      "Theft From Auto Over": 2,
-      "Theft From Auto Under": 152,
-      "Theft of Motor Vehicle VA, VT": 69,
-      "Violence/Threat": 22
-    },
-    "centroid": [
-      50.453,
-      -104.625
-    ]
-  },
-  "Centre Square": {
-    "total_all_years": 10595,
-    "latest_year": 2018,
-    "latest_incidents": 786,
-    "prev_incidents": 855,
-    "yoy_change_pct": -8.1,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 2438.0,
-    "crime_breakdown": {
-      "Arson": 6,
-      "Assault": 36,
-      "B&E (Business)": 8,
-      "B&E (Garage)": 10,
-      "B&E (Other)": 17,
-      "B&E (Residence)": 29,
-      "Controlled Drugs": 9,
-      "Crimes Against Property(2150-2166)": 25,
-      "Dangerous Operation": 9,
-      "HWY Traffic Violation": 36,
-      "Impaired Operation": 6,
-      "Mischief": 143,
-      "Offensive Weapons": 9,
-      "Other Crminal Code Traffic": 9,
-      "Other Federal Statute Violations": 7,
-      "Other Theft Over": 3,
-      "Other Theft Under": 110,
-      "OtherCriminalCode (A)": 72,
-      "OtherCriminalCode (B)": 6,
-      "Prostitution": 2,
-      "Provincial Statutes": 2,
-      "Sexual Assault": 6,
-      "Shoplift Under": 26,
-      "Special Inq(8510-8640)": 22,
-      "Special Inq(8660-8814)": 44,
-      "Theft From Auto Over": 3,
-      "Theft From Auto Under": 81,
-      "Theft of Motor Vehicle VA, VT": 34,
-      "Theft of Other Vehicle VM, VO": 1,
-      "Violence/Threat": 15
-    },
-    "centroid": [
-      50.448,
-      -104.605
-    ]
-  },
-  "Core Group": {
-    "total_all_years": 42096,
-    "latest_year": 2018,
-    "latest_incidents": 2843,
-    "prev_incidents": 3111,
-    "yoy_change_pct": -8.6,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 9162.0,
-    "crime_breakdown": {
-      "Arson": 20,
-      "Assault": 181,
-      "Attempt Murder": 4,
-      "B&E (Business)": 5,
-      "B&E (Garage)": 44,
-      "B&E (Other)": 33,
-      "B&E (Residence)": 98,
-      "Controlled Drugs": 58,
-      "Crimes Against Property(2150-2166)": 107,
-      "Dangerous Operation": 34,
-      "Deprivation of Freedom": 2,
-      "HWY Traffic Violation": 68,
-      "Impaired Operation": 28,
-      "Mischief": 506,
-      "Offensive Weapons": 63,
-      "Other Crminal Code Traffic": 32,
-      "Other Federal Statute Violations": 26,
-      "Other Theft Over": 2,
-      "Other Theft Under": 194,
-      "OtherCriminalCode (A)": 602,
-      "OtherCriminalCode (B)": 16,
-      "Prostitution": 7,
-      "Provincial Statutes": 24,
-      "Sexual Assault": 14,
-      "Shoplift Under": 30,
-      "Special Inq(8510-8640)": 193,
-      "Special Inq(8660-8814)": 145,
-      "Theft From Auto Under": 172,
-      "Theft of Motor Vehicle VA, VT": 90,
-      "Theft of Other Vehicle VM, VO": 1,
-      "Violence/Threat": 44
-    },
-    "centroid": [
-      50.45,
-      -104.61
-    ]
-  },
-  "Coronation Park": {
-    "total_all_years": 22008,
-    "latest_year": 2018,
-    "latest_incidents": 1255,
-    "prev_incidents": 1336,
-    "yoy_change_pct": -6.1,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 3840.5,
-    "crime_breakdown": {
-      "Arson": 7,
-      "Assault": 68,
-      "B&E (Business)": 3,
-      "B&E (Garage)": 43,
-      "B&E (Other)": 1,
-      "B&E (Residence)": 27,
-      "Commodification of Sexual Activity": 1,
-      "Controlled Drugs": 20,
-      "Crimes Against Property(2150-2166)": 28,
-      "Dangerous Operation": 19,
-      "Deprivation of Freedom": 1,
-      "HWY Traffic Violation": 55,
-      "Impaired Operation": 23,
-      "Mischief": 176,
-      "Offensive Weapons": 17,
-      "Other Crminal Code Traffic": 19,
-      "Other Federal Statute Violations": 4,
-      "Other Theft Under": 123,
-      "OtherCriminalCode (A)": 90,
-      "OtherCriminalCode (B)": 6,
-      "Prostitution": 4,
-      "Provincial Statutes": 8,
-      "Sexual Assault": 6,
-      "Shoplift Under": 111,
-      "Special Inq(8510-8640)": 62,
-      "Special Inq(8660-8814)": 135,
-      "Theft From Auto Under": 98,
-      "Theft of Motor Vehicle VA, VT": 75,
-      "Theft of Other Vehicle VM, VO": 2,
-      "Violence/Threat": 23
-    },
-    "centroid": [
-      50.46,
-      -104.585
-    ]
-  },
-  "Dewdney East": {
-    "total_all_years": 25598,
-    "latest_year": 2018,
-    "latest_incidents": 1533,
-    "prev_incidents": 1845,
-    "yoy_change_pct": -16.9,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 5172.5,
-    "crime_breakdown": {
-      "Arson": 4,
-      "Assault": 119,
-      "B&E (Business)": 12,
-      "B&E (Garage)": 18,
-      "B&E (Other)": 9,
-      "B&E (Residence)": 60,
-      "B&E Motor Vehicle Firearms": 2,
-      "Commodification of Sexual Activity": 2,
-      "Controlled Drugs": 16,
-      "Crimes Against Property(2150-2166)": 58,
-      "Dangerous Operation": 8,
-      "HWY Traffic Violation": 62,
-      "Impaired Operation": 37,
-      "Mischief": 221,
-      "Municipal ByLaws": 1,
-      "Offensive Weapons": 19,
-      "Other Crminal Code Traffic": 13,
-      "Other Federal Statute Violations": 2,
-      "Other Theft Over": 8,
-      "Other Theft Under": 115,
-      "OtherCriminalCode (A)": 101,
-      "OtherCriminalCode (B)": 9,
-      "Prostitution": 1,
-      "Provincial Statutes": 3,
-      "Sexual Assault": 12,
-      "Shoplift Under": 47,
-      "Special Inq(8510-8640)": 59,
-      "Special Inq(8660-8814)": 164,
-      "Theft From Auto Over": 2,
-      "Theft From Auto Under": 191,
-      "Theft of Motor Vehicle VA, VT": 113,
-      "Theft of Other Vehicle VM, VO": 1,
-      "Violence/Threat": 44
-    },
-    "centroid": [
-      50.456,
-      -104.59
-    ]
-  },
-  "Dieppe": {
-    "total_all_years": 4098,
-    "latest_year": 2018,
-    "latest_incidents": 183,
-    "prev_incidents": 204,
-    "yoy_change_pct": -10.3,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 589.0,
-    "crime_breakdown": {
-      "Assault": 10,
-      "B&E (Garage)": 9,
-      "B&E (Other)": 2,
-      "B&E (Residence)": 9,
-      "Controlled Drugs": 2,
-      "Crimes Against Property(2150-2166)": 6,
-      "Dangerous Operation": 4,
-      "HWY Traffic Violation": 10,
-      "Impaired Operation": 2,
-      "Mischief": 21,
-      "Offensive Weapons": 5,
-      "Other Crminal Code Traffic": 4,
-      "Other Theft Under": 24,
-      "OtherCriminalCode (A)": 11,
-      "OtherCriminalCode (B)": 4,
-      "Provincial Statutes": 1,
-      "Special Inq(8510-8640)": 6,
-      "Special Inq(8660-8814)": 21,
-      "Theft From Auto Under": 23,
-      "Theft of Motor Vehicle VA, VT": 7,
-      "Violence/Threat": 2
-    },
-    "centroid": [
-      50.477,
-      -104.61
-    ]
+      50.47,
+      -104.638
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   },
   "Eastview": {
-    "total_all_years": 11368,
-    "latest_year": 2018,
-    "latest_incidents": 689,
-    "prev_incidents": 794,
-    "yoy_change_pct": -13.2,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 2241.5,
+    "total_incidents": 17,
+    "latest_incidents": 17,
+    "weighted_severity_score": 61.0,
     "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 35,
-      "B&E (Business)": 13,
-      "B&E (Garage)": 7,
-      "B&E (Other)": 34,
-      "B&E (Residence)": 9,
-      "B&E Motor Vehicle Firearms": 1,
-      "Controlled Drugs": 15,
-      "Crimes Against Property(2150-2166)": 12,
-      "Dangerous Operation": 6,
-      "HWY Traffic Violation": 40,
-      "Impaired Operation": 12,
-      "Mischief": 122,
-      "Offensive Weapons": 9,
-      "Other Crminal Code Traffic": 11,
-      "Other Federal Statute Violations": 1,
-      "Other Theft Over": 2,
-      "Other Theft Under": 66,
-      "OtherCriminalCode (A)": 57,
-      "OtherCriminalCode (B)": 3,
-      "Provincial Statutes": 7,
-      "Sexual Assault": 6,
-      "Shoplift Under": 3,
-      "Special Inq(8510-8640)": 20,
-      "Special Inq(8660-8814)": 74,
-      "Theft From Auto Under": 64,
-      "Theft of Motor Vehicle VA, VT": 47,
-      "Theft of Other Vehicle VM, VO": 3,
-      "Violence/Threat": 8
+      "Mischief": 4,
+      "Break & Enter": 2,
+      "Theft": 4,
+      "Assault": 2,
+      "Other Criminal Code Traffic Violation": 1,
+      "Theft from Auto": 3,
+      "Theft of Auto": 1
     },
+    "crime_group_breakdown": {
+      "Crime Against Property": 14,
+      "Crime Against the Person": 2,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 2,
+    "property_crimes": 14,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
       50.454,
       -104.568
-    ]
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   },
-  "Gardiner Park": {
-    "total_all_years": 17414,
-    "latest_year": 2018,
-    "latest_incidents": 1618,
-    "prev_incidents": 1394,
-    "yoy_change_pct": 16.1,
-    "yoy_trend": "increasing",
-    "weighted_severity_score": 4538.0,
+  "Hawkstone": {
+    "total_incidents": 128,
+    "latest_incidents": 128,
+    "weighted_severity_score": 391.0,
     "crime_breakdown": {
-      "Arson": 3,
+      "Theft": 114,
+      "Break & Enter": 1,
+      "Impaired Operation of Motor Vehicle": 1,
+      "Theft from Auto": 3,
+      "Mischief": 4,
+      "Assault": 2,
+      "Other Criminal Code Traffic Violation": 3
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 122,
+      "Traffic Offense": 4,
+      "Crime Against the Person": 2
+    },
+    "person_crimes": 2,
+    "property_crimes": 122,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.395,
+      -104.66
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Washington Park": {
+    "total_incidents": 147,
+    "latest_incidents": 147,
+    "weighted_severity_score": 664.0,
+    "crime_breakdown": {
       "Assault": 41,
-      "B&E (Business)": 9,
-      "B&E (Garage)": 18,
-      "B&E (Other)": 15,
-      "B&E (Residence)": 72,
-      "Controlled Drugs": 8,
-      "Crimes Against Property(2150-2166)": 58,
-      "Dangerous Operation": 1,
-      "HWY Traffic Violation": 82,
-      "Impaired Operation": 8,
-      "Mischief": 161,
-      "Municipal ByLaws": 1,
-      "Offensive Weapons": 15,
-      "Other Crminal Code Traffic": 10,
-      "Other Federal Statute Violations": 9,
-      "Other Theft Over": 4,
-      "Other Theft Under": 128,
-      "OtherCriminalCode (A)": 72,
-      "OtherCriminalCode (B)": 4,
-      "Prostitution": 4,
-      "Provincial Statutes": 4,
-      "Sexual Assault": 4,
-      "Shoplift Over": 2,
-      "Shoplift Under": 428,
-      "Special Inq(8510-8640)": 49,
-      "Special Inq(8660-8814)": 99,
-      "Theft From Auto Over": 2,
-      "Theft From Auto Under": 197,
-      "Theft of Motor Vehicle VA, VT": 90,
-      "Theft of Other Vehicle VM, VO": 5,
-      "Violence/Threat": 15
+      "Mischief": 26,
+      "Theft": 40,
+      "Break & Enter": 20,
+      "Robbery": 5,
+      "Theft from Auto": 7,
+      "Other Criminal Code Traffic Violation": 3,
+      "Theft of Auto": 3,
+      "Impaired Operation of Motor Vehicle": 2
     },
-    "centroid": [
-      50.41,
-      -104.57
-    ]
-  },
-  "Gladmer Park": {
-    "total_all_years": 5281,
-    "latest_year": 2018,
-    "latest_incidents": 425,
-    "prev_incidents": 411,
-    "yoy_change_pct": 3.4,
-    "yoy_trend": "stable",
-    "weighted_severity_score": 1220.0,
-    "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 25,
-      "B&E (Business)": 2,
-      "B&E (Garage)": 3,
-      "B&E (Other)": 9,
-      "B&E (Residence)": 11,
-      "Controlled Drugs": 4,
-      "Crimes Against Property(2150-2166)": 7,
-      "Dangerous Operation": 2,
-      "HWY Traffic Violation": 12,
-      "Impaired Operation": 1,
-      "Mischief": 44,
-      "Offensive Weapons": 3,
-      "Other Crminal Code Traffic": 3,
-      "Other Theft Under": 59,
-      "OtherCriminalCode (A)": 29,
-      "OtherCriminalCode (B)": 2,
-      "Prostitution": 1,
-      "Provincial Statutes": 3,
-      "Sexual Assault": 2,
-      "Shoplift Under": 86,
-      "Special Inq(8510-8640)": 64,
-      "Special Inq(8660-8814)": 14,
-      "Theft From Auto Under": 24,
-      "Theft of Motor Vehicle VA, VT": 7,
-      "Violence/Threat": 6
+    "crime_group_breakdown": {
+      "Crime Against the Person": 46,
+      "Crime Against Property": 96,
+      "Traffic Offense": 5
     },
-    "centroid": [
-      50.465,
-      -104.62
-    ]
-  },
-  "Hillsdale": {
-    "total_all_years": 10272,
-    "latest_year": 2018,
-    "latest_incidents": 694,
-    "prev_incidents": 709,
-    "yoy_change_pct": -2.1,
-    "yoy_trend": "stable",
-    "weighted_severity_score": 2174.0,
-    "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 29,
-      "B&E (Business)": 1,
-      "B&E (Garage)": 5,
-      "B&E (Other)": 6,
-      "B&E (Residence)": 22,
-      "Controlled Drugs": 11,
-      "Crimes Against Property(2150-2166)": 16,
-      "Dangerous Operation": 2,
-      "HWY Traffic Violation": 27,
-      "Impaired Operation": 4,
-      "Mischief": 105,
-      "Municipal ByLaws": 1,
-      "Offensive Weapons": 12,
-      "Other Crminal Code Traffic": 12,
-      "Other Federal Statute Violations": 1,
-      "Other Theft Over": 4,
-      "Other Theft Under": 116,
-      "OtherCriminalCode (A)": 39,
-      "OtherCriminalCode (B)": 3,
-      "Provincial Statutes": 4,
-      "Sexual Assault": 4,
-      "Shoplift Over": 1,
-      "Shoplift Under": 9,
-      "Special Inq(8510-8640)": 55,
-      "Special Inq(8660-8814)": 53,
-      "Theft From Auto Over": 1,
-      "Theft From Auto Under": 84,
-      "Theft of Motor Vehicle VA, VT": 53,
-      "Theft of Other Vehicle VM, VO": 1,
-      "Violence/Threat": 11
-    },
-    "centroid": [
-      50.475,
-      -104.59
-    ]
-  },
-  "Lakeview": {
-    "total_all_years": 11857,
-    "latest_year": 2018,
-    "latest_incidents": 650,
-    "prev_incidents": 853,
-    "yoy_change_pct": -23.8,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 2117.0,
-    "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 34,
-      "B&E (Business)": 1,
-      "B&E (Garage)": 50,
-      "B&E (Other)": 3,
-      "B&E (Residence)": 28,
-      "Controlled Drugs": 9,
-      "Crimes Against Property(2150-2166)": 14,
-      "Dangerous Operation": 6,
-      "HWY Traffic Violation": 29,
-      "Impaired Operation": 13,
-      "Mischief": 115,
-      "Offensive Weapons": 9,
-      "Other Crminal Code Traffic": 8,
-      "Other Federal Statute Violations": 4,
-      "Other Theft Over": 2,
-      "Other Theft Under": 56,
-      "OtherCriminalCode (A)": 19,
-      "OtherCriminalCode (B)": 4,
-      "Provincial Statutes": 3,
-      "Sexual Assault": 2,
-      "Shoplift Under": 4,
-      "Special Inq(8510-8640)": 17,
-      "Special Inq(8660-8814)": 64,
-      "Theft From Auto Over": 2,
-      "Theft From Auto Under": 79,
-      "Theft of Motor Vehicle VA, VT": 52,
-      "Theft of Other Vehicle VM, VO": 3,
-      "Violation Causing Death": 1,
-      "Violence/Threat": 17
-    },
+    "person_crimes": 46,
+    "property_crimes": 96,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
       50.435,
-      -104.647
-    ]
+      -104.615
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   },
-  "Market Square": {
-    "total_all_years": 46670,
-    "latest_year": 2018,
-    "latest_incidents": 3156,
-    "prev_incidents": 4563,
-    "yoy_change_pct": -30.8,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 9261.0,
+  "Old 33": {
+    "total_incidents": 955,
+    "latest_incidents": 955,
+    "weighted_severity_score": 3854.0,
     "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 74,
-      "B&E (Business)": 11,
-      "B&E (Other)": 13,
-      "B&E (Residence)": 2,
-      "Controlled Drugs": 20,
-      "Crimes Against Property(2150-2166)": 70,
-      "Dangerous Operation": 13,
-      "HWY Traffic Violation": 53,
-      "Impaired Operation": 26,
-      "Mischief": 163,
-      "Municipal ByLaws": 1,
-      "Offensive Weapons": 43,
-      "Other Crminal Code Traffic": 16,
-      "Other Federal Statute Violations": 62,
-      "Other Theft Over": 1,
-      "Other Theft Under": 166,
-      "OtherCriminalCode (A)": 1820,
-      "OtherCriminalCode (B)": 21,
-      "Prostitution": 6,
-      "Provincial Statutes": 30,
-      "Sexual Assault": 5,
-      "Shoplift Under": 198,
-      "Special Inq(8510-8640)": 61,
-      "Special Inq(8660-8814)": 106,
-      "Theft From Auto Over": 2,
-      "Theft From Auto Under": 114,
-      "Theft of Motor Vehicle VA, VT": 30,
-      "Theft of Other Vehicle VM, VO": 2,
-      "Violence/Threat": 25
+      "Break & Enter": 82,
+      "Theft": 196,
+      "Mischief": 219,
+      "Theft from Auto": 134,
+      "Theft of Auto": 31,
+      "Assault": 203,
+      "Robbery": 30,
+      "Impaired Operation of Motor Vehicle": 30,
+      "Other Criminal Code Traffic Violation": 30
     },
-    "centroid": [
-      50.449,
-      -104.605
-    ]
-  },
-  "McNab": {
-    "total_all_years": 7545,
-    "latest_year": 2018,
-    "latest_incidents": 244,
-    "prev_incidents": 258,
-    "yoy_change_pct": -5.4,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 805.0,
-    "crime_breakdown": {
-      "Arson": 1,
-      "Assault": 10,
-      "B&E (Garage)": 7,
-      "B&E (Other)": 4,
-      "B&E (Residence)": 8,
-      "Controlled Drugs": 3,
-      "Crimes Against Property(2150-2166)": 4,
-      "Dangerous Operation": 5,
-      "HWY Traffic Violation": 8,
-      "Impaired Operation": 2,
-      "Mischief": 28,
-      "Offensive Weapons": 5,
-      "Other Crminal Code Traffic": 4,
-      "Other Theft Under": 17,
-      "OtherCriminalCode (A)": 27,
-      "OtherCriminalCode (B)": 3,
-      "Sexual Assault": 4,
-      "Special Inq(8510-8640)": 19,
-      "Special Inq(8660-8814)": 33,
-      "Theft From Auto Under": 35,
-      "Theft of Motor Vehicle VA, VT": 11,
-      "Violence/Threat": 6
+    "crime_group_breakdown": {
+      "Crime Against Property": 662,
+      "Crime Against the Person": 233,
+      "Traffic Offense": 60
     },
-    "centroid": [
-      50.46,
-      -104.57
-    ]
-  },
-  "Mount Royal": {
-    "total_all_years": 4073,
-    "latest_year": 2018,
-    "latest_incidents": 278,
-    "prev_incidents": 346,
-    "yoy_change_pct": -19.7,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 918.5,
-    "crime_breakdown": {
-      "Assault": 20,
-      "B&E (Business)": 1,
-      "B&E (Garage)": 12,
-      "B&E (Residence)": 7,
-      "Controlled Drugs": 1,
-      "Crimes Against Property(2150-2166)": 8,
-      "Dangerous Operation": 5,
-      "Deprivation of Freedom": 1,
-      "HWY Traffic Violation": 3,
-      "Impaired Operation": 8,
-      "Mischief": 53,
-      "Offensive Weapons": 3,
-      "Other Crminal Code Traffic": 5,
-      "Other Federal Statute Violations": 6,
-      "Other Theft Under": 18,
-      "OtherCriminalCode (A)": 39,
-      "Sexual Assault": 3,
-      "Shoplift Under": 1,
-      "Special Inq(8510-8640)": 12,
-      "Special Inq(8660-8814)": 17,
-      "Theft From Auto Over": 1,
-      "Theft From Auto Under": 30,
-      "Theft of Motor Vehicle VA, VT": 19,
-      "Violence/Threat": 5
-    },
-    "centroid": [
-      50.43,
-      -104.625
-    ]
-  },
-  "Normanview": {
-    "total_all_years": 4251,
-    "latest_year": 2018,
-    "latest_incidents": 268,
-    "prev_incidents": 241,
-    "yoy_change_pct": 11.2,
-    "yoy_trend": "increasing",
-    "weighted_severity_score": 857.0,
-    "crime_breakdown": {
-      "Arson": 1,
-      "Assault": 8,
-      "B&E (Garage)": 12,
-      "B&E (Residence)": 8,
-      "B&E Motor Vehicle Firearms": 1,
-      "Controlled Drugs": 8,
-      "Crimes Against Property(2150-2166)": 7,
-      "Dangerous Operation": 1,
-      "HWY Traffic Violation": 13,
-      "Impaired Operation": 8,
-      "Mischief": 59,
-      "Offensive Weapons": 4,
-      "Other Crminal Code Traffic": 8,
-      "Other Theft Over": 1,
-      "Other Theft Under": 17,
-      "OtherCriminalCode (A)": 14,
-      "Sexual Assault": 2,
-      "Special Inq(8510-8640)": 9,
-      "Special Inq(8660-8814)": 23,
-      "Theft From Auto Under": 31,
-      "Theft of Motor Vehicle VA, VT": 30,
-      "Theft of Other Vehicle VM, VO": 1,
-      "Violence/Threat": 2
-    },
-    "centroid": [
-      50.47,
-      -104.66
-    ]
-  },
-  "Normanview West": {
-    "total_all_years": 4645,
-    "latest_year": 2018,
-    "latest_incidents": 242,
-    "prev_incidents": 360,
-    "yoy_change_pct": -32.8,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 744.0,
-    "crime_breakdown": {
-      "Assault": 11,
-      "B&E (Garage)": 9,
-      "B&E (Residence)": 2,
-      "Controlled Drugs": 3,
-      "Crimes Against Property(2150-2166)": 10,
-      "Dangerous Operation": 1,
-      "HWY Traffic Violation": 18,
-      "Impaired Operation": 11,
-      "Mischief": 20,
-      "Offensive Weapons": 1,
-      "Other Crminal Code Traffic": 6,
-      "Other Federal Statute Violations": 1,
-      "Other Theft Under": 27,
-      "OtherCriminalCode (A)": 19,
-      "OtherCriminalCode (B)": 3,
-      "Provincial Statutes": 2,
-      "Sexual Assault": 1,
-      "Shoplift Under": 10,
-      "Special Inq(8510-8640)": 10,
-      "Special Inq(8660-8814)": 38,
-      "Theft From Auto Under": 19,
-      "Theft of Motor Vehicle VA, VT": 12,
-      "Violence/Threat": 8
-    },
-    "centroid": [
-      50.47,
-      -104.675
-    ]
-  },
-  "North Central": {
-    "total_all_years": 71935,
-    "latest_year": 2018,
-    "latest_incidents": 4751,
-    "prev_incidents": 5804,
-    "yoy_change_pct": -18.1,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 16473.5,
-    "crime_breakdown": {
-      "Arson": 69,
-      "Assault": 457,
-      "Attempt Murder": 11,
-      "B&E (Business)": 10,
-      "B&E (Garage)": 116,
-      "B&E (Other)": 34,
-      "B&E (Residence)": 233,
-      "Commodification of Sexual Activity": 12,
-      "Controlled Drugs": 129,
-      "Crimes Against Property(2150-2166)": 191,
-      "Dangerous Operation": 113,
-      "Deprivation of Freedom": 15,
-      "HWY Traffic Violation": 214,
-      "Impaired Operation": 77,
-      "Mischief": 575,
-      "Municipal ByLaws": 1,
-      "Offensive Weapons": 139,
-      "Other Crminal Code Traffic": 65,
-      "Other Federal Statute Violations": 33,
-      "Other Theft Over": 3,
-      "Other Theft Under": 315,
-      "OtherCriminalCode (A)": 659,
-      "OtherCriminalCode (B)": 35,
-      "Prostitution": 14,
-      "Provincial Statutes": 27,
-      "Sexual Assault": 31,
-      "Shoplift Under": 67,
-      "Special Inq(8510-8640)": 241,
-      "Special Inq(8660-8814)": 359,
-      "Theft From Auto Over": 5,
-      "Theft From Auto Under": 207,
-      "Theft of Motor Vehicle VA, VT": 175,
-      "Theft of Other Vehicle VM, VO": 5,
-      "Violation Causing Death": 4,
-      "Violence/Threat": 110
-    },
-    "centroid": [
-      50.462,
-      -104.62
-    ]
-  },
-  "North East": {
-    "total_all_years": 27068,
-    "latest_year": 2018,
-    "latest_incidents": 1326,
-    "prev_incidents": 1634,
-    "yoy_change_pct": -18.8,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 4239.5,
-    "crime_breakdown": {
-      "Arson": 6,
-      "Assault": 96,
-      "B&E (Business)": 8,
-      "B&E (Garage)": 37,
-      "B&E (Other)": 8,
-      "B&E (Residence)": 24,
-      "Controlled Drugs": 15,
-      "Crimes Against Property(2150-2166)": 79,
-      "Dangerous Operation": 14,
-      "Deprivation of Freedom": 3,
-      "HWY Traffic Violation": 48,
-      "Impaired Operation": 20,
-      "Mischief": 195,
-      "Offensive Weapons": 14,
-      "Other Crminal Code Traffic": 15,
-      "Other Federal Statute Violations": 4,
-      "Other Theft Under": 93,
-      "OtherCriminalCode (A)": 130,
-      "OtherCriminalCode (B)": 7,
-      "Prostitution": 1,
-      "Provincial Statutes": 5,
-      "Sexual Assault": 8,
-      "Shoplift Under": 99,
-      "Special Inq(8510-8640)": 58,
-      "Special Inq(8660-8814)": 111,
-      "Theft From Auto Under": 109,
-      "Theft of Motor Vehicle VA, VT": 89,
-      "Theft of Other Vehicle VM, VO": 4,
-      "Violence/Threat": 26
-    },
+    "person_crimes": 233,
+    "property_crimes": 662,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
       50.4452,
       -104.6189
-    ]
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   },
-  "Prairie View": {
-    "total_all_years": 5674,
-    "latest_year": 2018,
-    "latest_incidents": 337,
-    "prev_incidents": 369,
-    "yoy_change_pct": -8.7,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 1175.0,
+  "Spruce Meadows": {
+    "total_incidents": 189,
+    "latest_incidents": 189,
+    "weighted_severity_score": 575.0,
     "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 14,
-      "B&E (Garage)": 11,
-      "B&E (Residence)": 44,
-      "Controlled Drugs": 1,
-      "Crimes Against Property(2150-2166)": 10,
-      "Dangerous Operation": 4,
-      "HWY Traffic Violation": 6,
-      "Impaired Operation": 12,
-      "Mischief": 60,
-      "Other Crminal Code Traffic": 3,
-      "Other Federal Statute Violations": 2,
-      "Other Theft Over": 2,
-      "Other Theft Under": 20,
-      "OtherCriminalCode (A)": 7,
-      "OtherCriminalCode (B)": 1,
-      "Special Inq(8510-8640)": 28,
-      "Special Inq(8660-8814)": 31,
-      "Theft From Auto Under": 48,
-      "Theft of Motor Vehicle VA, VT": 27,
-      "Violence/Threat": 4
-    },
-    "centroid": [
-      50.41,
-      -104.67
-    ]
-  },
-  "Regent Park": {
-    "total_all_years": 5287,
-    "latest_year": 2018,
-    "latest_incidents": 347,
-    "prev_incidents": 407,
-    "yoy_change_pct": -14.7,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 1186.0,
-    "crime_breakdown": {
-      "Arson": 1,
-      "Assault": 25,
-      "B&E (Garage)": 9,
-      "B&E (Residence)": 9,
-      "Controlled Drugs": 6,
-      "Crimes Against Property(2150-2166)": 9,
-      "Dangerous Operation": 7,
-      "HWY Traffic Violation": 13,
-      "Impaired Operation": 8,
-      "Mischief": 44,
-      "Offensive Weapons": 6,
-      "Other Crminal Code Traffic": 5,
-      "Other Theft Over": 2,
-      "Other Theft Under": 12,
-      "OtherCriminalCode (A)": 34,
-      "Provincial Statutes": 2,
-      "Sexual Assault": 5,
-      "Special Inq(8510-8640)": 50,
-      "Special Inq(8660-8814)": 46,
-      "Theft From Auto Under": 26,
-      "Theft of Motor Vehicle VA, VT": 21,
-      "Theft of Other Vehicle VM, VO": 1,
-      "Violence/Threat": 6
-    },
-    "centroid": [
-      50.446,
-      -104.57
-    ]
-  },
-  "Rosemont": {
-    "total_all_years": 11162,
-    "latest_year": 2018,
-    "latest_incidents": 959,
-    "prev_incidents": 988,
-    "yoy_change_pct": -2.9,
-    "yoy_trend": "stable",
-    "weighted_severity_score": 3053.0,
-    "crime_breakdown": {
-      "Arson": 1,
-      "Assault": 57,
-      "B&E (Garage)": 52,
-      "B&E (Other)": 3,
-      "B&E (Residence)": 31,
-      "Controlled Drugs": 11,
-      "Crimes Against Property(2150-2166)": 17,
-      "Dangerous Operation": 17,
-      "HWY Traffic Violation": 27,
-      "Impaired Operation": 10,
-      "Mischief": 171,
-      "Offensive Weapons": 10,
-      "Other Crminal Code Traffic": 15,
-      "Other Federal Statute Violations": 3,
-      "Other Theft Over": 3,
-      "Other Theft Under": 67,
-      "OtherCriminalCode (A)": 76,
-      "OtherCriminalCode (B)": 2,
-      "Sexual Assault": 7,
-      "Shoplift Under": 52,
-      "Special Inq(8510-8640)": 61,
-      "Special Inq(8660-8814)": 60,
-      "Theft From Auto Under": 121,
-      "Theft of Motor Vehicle VA, VT": 60,
-      "Theft of Other Vehicle VM, VO": 3,
-      "Violence/Threat": 22
-    },
-    "centroid": [
-      50.468,
-      -104.635
-    ]
-  },
-  "Ross Industrial": {
-    "total_all_years": 9280,
-    "latest_year": 2018,
-    "latest_incidents": 565,
-    "prev_incidents": 655,
-    "yoy_change_pct": -13.7,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 1793.0,
-    "crime_breakdown": {
-      "Assault": 13,
-      "B&E (Business)": 19,
-      "B&E (Garage)": 2,
-      "B&E (Other)": 37,
-      "B&E (Residence)": 3,
-      "Controlled Drugs": 5,
-      "Crimes Against Property(2150-2166)": 18,
-      "Dangerous Operation": 16,
-      "HWY Traffic Violation": 53,
-      "Impaired Operation": 14,
-      "Mischief": 62,
-      "Offensive Weapons": 4,
-      "Other Crminal Code Traffic": 12,
-      "Other Federal Statute Violations": 1,
-      "Other Theft Over": 8,
-      "Other Theft Under": 42,
-      "OtherCriminalCode (A)": 23,
-      "OtherCriminalCode (B)": 7,
-      "Shoplift Over": 3,
-      "Shoplift Under": 11,
-      "Special Inq(8510-8640)": 9,
-      "Special Inq(8660-8814)": 99,
-      "Theft From Auto Under": 56,
-      "Theft of Motor Vehicle VA, VT": 40,
-      "Theft of Other Vehicle VM, VO": 2,
-      "Violence/Threat": 6
-    },
-    "centroid": [
-      50.459,
-      -104.55
-    ]
-  },
-  "Rural": {
-    "total_all_years": 1190,
-    "latest_year": 2018,
-    "latest_incidents": 28,
-    "prev_incidents": 75,
-    "yoy_change_pct": -62.7,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 82.0,
-    "crime_breakdown": {
-      "Crimes Against Property(2150-2166)": 2,
-      "Dangerous Operation": 3,
-      "HWY Traffic Violation": 2,
-      "Impaired Operation": 2,
+      "Theft": 180,
       "Mischief": 4,
-      "Offensive Weapons": 2,
-      "OtherCriminalCode (B)": 1,
-      "Special Inq(8510-8640)": 1,
-      "Special Inq(8660-8814)": 7,
-      "Theft From Auto Under": 3,
-      "Theft of Motor Vehicle VA, VT": 1
+      "Assault": 3,
+      "Impaired Operation of Motor Vehicle": 1,
+      "Theft from Auto": 1
     },
+    "crime_group_breakdown": {
+      "Crime Against Property": 185,
+      "Crime Against the Person": 3,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 3,
+    "property_crimes": 185,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
       50.4452,
       -104.6189
-    ]
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   },
-  "Sherwood Estates": {
-    "total_all_years": 4239,
-    "latest_year": 2018,
-    "latest_incidents": 206,
-    "prev_incidents": 309,
-    "yoy_change_pct": -33.3,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 755.0,
+  "Broders Annex": {
+    "total_incidents": 54,
+    "latest_incidents": 54,
+    "weighted_severity_score": 203.0,
     "crime_breakdown": {
-      "Arson": 1,
-      "Assault": 17,
-      "B&E (Garage)": 4,
-      "B&E (Residence)": 7,
-      "Controlled Drugs": 4,
-      "Crimes Against Property(2150-2166)": 4,
-      "Dangerous Operation": 2,
-      "HWY Traffic Violation": 7,
-      "Impaired Operation": 4,
-      "Mischief": 33,
-      "Offensive Weapons": 2,
-      "Other Crminal Code Traffic": 1,
-      "Other Theft Under": 7,
-      "OtherCriminalCode (A)": 20,
-      "Provincial Statutes": 1,
-      "Sexual Assault": 7,
-      "Special Inq(8510-8640)": 10,
-      "Special Inq(8660-8814)": 18,
-      "Theft From Auto Under": 28,
-      "Theft of Motor Vehicle VA, VT": 23,
-      "Violence/Threat": 6
+      "Mischief": 8,
+      "Theft": 13,
+      "Theft from Auto": 15,
+      "Break & Enter": 11,
+      "Assault": 4,
+      "Other Criminal Code Traffic Violation": 2,
+      "Theft of Auto": 1
     },
-    "centroid": [
-      50.485,
-      -104.62
-    ]
-  },
-  "Twin Lakes": {
-    "total_all_years": 6308,
-    "latest_year": 2018,
-    "latest_incidents": 483,
-    "prev_incidents": 502,
-    "yoy_change_pct": -3.8,
-    "yoy_trend": "stable",
-    "weighted_severity_score": 1511.5,
-    "crime_breakdown": {
-      "Arson": 3,
-      "Assault": 22,
-      "B&E (Business)": 3,
-      "B&E (Garage)": 2,
-      "B&E (Other)": 8,
-      "B&E (Residence)": 26,
-      "Controlled Drugs": 5,
-      "Crimes Against Property(2150-2166)": 7,
-      "Dangerous Operation": 2,
-      "HWY Traffic Violation": 17,
-      "Impaired Operation": 11,
-      "Mischief": 70,
-      "Offensive Weapons": 3,
-      "Other Crminal Code Traffic": 3,
-      "Other Federal Statute Violations": 2,
-      "Other Theft Over": 1,
-      "Other Theft Under": 64,
-      "OtherCriminalCode (A)": 31,
-      "OtherCriminalCode (B)": 2,
-      "Provincial Statutes": 1,
-      "Sexual Assault": 1,
-      "Shoplift Under": 23,
-      "Special Inq(8510-8640)": 37,
-      "Special Inq(8660-8814)": 41,
-      "Theft From Auto Over": 2,
-      "Theft From Auto Under": 65,
-      "Theft of Motor Vehicle VA, VT": 21,
-      "Violence/Threat": 10
+    "crime_group_breakdown": {
+      "Crime Against Property": 48,
+      "Crime Against the Person": 4,
+      "Traffic Offense": 2
     },
-    "centroid": [
-      50.405,
-      -104.62
-    ]
-  },
-  "University Park": {
-    "total_all_years": 5220,
-    "latest_year": 2018,
-    "latest_incidents": 361,
-    "prev_incidents": 505,
-    "yoy_change_pct": -28.5,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 1231.0,
-    "crime_breakdown": {
-      "Assault": 10,
-      "B&E (Business)": 3,
-      "B&E (Garage)": 7,
-      "B&E (Other)": 2,
-      "B&E (Residence)": 35,
-      "Controlled Drugs": 1,
-      "Crimes Against Property(2150-2166)": 9,
-      "Dangerous Operation": 3,
-      "HWY Traffic Violation": 4,
-      "Impaired Operation": 11,
-      "Mischief": 62,
-      "Offensive Weapons": 1,
-      "Other Crminal Code Traffic": 6,
-      "Other Federal Statute Violations": 9,
-      "Other Theft Under": 27,
-      "OtherCriminalCode (A)": 6,
-      "Provincial Statutes": 1,
-      "Sexual Assault": 3,
-      "Special Inq(8510-8640)": 8,
-      "Special Inq(8660-8814)": 48,
-      "Theft From Auto Over": 1,
-      "Theft From Auto Under": 67,
-      "Theft of Motor Vehicle VA, VT": 35,
-      "Violence/Threat": 2
-    },
-    "centroid": [
-      50.417,
-      -104.587
-    ]
-  },
-  "Unverified Address": {
-    "total_all_years": 26373,
-    "latest_year": 2018,
-    "latest_incidents": 1797,
-    "prev_incidents": 1858,
-    "yoy_change_pct": -3.3,
-    "yoy_trend": "stable",
-    "weighted_severity_score": 5725.0,
-    "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 58,
-      "Attempt Murder": 3,
-      "B&E (Business)": 6,
-      "B&E (Garage)": 4,
-      "B&E (Other)": 4,
-      "B&E (Residence)": 14,
-      "Commodification of Sexual Activity": 4,
-      "Controlled Drugs": 11,
-      "Crimes Against Property(2150-2166)": 204,
-      "Dangerous Operation": 2,
-      "HWY Traffic Violation": 129,
-      "Impaired Operation": 6,
-      "Mischief": 159,
-      "Offensive Weapons": 5,
-      "Other Crminal Code Traffic": 13,
-      "Other Federal Statute Violations": 6,
-      "Other Theft Over": 2,
-      "Other Theft Under": 120,
-      "OtherCriminalCode (A)": 63,
-      "OtherCriminalCode (B)": 5,
-      "Prostitution": 1,
-      "Provincial Statutes": 3,
-      "Sexual Assault": 39,
-      "Shoplift Under": 12,
-      "Special Inq(8510-8640)": 371,
-      "Special Inq(8660-8814)": 86,
-      "Theft From Auto Over": 3,
-      "Theft From Auto Under": 384,
-      "Theft of Motor Vehicle VA, VT": 46,
-      "Theft of Other Vehicle VM, VO": 4,
-      "Violence/Threat": 28
-    },
+    "person_crimes": 4,
+    "property_crimes": 48,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
       50.4452,
       -104.6189
-    ]
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   },
-  "Uplands": {
-    "total_all_years": 6014,
-    "latest_year": 2018,
-    "latest_incidents": 255,
-    "prev_incidents": 325,
-    "yoy_change_pct": -21.5,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 827.5,
+  "Lakeridge Addition": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 2.0,
     "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 11,
-      "B&E (Garage)": 17,
-      "B&E (Residence)": 12,
-      "Controlled Drugs": 3,
-      "Crimes Against Property(2150-2166)": 8,
-      "Dangerous Operation": 2,
-      "HWY Traffic Violation": 6,
-      "Impaired Operation": 6,
-      "Mischief": 65,
-      "Offensive Weapons": 5,
-      "Other Crminal Code Traffic": 2,
-      "Other Theft Under": 13,
-      "OtherCriminalCode (A)": 15,
-      "Sexual Assault": 3,
-      "Shoplift Under": 1,
-      "Special Inq(8510-8640)": 11,
-      "Special Inq(8660-8814)": 17,
-      "Theft From Auto Under": 29,
-      "Theft of Motor Vehicle VA, VT": 22,
-      "Violence/Threat": 5
+      "Mischief": 1
     },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
-      50.47,
-      -104.57
-    ]
+      50.408,
+      -104.59
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   },
   "Walsh Acres": {
-    "total_all_years": 10872,
-    "latest_year": 2018,
-    "latest_incidents": 819,
-    "prev_incidents": 818,
-    "yoy_change_pct": 0.1,
-    "yoy_trend": "stable",
-    "weighted_severity_score": 2297.0,
+    "total_incidents": 12,
+    "latest_incidents": 12,
+    "weighted_severity_score": 49.0,
     "crime_breakdown": {
-      "Arson": 1,
-      "Assault": 27,
-      "B&E (Garage)": 16,
-      "B&E (Other)": 3,
-      "B&E (Residence)": 38,
-      "Controlled Drugs": 1,
-      "Crimes Against Property(2150-2166)": 19,
-      "Dangerous Operation": 8,
-      "HWY Traffic Violation": 37,
-      "Impaired Operation": 16,
-      "Mischief": 66,
-      "Offensive Weapons": 4,
-      "Other Crminal Code Traffic": 10,
-      "Other Federal Statute Violations": 4,
-      "Other Theft Over": 1,
-      "Other Theft Under": 65,
-      "OtherCriminalCode (A)": 34,
-      "OtherCriminalCode (B)": 2,
-      "Provincial Statutes": 3,
-      "Sexual Assault": 4,
-      "Shoplift Under": 240,
-      "Special Inq(8510-8640)": 28,
-      "Special Inq(8660-8814)": 62,
-      "Theft From Auto Over": 1,
-      "Theft From Auto Under": 76,
-      "Theft of Motor Vehicle VA, VT": 39,
-      "Violence/Threat": 14
+      "Assault": 1,
+      "Theft": 3,
+      "Theft from Auto": 2,
+      "Robbery": 1,
+      "Mischief": 2,
+      "Break & Enter": 2,
+      "Impaired Operation of Motor Vehicle": 1
     },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 2,
+      "Crime Against Property": 9,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 2,
+    "property_crimes": 9,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
       50.48,
       -104.65
-    ]
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   },
-  "Warehouse District": {
-    "total_all_years": 13802,
-    "latest_year": 2018,
-    "latest_incidents": 981,
-    "prev_incidents": 854,
-    "yoy_change_pct": 14.9,
-    "yoy_trend": "increasing",
-    "weighted_severity_score": 2826.0,
+  "Mount Pleasant": {
+    "total_incidents": 16,
+    "latest_incidents": 16,
+    "weighted_severity_score": 59.0,
     "crime_breakdown": {
-      "Arson": 7,
-      "Assault": 31,
-      "B&E (Business)": 31,
-      "B&E (Other)": 44,
-      "B&E (Residence)": 5,
-      "Controlled Drugs": 13,
-      "Crimes Against Property(2150-2166)": 52,
-      "Dangerous Operation": 21,
-      "HWY Traffic Violation": 52,
-      "Impaired Operation": 15,
-      "Mischief": 133,
-      "Offensive Weapons": 9,
-      "Other Crminal Code Traffic": 15,
-      "Other Federal Statute Violations": 2,
-      "Other Theft Over": 4,
-      "Other Theft Under": 56,
-      "OtherCriminalCode (A)": 77,
-      "OtherCriminalCode (B)": 5,
-      "Prostitution": 3,
-      "Provincial Statutes": 3,
-      "Shoplift Under": 150,
-      "Special Inq(8510-8640)": 19,
-      "Special Inq(8660-8814)": 85,
-      "Theft From Auto Under": 108,
-      "Theft of Motor Vehicle VA, VT": 33,
-      "Theft of Other Vehicle VM, VO": 1,
-      "Violence/Threat": 7
+      "Mischief": 4,
+      "Impaired Operation of Motor Vehicle": 2,
+      "Theft": 2,
+      "Assault": 3,
+      "Other Criminal Code Traffic Violation": 2,
+      "Theft of Auto": 1,
+      "Theft from Auto": 1,
+      "Break & Enter": 1
     },
-    "centroid": [
-      50.452,
-      -104.605
-    ]
-  },
-  "Wascana Park": {
-    "total_all_years": 6376,
-    "latest_year": 2018,
-    "latest_incidents": 310,
-    "prev_incidents": 428,
-    "yoy_change_pct": -27.6,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 913.0,
-    "crime_breakdown": {
-      "Arson": 2,
-      "Assault": 13,
-      "B&E (Business)": 4,
-      "B&E (Garage)": 1,
-      "B&E (Other)": 6,
-      "Controlled Drugs": 8,
-      "Crimes Against Property(2150-2166)": 7,
-      "HWY Traffic Violation": 30,
-      "Impaired Operation": 9,
-      "Mischief": 60,
-      "Other Crminal Code Traffic": 6,
-      "Other Federal Statute Violations": 1,
-      "Other Theft Under": 43,
-      "OtherCriminalCode (A)": 21,
-      "Provincial Statutes": 2,
-      "Sexual Assault": 3,
-      "Special Inq(8510-8640)": 19,
-      "Special Inq(8660-8814)": 41,
-      "Theft From Auto Under": 21,
-      "Theft of Motor Vehicle VA, VT": 2,
-      "Violence/Threat": 11
+    "crime_group_breakdown": {
+      "Crime Against Property": 9,
+      "Traffic Offense": 4,
+      "Crime Against the Person": 3
     },
+    "person_crimes": 3,
+    "property_crimes": 9,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
       50.4452,
       -104.6189
-    ]
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   },
-  "Whitmore Park": {
-    "total_all_years": 6190,
-    "latest_year": 2018,
-    "latest_incidents": 164,
-    "prev_incidents": 3218,
-    "yoy_change_pct": -94.9,
-    "yoy_trend": "decreasing",
-    "weighted_severity_score": 485.0,
+  "Hillsdale": {
+    "total_incidents": 119,
+    "latest_incidents": 119,
+    "weighted_severity_score": 370.0,
+    "crime_breakdown": {
+      "Theft": 91,
+      "Mischief": 17,
+      "Assault": 6,
+      "Theft from Auto": 3,
+      "Break & Enter": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 113,
+      "Crime Against the Person": 6
+    },
+    "person_crimes": 6,
+    "property_crimes": 113,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.475,
+      -104.59
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Belvedere": {
+    "total_incidents": 33,
+    "latest_incidents": 33,
+    "weighted_severity_score": 116.0,
+    "crime_breakdown": {
+      "Mischief": 11,
+      "Theft from Auto": 7,
+      "Impaired Operation of Motor Vehicle": 2,
+      "Assault": 4,
+      "Break & Enter": 4,
+      "Theft": 4,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 27,
+      "Traffic Offense": 2,
+      "Crime Against the Person": 4
+    },
+    "person_crimes": 4,
+    "property_crimes": 27,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Harbour Landing": {
+    "total_incidents": 68,
+    "latest_incidents": 68,
+    "weighted_severity_score": 246.0,
+    "crime_breakdown": {
+      "Theft": 34,
+      "Mischief": 9,
+      "Theft of Auto": 3,
+      "Theft from Auto": 5,
+      "Assault": 6,
+      "Break & Enter": 9,
+      "Other Criminal Code Traffic Violation": 1,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 60,
+      "Crime Against the Person": 6,
+      "Traffic Offense": 2
+    },
+    "person_crimes": 6,
+    "property_crimes": 60,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.405,
+      -104.65
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Windsor Park": {
+    "total_incidents": 16,
+    "latest_incidents": 16,
+    "weighted_severity_score": 61.0,
+    "crime_breakdown": {
+      "Break & Enter": 2,
+      "Theft": 7,
+      "Mischief": 1,
+      "Assault": 2,
+      "Theft of Auto": 2,
+      "Theft from Auto": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 14,
+      "Crime Against the Person": 2
+    },
+    "person_crimes": 2,
+    "property_crimes": 14,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.435,
+      -104.56
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Wascana Park": {
+    "total_incidents": 36,
+    "latest_incidents": 36,
+    "weighted_severity_score": 129.0,
+    "crime_breakdown": {
+      "Robbery": 1,
+      "Impaired Operation of Motor Vehicle": 4,
+      "Theft from Auto": 5,
+      "Theft": 6,
+      "Assault": 4,
+      "Mischief": 9,
+      "Other Criminal Code Traffic Violation": 4,
+      "Break & Enter": 3
+    },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 5,
+      "Traffic Offense": 8,
+      "Crime Against Property": 23
+    },
+    "person_crimes": 5,
+    "property_crimes": 23,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Industrial Centre": {
+    "total_incidents": 7,
+    "latest_incidents": 7,
+    "weighted_severity_score": 35.0,
+    "crime_breakdown": {
+      "Assault": 2,
+      "Break & Enter": 2,
+      "Theft from Auto": 2,
+      "Theft": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 2,
+      "Crime Against Property": 5
+    },
+    "person_crimes": 2,
+    "property_crimes": 5,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "North Annex": {
+    "total_incidents": 31,
+    "latest_incidents": 31,
+    "weighted_severity_score": 117.0,
+    "crime_breakdown": {
+      "Break & Enter": 4,
+      "Mischief": 6,
+      "Impaired Operation of Motor Vehicle": 1,
+      "Theft of Auto": 2,
+      "Theft": 9,
+      "Theft from Auto": 3,
+      "Robbery": 2,
+      "Assault": 2,
+      "Other Criminal Code Traffic Violation": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 24,
+      "Traffic Offense": 3,
+      "Crime Against the Person": 4
+    },
+    "person_crimes": 4,
+    "property_crimes": 24,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Industrial Ross": {
+    "total_incidents": 32,
+    "latest_incidents": 32,
+    "weighted_severity_score": 135.0,
+    "crime_breakdown": {
+      "Break & Enter": 13,
+      "Theft": 13,
+      "Theft of Auto": 1,
+      "Theft from Auto": 3,
+      "Other Criminal Code Traffic Violation": 1,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 30,
+      "Traffic Offense": 2
+    },
+    "person_crimes": 0,
+    "property_crimes": 30,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Wascana View": {
+    "total_incidents": 7,
+    "latest_incidents": 7,
+    "weighted_severity_score": 30.0,
+    "crime_breakdown": {
+      "Theft": 2,
+      "Break & Enter": 2,
+      "Theft from Auto": 1,
+      "Mischief": 1,
+      "Assault": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 6,
+      "Crime Against the Person": 1
+    },
+    "person_crimes": 1,
+    "property_crimes": 6,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.407,
+      -104.55
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Rothwell Place": {
+    "total_incidents": 21,
+    "latest_incidents": 21,
+    "weighted_severity_score": 82.0,
+    "crime_breakdown": {
+      "Theft from Auto": 4,
+      "Theft": 5,
+      "Mischief": 3,
+      "Theft of Auto": 2,
+      "Assault": 4,
+      "Impaired Operation of Motor Vehicle": 1,
+      "Break & Enter": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 16,
+      "Crime Against the Person": 4,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 4,
+    "property_crimes": 16,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Mirror Sun Gardens": {
+    "total_incidents": 3,
+    "latest_incidents": 3,
+    "weighted_severity_score": 9.0,
+    "crime_breakdown": {
+      "Theft from Auto": 1,
+      "Theft": 1,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 3
+    },
+    "person_crimes": 0,
+    "property_crimes": 3,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Wascana Addition": {
+    "total_incidents": 33,
+    "latest_incidents": 33,
+    "weighted_severity_score": 143.0,
+    "crime_breakdown": {
+      "Break & Enter": 4,
+      "Theft from Auto": 8,
+      "Assault": 7,
+      "Theft": 9,
+      "Impaired Operation of Motor Vehicle": 3,
+      "Mischief": 1,
+      "Robbery": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 22,
+      "Crime Against the Person": 8,
+      "Traffic Offense": 3
+    },
+    "person_crimes": 8,
+    "property_crimes": 22,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Highland Park": {
+    "total_incidents": 30,
+    "latest_incidents": 30,
+    "weighted_severity_score": 118.0,
     "crime_breakdown": {
       "Assault": 5,
-      "B&E (Garage)": 2,
-      "B&E (Residence)": 6,
-      "Crimes Against Property(2150-2166)": 2,
-      "HWY Traffic Violation": 7,
-      "Impaired Operation": 1,
-      "Mischief": 63,
-      "Other Federal Statute Violations": 3,
-      "Other Theft Under": 6,
-      "OtherCriminalCode (A)": 9,
-      "Provincial Statutes": 1,
-      "Special Inq(8510-8640)": 10,
-      "Special Inq(8660-8814)": 14,
-      "Theft From Auto Under": 17,
-      "Theft of Motor Vehicle VA, VT": 12,
-      "Theft of Other Vehicle VM, VO": 6
+      "Robbery": 2,
+      "Theft": 6,
+      "Break & Enter": 1,
+      "Theft from Auto": 6,
+      "Mischief": 5,
+      "Theft of Auto": 4,
+      "Impaired Operation of Motor Vehicle": 1
     },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 7,
+      "Crime Against Property": 22,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 7,
+    "property_crimes": 22,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Glencairn": {
+    "total_incidents": 28,
+    "latest_incidents": 28,
+    "weighted_severity_score": 111.0,
+    "crime_breakdown": {
+      "Impaired Operation of Motor Vehicle": 1,
+      "Mischief": 5,
+      "Theft": 11,
+      "Assault": 8,
+      "Theft of Auto": 2,
+      "Theft from Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Traffic Offense": 1,
+      "Crime Against Property": 19,
+      "Crime Against the Person": 8
+    },
+    "person_crimes": 8,
+    "property_crimes": 19,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.473,
+      -104.635
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Glen Elm Park": {
+    "total_incidents": 46,
+    "latest_incidents": 46,
+    "weighted_severity_score": 180.0,
+    "crime_breakdown": {
+      "Impaired Operation of Motor Vehicle": 4,
+      "Assault": 11,
+      "Mischief": 10,
+      "Theft": 10,
+      "Break & Enter": 1,
+      "Theft from Auto": 4,
+      "Other Criminal Code Traffic Violation": 4,
+      "Robbery": 1,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Traffic Offense": 8,
+      "Crime Against the Person": 12,
+      "Crime Against Property": 26
+    },
+    "person_crimes": 12,
+    "property_crimes": 26,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.438,
+      -104.575
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Parliament Place": {
+    "total_incidents": 30,
+    "latest_incidents": 30,
+    "weighted_severity_score": 143.0,
+    "crime_breakdown": {
+      "Theft from Auto": 5,
+      "Assault": 12,
+      "Mischief": 4,
+      "Impaired Operation of Motor Vehicle": 1,
+      "Other Criminal Code Traffic Violation": 1,
+      "Break & Enter": 3,
+      "Theft": 4
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 16,
+      "Crime Against the Person": 12,
+      "Traffic Offense": 2
+    },
+    "person_crimes": 12,
+    "property_crimes": 16,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.445,
+      -104.64
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Glencairn Village": {
+    "total_incidents": 16,
+    "latest_incidents": 16,
+    "weighted_severity_score": 57.0,
+    "crime_breakdown": {
+      "Break & Enter": 2,
+      "Other Criminal Code Traffic Violation": 1,
+      "Theft from Auto": 1,
+      "Theft of Auto": 2,
+      "Mischief": 5,
+      "Assault": 2,
+      "Theft": 2,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 12,
+      "Traffic Offense": 2,
+      "Crime Against the Person": 2
+    },
+    "person_crimes": 2,
+    "property_crimes": 12,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.473,
+      -104.635
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Lakeview South": {
+    "total_incidents": 6,
+    "latest_incidents": 6,
+    "weighted_severity_score": 24.0,
+    "crime_breakdown": {
+      "Theft": 3,
+      "Break & Enter": 2,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 5,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 5,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.435,
+      -104.647
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Industrial Park": {
+    "total_incidents": 22,
+    "latest_incidents": 22,
+    "weighted_severity_score": 79.0,
+    "crime_breakdown": {
+      "Break & Enter": 3,
+      "Theft from Auto": 4,
+      "Mischief": 5,
+      "Assault": 1,
+      "Other Criminal Code Traffic Violation": 4,
+      "Theft": 1,
+      "Impaired Operation of Motor Vehicle": 3,
+      "Robbery": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 13,
+      "Crime Against the Person": 2,
+      "Traffic Offense": 7
+    },
+    "person_crimes": 2,
+    "property_crimes": 13,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Coventry Place": {
+    "total_incidents": 8,
+    "latest_incidents": 8,
+    "weighted_severity_score": 35.0,
+    "crime_breakdown": {
+      "Theft": 3,
+      "Theft from Auto": 2,
+      "Assault": 2,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 6,
+      "Crime Against the Person": 2
+    },
+    "person_crimes": 2,
+    "property_crimes": 6,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Wascana Crescents": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 3.0,
+    "crime_breakdown": {
+      "Theft": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.443,
+      -104.62
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Lakeridge": {
+    "total_incidents": 92,
+    "latest_incidents": 92,
+    "weighted_severity_score": 311.0,
+    "crime_breakdown": {
+      "Theft from Auto": 2,
+      "Theft": 69,
+      "Theft of Auto": 4,
+      "Assault": 6,
+      "Break & Enter": 3,
+      "Robbery": 1,
+      "Other Criminal Code Traffic Violation": 3,
+      "Mischief": 3,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 81,
+      "Crime Against the Person": 7,
+      "Traffic Offense": 4
+    },
+    "person_crimes": 7,
+    "property_crimes": 81,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.408,
+      -104.59
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Lakeview": {
+    "total_incidents": 12,
+    "latest_incidents": 12,
+    "weighted_severity_score": 46.0,
+    "crime_breakdown": {
+      "Break & Enter": 4,
+      "Mischief": 2,
+      "Theft from Auto": 3,
+      "Theft": 2,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 12
+    },
+    "person_crimes": 0,
+    "property_crimes": 12,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.435,
+      -104.647
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Mayfair": {
+    "total_incidents": 26,
+    "latest_incidents": 26,
+    "weighted_severity_score": 79.0,
+    "crime_breakdown": {
+      "Theft": 19,
+      "Break & Enter": 1,
+      "Mischief": 2,
+      "Theft from Auto": 2,
+      "Impaired Operation of Motor Vehicle": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 24,
+      "Traffic Offense": 2
+    },
+    "person_crimes": 0,
+    "property_crimes": 24,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Albert Park": {
+    "total_incidents": 43,
+    "latest_incidents": 43,
+    "weighted_severity_score": 145.0,
+    "crime_breakdown": {
+      "Theft": 27,
+      "Theft from Auto": 5,
+      "Other Criminal Code Traffic Violation": 1,
+      "Break & Enter": 1,
+      "Robbery": 2,
+      "Assault": 2,
+      "Mischief": 5
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 38,
+      "Traffic Offense": 1,
+      "Crime Against the Person": 4
+    },
+    "person_crimes": 4,
+    "property_crimes": 38,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.418,
+      -104.636
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Pasqua Place": {
+    "total_incidents": 18,
+    "latest_incidents": 18,
+    "weighted_severity_score": 83.0,
+    "crime_breakdown": {
+      "Theft": 7,
+      "Other Criminal Code Traffic Violation": 1,
+      "Assault": 4,
+      "Mischief": 1,
+      "Break & Enter": 3,
+      "Robbery": 1,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 11,
+      "Traffic Offense": 2,
+      "Crime Against the Person": 5
+    },
+    "person_crimes": 5,
+    "property_crimes": 11,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "The Towns": {
+    "total_incidents": 24,
+    "latest_incidents": 24,
+    "weighted_severity_score": 94.0,
+    "crime_breakdown": {
+      "Mischief": 7,
+      "Theft": 7,
+      "Assault": 5,
+      "Break & Enter": 3,
+      "Theft from Auto": 1,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 19,
+      "Crime Against the Person": 5
+    },
+    "person_crimes": 5,
+    "property_crimes": 19,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "The Greens on Gardiner": {
+    "total_incidents": 19,
+    "latest_incidents": 19,
+    "weighted_severity_score": 76.0,
+    "crime_breakdown": {
+      "Theft of Auto": 1,
+      "Break & Enter": 3,
+      "Theft": 8,
+      "Assault": 3,
+      "Mischief": 2,
+      "Theft from Auto": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 16,
+      "Crime Against the Person": 3
+    },
+    "person_crimes": 3,
+    "property_crimes": 16,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.405,
+      -104.565
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Lakeview Centre": {
+    "total_incidents": 7,
+    "latest_incidents": 7,
+    "weighted_severity_score": 32.0,
+    "crime_breakdown": {
+      "Assault": 1,
+      "Break & Enter": 3,
+      "Theft": 1,
+      "Mischief": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 1,
+      "Crime Against Property": 6
+    },
+    "person_crimes": 1,
+    "property_crimes": 6,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.435,
+      -104.647
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Normanview W. Addn.": {
+    "total_incidents": 7,
+    "latest_incidents": 7,
+    "weighted_severity_score": 32.0,
+    "crime_breakdown": {
+      "Assault": 3,
+      "Other Criminal Code Traffic Violation": 1,
+      "Theft": 2,
+      "Mischief": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 3,
+      "Traffic Offense": 1,
+      "Crime Against Property": 3
+    },
+    "person_crimes": 3,
+    "property_crimes": 3,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.47,
+      -104.66
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Premier Place": {
+    "total_incidents": 20,
+    "latest_incidents": 20,
+    "weighted_severity_score": 86.0,
+    "crime_breakdown": {
+      "Assault": 6,
+      "Other Criminal Code Traffic Violation": 1,
+      "Theft": 4,
+      "Mischief": 3,
+      "Robbery": 1,
+      "Impaired Operation of Motor Vehicle": 3,
+      "Theft from Auto": 1,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 7,
+      "Traffic Offense": 4,
+      "Crime Against Property": 9
+    },
+    "person_crimes": 7,
+    "property_crimes": 9,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Assiniboia  Place": {
+    "total_incidents": 28,
+    "latest_incidents": 28,
+    "weighted_severity_score": 111.0,
+    "crime_breakdown": {
+      "Theft": 5,
+      "Break & Enter": 8,
+      "Mischief": 5,
+      "Theft from Auto": 6,
+      "Assault": 2,
+      "Theft of Auto": 1,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 25,
+      "Crime Against the Person": 2,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 2,
+    "property_crimes": 25,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Uplands": {
+    "total_incidents": 12,
+    "latest_incidents": 12,
+    "weighted_severity_score": 57.0,
+    "crime_breakdown": {
+      "Theft": 2,
+      "Break & Enter": 2,
+      "Robbery": 1,
+      "Assault": 3,
+      "Impaired Operation of Motor Vehicle": 2,
+      "Mischief": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 6,
+      "Crime Against the Person": 4,
+      "Traffic Offense": 2
+    },
+    "person_crimes": 4,
+    "property_crimes": 6,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.47,
+      -104.57
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Cpr Annex": {
+    "total_incidents": 21,
+    "latest_incidents": 21,
+    "weighted_severity_score": 89.0,
+    "crime_breakdown": {
+      "Impaired Operation of Motor Vehicle": 2,
+      "Assault": 5,
+      "Break & Enter": 3,
+      "Theft of Auto": 2,
+      "Other Criminal Code Traffic Violation": 1,
+      "Theft": 3,
+      "Mischief": 3,
+      "Theft from Auto": 2
+    },
+    "crime_group_breakdown": {
+      "Traffic Offense": 3,
+      "Crime Against the Person": 5,
+      "Crime Against Property": 13
+    },
+    "person_crimes": 5,
+    "property_crimes": 13,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Dewdney Place": {
+    "total_incidents": 8,
+    "latest_incidents": 8,
+    "weighted_severity_score": 31.0,
+    "crime_breakdown": {
+      "Theft": 5,
+      "Assault": 1,
+      "Break & Enter": 1,
+      "Other Criminal Code Traffic Violation": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 6,
+      "Crime Against the Person": 1,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 1,
+    "property_crimes": 6,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Rosemont": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 18.0,
+    "crime_breakdown": {
+      "Theft": 2,
+      "Theft from Auto": 1,
+      "Mischief": 1,
+      "Assault": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 4,
+      "Crime Against the Person": 1
+    },
+    "person_crimes": 1,
+    "property_crimes": 4,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.468,
+      -104.635
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Richmond Place": {
+    "total_incidents": 4,
+    "latest_incidents": 4,
+    "weighted_severity_score": 17.0,
+    "crime_breakdown": {
+      "Break & Enter": 2,
+      "Mischief": 1,
+      "Theft from Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 4
+    },
+    "person_crimes": 0,
+    "property_crimes": 4,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.45,
+      -104.56
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Englewood": {
+    "total_incidents": 4,
+    "latest_incidents": 4,
+    "weighted_severity_score": 14.0,
+    "crime_breakdown": {
+      "Mischief": 2,
+      "Assault": 1,
+      "Theft": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 3,
+      "Crime Against the Person": 1
+    },
+    "person_crimes": 1,
+    "property_crimes": 3,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Coronation Park": {
+    "total_incidents": 54,
+    "latest_incidents": 54,
+    "weighted_severity_score": 215.0,
+    "crime_breakdown": {
+      "Impaired Operation of Motor Vehicle": 2,
+      "Theft of Auto": 3,
+      "Theft": 16,
+      "Assault": 9,
+      "Break & Enter": 6,
+      "Mischief": 6,
+      "Theft from Auto": 8,
+      "Other Criminal Code Traffic Violation": 3,
+      "Robbery": 1
+    },
+    "crime_group_breakdown": {
+      "Traffic Offense": 5,
+      "Crime Against Property": 39,
+      "Crime Against the Person": 10
+    },
+    "person_crimes": 10,
+    "property_crimes": 39,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.46,
+      -104.585
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Whitmore Park": {
+    "total_incidents": 27,
+    "latest_incidents": 27,
+    "weighted_severity_score": 93.0,
+    "crime_breakdown": {
+      "Mischief": 9,
+      "Assault": 3,
+      "Break & Enter": 3,
+      "Theft from Auto": 3,
+      "Theft": 5,
+      "Impaired Operation of Motor Vehicle": 1,
+      "Theft of Auto": 1,
+      "Other Criminal Code Traffic Violation": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 21,
+      "Crime Against the Person": 3,
+      "Traffic Offense": 3
+    },
+    "person_crimes": 3,
+    "property_crimes": 21,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
     "centroid": [
       50.42,
       -104.65
-    ]
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Sherwood Estates": {
+    "total_incidents": 10,
+    "latest_incidents": 10,
+    "weighted_severity_score": 38.0,
+    "crime_breakdown": {
+      "Mischief": 3,
+      "Assault": 2,
+      "Theft": 1,
+      "Break & Enter": 1,
+      "Theft of Auto": 2,
+      "Other Criminal Code Traffic Violation": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 7,
+      "Crime Against the Person": 2,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 2,
+    "property_crimes": 7,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.485,
+      -104.62
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "UNDEVELOP": {
+    "total_incidents": 4,
+    "latest_incidents": 4,
+    "weighted_severity_score": 11.0,
+    "crime_breakdown": {
+      "Theft": 2,
+      "Mischief": 1,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 3,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 3,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Lakewood": {
+    "total_incidents": 19,
+    "latest_incidents": 19,
+    "weighted_severity_score": 69.0,
+    "crime_breakdown": {
+      "Theft": 10,
+      "Mischief": 3,
+      "Assault": 3,
+      "Break & Enter": 1,
+      "Theft from Auto": 1,
+      "Other Criminal Code Traffic Violation": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 15,
+      "Crime Against the Person": 3,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 3,
+    "property_crimes": 15,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.417,
+      -104.56
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "East Victoria Lands": {
+    "total_incidents": 22,
+    "latest_incidents": 22,
+    "weighted_severity_score": 77.0,
+    "crime_breakdown": {
+      "Theft": 17,
+      "Other Criminal Code Traffic Violation": 2,
+      "Break & Enter": 1,
+      "Assault": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 18,
+      "Traffic Offense": 2,
+      "Crime Against the Person": 2
+    },
+    "person_crimes": 2,
+    "property_crimes": 18,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Mount Royal": {
+    "total_incidents": 9,
+    "latest_incidents": 9,
+    "weighted_severity_score": 34.0,
+    "crime_breakdown": {
+      "Theft": 1,
+      "Assault": 2,
+      "Other Criminal Code Traffic Violation": 1,
+      "Theft from Auto": 3,
+      "Mischief": 1,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 5,
+      "Crime Against the Person": 2,
+      "Traffic Offense": 2
+    },
+    "person_crimes": 2,
+    "property_crimes": 5,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.43,
+      -104.625
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Transcona": {
+    "total_incidents": 13,
+    "latest_incidents": 13,
+    "weighted_severity_score": 72.0,
+    "crime_breakdown": {
+      "Assault": 8,
+      "Theft": 1,
+      "Mischief": 2,
+      "Other Criminal Code Traffic Violation": 1,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 8,
+      "Crime Against Property": 4,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 8,
+    "property_crimes": 4,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Regent Park": {
+    "total_incidents": 29,
+    "latest_incidents": 29,
+    "weighted_severity_score": 110.0,
+    "crime_breakdown": {
+      "Other Criminal Code Traffic Violation": 3,
+      "Mischief": 7,
+      "Theft": 3,
+      "Theft from Auto": 6,
+      "Assault": 6,
+      "Impaired Operation of Motor Vehicle": 1,
+      "Theft of Auto": 1,
+      "Break & Enter": 2
+    },
+    "crime_group_breakdown": {
+      "Traffic Offense": 4,
+      "Crime Against Property": 19,
+      "Crime Against the Person": 6
+    },
+    "person_crimes": 6,
+    "property_crimes": 19,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.446,
+      -104.57
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Global Transportation Hub": {
+    "total_incidents": 2,
+    "latest_incidents": 2,
+    "weighted_severity_score": 5.0,
+    "crime_breakdown": {
+      "Theft": 1,
+      "Mischief": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 2
+    },
+    "person_crimes": 0,
+    "property_crimes": 2,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Eastern Annex": {
+    "total_incidents": 11,
+    "latest_incidents": 11,
+    "weighted_severity_score": 52.0,
+    "crime_breakdown": {
+      "Mischief": 3,
+      "Assault": 4,
+      "Theft": 1,
+      "Break & Enter": 2,
+      "Theft from Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 7,
+      "Crime Against the Person": 4
+    },
+    "person_crimes": 4,
+    "property_crimes": 7,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Westerra": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 18.0,
+    "crime_breakdown": {
+      "Theft": 3,
+      "Theft from Auto": 1,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 5
+    },
+    "person_crimes": 0,
+    "property_crimes": 5,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Cityview": {
+    "total_incidents": 19,
+    "latest_incidents": 19,
+    "weighted_severity_score": 83.0,
+    "crime_breakdown": {
+      "Theft": 6,
+      "Impaired Operation of Motor Vehicle": 2,
+      "Assault": 5,
+      "Theft from Auto": 1,
+      "Break & Enter": 2,
+      "Other Criminal Code Traffic Violation": 3
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 9,
+      "Traffic Offense": 5,
+      "Crime Against the Person": 5
+    },
+    "person_crimes": 5,
+    "property_crimes": 9,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Assiniboia East": {
+    "total_incidents": 8,
+    "latest_incidents": 8,
+    "weighted_severity_score": 42.0,
+    "crime_breakdown": {
+      "Mischief": 1,
+      "Assault": 4,
+      "Other Criminal Code Traffic Violation": 1,
+      "Break & Enter": 1,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 2,
+      "Crime Against the Person": 4,
+      "Traffic Offense": 2
+    },
+    "person_crimes": 4,
+    "property_crimes": 2,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Crescents": {
+    "total_incidents": 8,
+    "latest_incidents": 8,
+    "weighted_severity_score": 25.0,
+    "crime_breakdown": {
+      "Break & Enter": 1,
+      "Mischief": 2,
+      "Theft from Auto": 4,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 8
+    },
+    "person_crimes": 0,
+    "property_crimes": 8,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.443,
+      -104.62
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Tuxedo Park": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 18.0,
+    "crime_breakdown": {
+      "Theft": 3,
+      "Theft from Auto": 1,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 5
+    },
+    "person_crimes": 0,
+    "property_crimes": 5,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.445,
+      -104.585
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "River Heights": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 18.0,
+    "crime_breakdown": {
+      "Theft from Auto": 2,
+      "Mischief": 1,
+      "Theft": 1,
+      "Assault": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 4,
+      "Crime Against the Person": 1
+    },
+    "person_crimes": 1,
+    "property_crimes": 4,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Parkdale": {
+    "total_incidents": 25,
+    "latest_incidents": 25,
+    "weighted_severity_score": 115.0,
+    "crime_breakdown": {
+      "Theft": 4,
+      "Assault": 9,
+      "Theft from Auto": 3,
+      "Theft of Auto": 3,
+      "Mischief": 2,
+      "Break & Enter": 2,
+      "Impaired Operation of Motor Vehicle": 1,
+      "Other Criminal Code Traffic Violation": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 14,
+      "Crime Against the Person": 9,
+      "Traffic Offense": 2
+    },
+    "person_crimes": 9,
+    "property_crimes": 14,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.453,
+      -104.595
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Coronation Park N.": {
+    "total_incidents": 33,
+    "latest_incidents": 33,
+    "weighted_severity_score": 128.0,
+    "crime_breakdown": {
+      "Mischief": 7,
+      "Theft": 12,
+      "Theft of Auto": 2,
+      "Other Criminal Code Traffic Violation": 1,
+      "Assault": 9,
+      "Theft from Auto": 1,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 22,
+      "Traffic Offense": 2,
+      "Crime Against the Person": 9
+    },
+    "person_crimes": 9,
+    "property_crimes": 22,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.46,
+      -104.585
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Eastgate": {
+    "total_incidents": 15,
+    "latest_incidents": 15,
+    "weighted_severity_score": 67.0,
+    "crime_breakdown": {
+      "Theft": 8,
+      "Break & Enter": 2,
+      "Assault": 3,
+      "Mischief": 1,
+      "Robbery": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 11,
+      "Crime Against the Person": 4
+    },
+    "person_crimes": 4,
+    "property_crimes": 11,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Innismore": {
+    "total_incidents": 8,
+    "latest_incidents": 8,
+    "weighted_severity_score": 23.0,
+    "crime_breakdown": {
+      "Theft": 1,
+      "Theft from Auto": 1,
+      "Impaired Operation of Motor Vehicle": 3,
+      "Theft of Auto": 2,
+      "Mischief": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 5,
+      "Traffic Offense": 3
+    },
+    "person_crimes": 0,
+    "property_crimes": 5,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Glen Elm Park S.": {
+    "total_incidents": 19,
+    "latest_incidents": 19,
+    "weighted_severity_score": 93.0,
+    "crime_breakdown": {
+      "Assault": 9,
+      "Theft": 3,
+      "Mischief": 3,
+      "Theft from Auto": 2,
+      "Break & Enter": 1,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 9,
+      "Crime Against Property": 10
+    },
+    "person_crimes": 9,
+    "property_crimes": 10,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.438,
+      -104.575
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Windsor Place": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 18.0,
+    "crime_breakdown": {
+      "Theft from Auto": 4,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 5
+    },
+    "person_crimes": 0,
+    "property_crimes": 5,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Arcola Sub": {
+    "total_incidents": 36,
+    "latest_incidents": 36,
+    "weighted_severity_score": 176.0,
+    "crime_breakdown": {
+      "Theft from Auto": 6,
+      "Mischief": 6,
+      "Theft": 3,
+      "Robbery": 3,
+      "Assault": 14,
+      "Impaired Operation of Motor Vehicle": 2,
+      "Break & Enter": 1,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 17,
+      "Crime Against the Person": 17,
+      "Traffic Offense": 2
+    },
+    "person_crimes": 17,
+    "property_crimes": 17,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Westhill Park": {
+    "total_incidents": 2,
+    "latest_incidents": 2,
+    "weighted_severity_score": 4.0,
+    "crime_breakdown": {
+      "Mischief": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 2
+    },
+    "person_crimes": 0,
+    "property_crimes": 2,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.445,
+      -104.65
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Rosemont South": {
+    "total_incidents": 11,
+    "latest_incidents": 11,
+    "weighted_severity_score": 45.0,
+    "crime_breakdown": {
+      "Mischief": 3,
+      "Assault": 3,
+      "Theft": 2,
+      "Theft from Auto": 2,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 8,
+      "Crime Against the Person": 3
+    },
+    "person_crimes": 3,
+    "property_crimes": 8,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.468,
+      -104.635
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Normanview West": {
+    "total_incidents": 6,
+    "latest_incidents": 6,
+    "weighted_severity_score": 18.0,
+    "crime_breakdown": {
+      "Mischief": 3,
+      "Theft": 2,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 6
+    },
+    "person_crimes": 0,
+    "property_crimes": 6,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.47,
+      -104.675
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Rochdale Park": {
+    "total_incidents": 3,
+    "latest_incidents": 3,
+    "weighted_severity_score": 21.0,
+    "crime_breakdown": {
+      "Assault": 3
+    },
+    "crime_group_breakdown": {
+      "Crime Against the Person": 3
+    },
+    "person_crimes": 3,
+    "property_crimes": 0,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.485,
+      -104.64
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Normanview": {
+    "total_incidents": 26,
+    "latest_incidents": 26,
+    "weighted_severity_score": 89.0,
+    "crime_breakdown": {
+      "Theft": 12,
+      "Theft from Auto": 6,
+      "Assault": 2,
+      "Mischief": 3,
+      "Break & Enter": 2,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 23,
+      "Crime Against the Person": 2,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 2,
+    "property_crimes": 23,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.47,
+      -104.66
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Arnheim Place": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 3.0,
+    "crime_breakdown": {
+      "Theft": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Gardiner Park": {
+    "total_incidents": 2,
+    "latest_incidents": 2,
+    "weighted_severity_score": 9.0,
+    "crime_breakdown": {
+      "Break & Enter": 1,
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.41,
+      -104.57
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "University Park": {
+    "total_incidents": 6,
+    "latest_incidents": 6,
+    "weighted_severity_score": 15.0,
+    "crime_breakdown": {
+      "Theft from Auto": 2,
+      "Mischief": 3,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 6
+    },
+    "person_crimes": 0,
+    "property_crimes": 6,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.417,
+      -104.587
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Lewvan Park": {
+    "total_incidents": 4,
+    "latest_incidents": 4,
+    "weighted_severity_score": 19.0,
+    "crime_breakdown": {
+      "Theft from Auto": 2,
+      "Assault": 1,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 3,
+      "Crime Against the Person": 1
+    },
+    "person_crimes": 1,
+    "property_crimes": 3,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Argyle Park": {
+    "total_incidents": 17,
+    "latest_incidents": 17,
+    "weighted_severity_score": 64.0,
+    "crime_breakdown": {
+      "Break & Enter": 2,
+      "Assault": 3,
+      "Other Criminal Code Traffic Violation": 3,
+      "Mischief": 5,
+      "Theft from Auto": 2,
+      "Theft": 1,
+      "Theft of Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 11,
+      "Crime Against the Person": 3,
+      "Traffic Offense": 3
+    },
+    "person_crimes": 3,
+    "property_crimes": 11,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.435,
+      -104.59
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Wood Meadows": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 18.0,
+    "crime_breakdown": {
+      "Theft": 2,
+      "Theft from Auto": 2,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 5
+    },
+    "person_crimes": 0,
+    "property_crimes": 5,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.398,
+      -104.64
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Parkridge": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 2.0,
+    "crime_breakdown": {
+      "Mischief": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Dieppe Place": {
+    "total_incidents": 6,
+    "latest_incidents": 6,
+    "weighted_severity_score": 32.0,
+    "crime_breakdown": {
+      "Mischief": 1,
+      "Assault": 3,
+      "Impaired Operation of Motor Vehicle": 1,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 2,
+      "Crime Against the Person": 3,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 3,
+    "property_crimes": 2,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.477,
+      -104.61
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Douglas Place": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 22.0,
+    "crime_breakdown": {
+      "Break & Enter": 1,
+      "Assault": 1,
+      "Theft from Auto": 2,
+      "Theft": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 4,
+      "Crime Against the Person": 1
+    },
+    "person_crimes": 1,
+    "property_crimes": 4,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Skyview": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 3.0,
+    "crime_breakdown": {
+      "Other Criminal Code Traffic Violation": 1
+    },
+    "crime_group_breakdown": {
+      "Traffic Offense": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 0,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.415,
+      -104.64
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "The Creeks": {
+    "total_incidents": 3,
+    "latest_incidents": 3,
+    "weighted_severity_score": 12.0,
+    "crime_breakdown": {
+      "Break & Enter": 1,
+      "Theft from Auto": 1,
+      "Theft": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 3
+    },
+    "person_crimes": 0,
+    "property_crimes": 3,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.396,
+      -104.63
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "University Park East": {
+    "total_incidents": 2,
+    "latest_incidents": 2,
+    "weighted_severity_score": 6.0,
+    "crime_breakdown": {
+      "Theft from Auto": 2
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 2
+    },
+    "person_crimes": 0,
+    "property_crimes": 2,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.417,
+      -104.587
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Normandy Heights": {
+    "total_incidents": 3,
+    "latest_incidents": 3,
+    "weighted_severity_score": 8.0,
+    "crime_breakdown": {
+      "Theft of Auto": 1,
+      "Theft from Auto": 1,
+      "Mischief": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 3
+    },
+    "person_crimes": 0,
+    "property_crimes": 3,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.48,
+      -104.6
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Garden Ridge": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 15.0,
+    "crime_breakdown": {
+      "Mischief": 4,
+      "Assault": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 4,
+      "Crime Against the Person": 1
+    },
+    "person_crimes": 1,
+    "property_crimes": 4,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Churchill Downs": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 20.0,
+    "crime_breakdown": {
+      "Theft from Auto": 1,
+      "Assault": 1,
+      "Mischief": 2,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 4,
+      "Crime Against the Person": 1
+    },
+    "person_crimes": 1,
+    "property_crimes": 4,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4,
+      -104.6
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Churchill Place": {
+    "total_incidents": 2,
+    "latest_incidents": 2,
+    "weighted_severity_score": 5.0,
+    "crime_breakdown": {
+      "Theft": 1,
+      "Mischief": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 2
+    },
+    "person_crimes": 0,
+    "property_crimes": 2,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Balbriggan Place": {
+    "total_incidents": 3,
+    "latest_incidents": 3,
+    "weighted_severity_score": 12.0,
+    "crime_breakdown": {
+      "Break & Enter": 1,
+      "Theft": 1,
+      "Theft from Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 3
+    },
+    "person_crimes": 0,
+    "property_crimes": 3,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Mccarthy Park": {
+    "total_incidents": 4,
+    "latest_incidents": 4,
+    "weighted_severity_score": 19.0,
+    "crime_breakdown": {
+      "Mischief": 1,
+      "Assault": 2,
+      "Theft": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 2,
+      "Crime Against the Person": 2
+    },
+    "person_crimes": 2,
+    "property_crimes": 2,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.489,
+      -104.59
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Creekside": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 3.0,
+    "crime_breakdown": {
+      "Theft": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "River Bend": {
+    "total_incidents": 5,
+    "latest_incidents": 5,
+    "weighted_severity_score": 14.0,
+    "crime_breakdown": {
+      "Mischief": 1,
+      "Theft": 3,
+      "Other Criminal Code Traffic Violation": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 4,
+      "Traffic Offense": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 4,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Grand Trunk Annex": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 2.0,
+    "crime_breakdown": {
+      "Mischief": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Woodland Grove": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 6.0,
+    "crime_breakdown": {
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Dominion Heights": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 3.0,
+    "crime_breakdown": {
+      "Theft from Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Lakeview A": {
+    "total_incidents": 2,
+    "latest_incidents": 2,
+    "weighted_severity_score": 6.0,
+    "crime_breakdown": {
+      "Impaired Operation of Motor Vehicle": 1,
+      "Theft from Auto": 1
+    },
+    "crime_group_breakdown": {
+      "Traffic Offense": 1,
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.435,
+      -104.647
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Connaught Park": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 3.0,
+    "crime_breakdown": {
+      "Impaired Operation of Motor Vehicle": 1
+    },
+    "crime_group_breakdown": {
+      "Traffic Offense": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 0,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Gardiner Heights": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 6.0,
+    "crime_breakdown": {
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Kensington Greens": {
+    "total_incidents": 2,
+    "latest_incidents": 2,
+    "weighted_severity_score": 9.0,
+    "crime_breakdown": {
+      "Theft of Auto": 1,
+      "Break & Enter": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 2
+    },
+    "person_crimes": 0,
+    "property_crimes": 2,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.41,
+      -104.62
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
+  },
+  "Parkview": {
+    "total_incidents": 1,
+    "latest_incidents": 1,
+    "weighted_severity_score": 3.0,
+    "crime_breakdown": {
+      "Theft": 1
+    },
+    "crime_group_breakdown": {
+      "Crime Against Property": 1
+    },
+    "person_crimes": 0,
+    "property_crimes": 1,
+    "data_period": "2026-05-09 to 2026-08-06",
+    "last_updated": "2026-08-06",
+    "centroid": [
+      50.4452,
+      -104.6189
+    ],
+    "yoy_change_pct": 0.0,
+    "yoy_trend": "current"
   }
 }

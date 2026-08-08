@@ -107,6 +107,9 @@
         <div class="welcome-body" data-i18n="welcome_body">
             Click any area to explore safety scores, schools, transit access, and real crime data — all in one view.
         </div>
+        <div class="welcome-data-badge" id="data-freshness">
+            Live data from Regina Police Service &middot; Updated daily
+        </div>
         <div class="welcome-cta">Click a neighbourhood to begin</div>
         <div class="welcome-footer">
             Open source civic intelligence &middot; Built by OpenPodTech &middot; Free forever
@@ -166,6 +169,7 @@
             <div class="legend-gradient"></div>
             <span class="legend-high">High</span>
         </div>
+        <div id="legend-updated" style="font-size:0.7rem;color:#64748b;margin-top:8px;text-align:center;"></div>
     </div>
 
     <!-- Watermark -->
@@ -262,6 +266,40 @@
 
         // Auto-dismiss after 6 seconds
         setTimeout(dismiss, 6000);
+    })();
+    </script>
+
+    <!-- Data freshness indicator -->
+    <script>
+    (function() {
+        fetch('data/processed/crimes.geojson')
+            .then(function(r) { return r.ok ? r.json() : null; })
+            .catch(function() { return null; })
+            .then(function(data) {
+                if (!data || !data.metadata) return;
+                var updated = data.metadata.last_updated || data.metadata.generated || '';
+                var total = data.metadata.total_raw_records || data.metadata.total_records || 0;
+                // Parse date — could be "8/8/2026 12:01:01 AM" or ISO
+                var dateStr = '';
+                if (updated) {
+                    try {
+                        var d = new Date(updated);
+                        if (!isNaN(d.getTime())) {
+                            dateStr = d.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+                        } else {
+                            dateStr = updated.split(' ')[0];
+                        }
+                    } catch(e) { dateStr = updated; }
+                }
+                var legendEl = document.getElementById('legend-updated');
+                if (legendEl && dateStr) {
+                    legendEl.textContent = 'Updated: ' + dateStr + ' (' + total.toLocaleString() + ' incidents)';
+                }
+                var badgeEl = document.getElementById('data-freshness');
+                if (badgeEl && dateStr) {
+                    badgeEl.textContent = 'Live data \u2022 ' + total.toLocaleString() + ' incidents \u2022 Updated ' + dateStr;
+                }
+            });
     })();
     </script>
 </body>

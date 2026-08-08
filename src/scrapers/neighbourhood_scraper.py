@@ -1,9 +1,12 @@
 """
-Neighbourhood Boundary Scraper — Gets neighbourhood polygons for Regina.
+Neighbourhood Boundary Scraper — Gets REAL neighbourhood polygons from Regina GIS.
 
-Strategy: Use centroid-based approximate polygons directly. Official GIS boundary
-endpoints are unreliable. The centroid approximation is good enough for display
-and scoring — gives users a visual sense of each neighbourhood's area.
+Data Source (PRIMARY — LIVE):
+  City of Regina ArcGIS Feature Service — Subdivision Boundaries
+  URL: https://services6.arcgis.com/EXgfJNbcrqacNMPa/arcgis/rest/services/shp_Subdivisions/FeatureServer/0/query
+  Returns actual polygon GeoJSON with SUB_NAME field
+
+Fallback: centroid-based approximate hexagonal polygons
 
 Output: data/processed/neighbourhoods.geojson
 """
@@ -19,9 +22,15 @@ import httpx
 
 logger = logging.getLogger(__name__)
 
+# Live ArcGIS endpoint for subdivision boundaries
+BOUNDARIES_API_URL = (
+    "https://services6.arcgis.com/EXgfJNbcrqacNMPa/arcgis/rest/services/"
+    "shp_Subdivisions/FeatureServer/0/query"
+)
+
 
 class NeighbourhoodScraper:
-    """Collects neighbourhood boundary polygons for Regina."""
+    """Collects real neighbourhood boundary polygons from City of Regina GIS."""
 
     def __init__(self, data_dir: str = "data"):
         self.data_dir = Path(data_dir)
@@ -31,16 +40,20 @@ class NeighbourhoodScraper:
         self.processed_dir.mkdir(parents=True, exist_ok=True)
 
     async def collect_all(self):
-        """Collect neighbourhood boundaries."""
-        logger.info("Starting neighbourhood boundary collection...")
+        """Collect neighbourhood boundaries from live GIS API."""
+        logger.info("Starting neighbourhood boundary collection (LIVE GIS)...")
 
-        # Try OpenRegina CKAN for real boundaries first
-        boundaries = await self._try_openregina()
+        # PRIMARY: Fetch real polygons from ArcGIS
+        boundaries = await self._fetch_live_boundaries()
 
-        # If that fails, use centroid approximations (which always works)
-        if not boundaries:
-            logger.info("  Using centroid-based approximate polygons (reliable fallback)")
+        if boundaries:
+            logger.info(f"  Got {len(boundaries)} REAL boundary polygons from City of Regina GIS")
+            source = "city_of_regina_gis"
+        else:
+            # FALLBACK: centroid-based approximation
+            logger.warning("  Live GIS failed — using centroid approximation fallback")
             boundaries = self._create_from_centroids()
+            source = "centroid_approximation"
 
         # Write output
         geojson = {
@@ -50,7 +63,8 @@ class NeighbourhoodScraper:
                 "total_neighbourhoods": len(boundaries),
                 "city": "Regina",
                 "province": "Saskatchewan",
-                "source": "centroid_approximation",
+                "source": source,
+                "source_url": BOUNDARIES_API_URL,
             },
             "features": boundaries,
         }
@@ -59,42 +73,83 @@ class NeighbourhoodScraper:
         output_path.write_text(json.dumps(geojson, indent=2))
         logger.info(f"  Written {len(boundaries)} neighbourhood boundaries to {output_path}")
 
-    async def _try_openregina(self) -> list[dict] | None:
-        """Quick attempt at OpenRegina CKAN — don't block on failure."""
+    async def _fetch_live_boundaries(self) -> list[dict] | None:
+        """Fetch real boundary polygons from City of Regina ArcGIS service."""
+        params = {
+            "where": "1=1",
+            "outFields": "*",
+            "outSR": "4326",
+            "f": "geojson",
+            "resultRecordCount": 200,
+        }
+
         try:
-            async with httpx.AsyncClient(timeout=10.0) as client:
-                response = await client.get(
-                    "https://openregina.ca/api/3/action/package_search",
-                    params={"q": "neighbourhood boundary", "rows": 5},
-                )
+            async with httpx.AsyncClient(timeout=30.0) as client:
+                response = await client.get(BOUNDARIES_API_URL, params=params)
+
                 if response.status_code != 200:
+                    logger.warning(f"  Boundaries API returned HTTP {response.status_code}")
                     return None
 
                 data = response.json()
-                results = data.get("result", {}).get("results", [])
+                features = data.get("features", [])
 
-                for dataset in results:
-                    for resource in dataset.get("resources", []):
-                        fmt = resource.get("format", "").lower()
-                        if fmt in ("geojson", "json"):
-                            url = resource.get("url")
-                            if url:
-                                resp = await client.get(url, timeout=15.0)
-                                if resp.status_code == 200:
-                                    geo = resp.json()
-                                    features = geo.get("features", [])
-                                    if features:
-                                        logger.info(f"  Got {len(features)} boundaries from OpenRegina!")
-                                        return features
+                if not features:
+                    logger.warning("  Boundaries API returned empty features")
+                    return None
+
+                # Save raw response
+                raw_path = self.raw_dir / "subdivisions_raw.geojson"
+                raw_path.write_text(json.dumps(data, indent=2))
+
+                # Process: normalize field names
+                processed = []
+                for feature in features:
+                    props = feature.get("properties", {})
+                    geometry = feature.get("geometry")
+
+                    if not geometry:
+                        continue
+
+                    # Extract the subdivision name (field is SUB_NAME)
+                    name = (
+                        props.get("SUB_NAME")
+                        or props.get("sub_name")
+                        or props.get("Name")
+                        or props.get("NAME")
+                        or "Unknown"
+                    )
+
+                    # Build normalized feature
+                    normalized = {
+                        "type": "Feature",
+                        "geometry": geometry,
+                        "properties": {
+                            "name": name,
+                            "source": "city_of_regina_gis",
+                        },
+                    }
+
+                    # Carry over any other useful fields
+                    for key in ("OBJECTID", "Shape__Area", "Shape__Length"):
+                        if key in props:
+                            normalized["properties"][key.lower()] = props[key]
+
+                    processed.append(normalized)
+
+                return processed if processed else None
+
+        except httpx.TimeoutException:
+            logger.warning("  Boundaries API timed out")
+            return None
         except Exception as e:
-            logger.debug(f"  OpenRegina attempt failed (expected): {e}")
-
-        return None
+            logger.warning(f"  Boundaries API error: {e}")
+            return None
 
     def _create_from_centroids(self) -> list[dict]:
         """
         Create approximate neighbourhood polygons from centroids.
-        Uses a hexagonal approximation — good enough for display and scoring.
+        Uses a hexagonal approximation — fallback when GIS API is unavailable.
         """
         from .crime_scraper import NEIGHBOURHOOD_CENTROIDS
 

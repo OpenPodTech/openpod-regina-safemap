@@ -1,14 +1,16 @@
 """
-Crime Data Scraper — Collects crime incident data for Regina.
+Crime Data Scraper — Collects LIVE crime incident data from Regina Police Service.
 
-Data Source:
-  GitHub: andrewjdyck/regina-crime-data — Historical CSVs by neighbourhood (2007-2018)
-  URL pattern: https://raw.githubusercontent.com/andrewjdyck/regina-crime-data/master/data/crime_report_YYYY.csv
-  Combined file: https://raw.githubusercontent.com/andrewjdyck/regina-crime-data/master/data/regina_crime_reports.csv
+Data Source (PRIMARY — LIVE, updated daily):
+  Regina Police Service ArcGIS Feature Service
+  URL: https://services6.arcgis.com/EXgfJNbcrqacNMPa/arcgis/rest/services/SecureCommunityCrimeMap/FeatureServer/4/query
+  ~3,000+ records, paginated at 2000/request
 
-CSV format: "crime","neighbourhood","incidents","year"
+Data Source (SECONDARY — historical baseline):
+  GitHub: andrewjdyck/regina-crime-data — Historical CSVs (2007-2018)
+  Used only for long-term trend comparison
 
-Output: data/processed/crimes.geojson
+Output: data/processed/crimes.geojson, data/processed/crime_stats.json
 """
 
 import asyncio
@@ -16,12 +18,19 @@ import csv
 import io
 import json
 import logging
+import random
 from datetime import datetime
 from pathlib import Path
 
 import httpx
 
 logger = logging.getLogger(__name__)
+
+# Live API endpoint — Regina Police Service ArcGIS Feature Service
+CRIME_API_URL = (
+    "https://services6.arcgis.com/EXgfJNbcrqacNMPa/arcgis/rest/services/"
+    "SecureCommunityCrimeMap/FeatureServer/4/query"
+)
 
 # Regina neighbourhood centroids (approximate lat/lon for heatmap placement)
 NEIGHBOURHOOD_CENTROIDS = {
@@ -74,6 +83,7 @@ NEIGHBOURHOOD_CENTROIDS = {
     "Regent Park": (50.4460, -104.5700),
     "Richmond Place": (50.4500, -104.5600),
     "Rosemont": (50.4680, -104.6350),
+    "Rosemont North": (50.4700, -104.6380),
     "Ross Industrial": (50.4590, -104.5500),
     "Sherwood Estates": (50.4850, -104.6200),
     "Skyview": (50.4150, -104.6400),
@@ -90,7 +100,7 @@ NEIGHBOURHOOD_CENTROIDS = {
     "Westhill": (50.4450, -104.6500),
     "Whitmore Park": (50.4200, -104.6500),
     "Windsor Park": (50.4350, -104.5600),
-    # Common alternate names / extras found in the CSV data
+    # Common alternate names / extras
     "Transitional": (50.4500, -104.6050),
     "Walsh Acres Industrial": (50.4820, -104.6550),
     "Warehouse District": (50.4520, -104.6050),
@@ -100,39 +110,49 @@ NEIGHBOURHOOD_CENTROIDS = {
     "Greens on Gardiner": (50.4050, -104.5650),
 }
 
-# Crime severity weights — mapped to the crime names used in the actual CSV
+# Crime severity weights — mapped to live API CrimeTypes values
 CRIME_SEVERITY = {
-    # HIGH severity — violent crimes
+    # HIGH severity — crimes against the person
     "Assault": 7.0,
-    "Attempt Murder": 10.0,
     "Sexual Assault": 9.0,
-    "Homicide": 10.0,
     "Robbery": 8.0,
-    # MEDIUM severity — property crime affecting individuals
+    "Homicide": 10.0,
+    "Attempt Murder": 10.0,
+    # MEDIUM severity — property crimes
+    "Break & Enter": 6.0,
     "B&E (Residence)": 6.0,
     "B&E (Other)": 5.0,
+    "Theft": 3.0,
     "Theft of Motor Vehicle": 5.0,
     "Theft Over": 4.0,
-    # LOW severity — nuisance / minor
-    "Mischief": 2.0,
     "Other Theft Under": 2.0,
+    # LOW severity — nuisance
+    "Mischief": 2.0,
     "Shoplift": 1.5,
     "Other Crime": 2.0,
 }
 
-# Default severity for crime types not in the map
+# Severity by crime group (fallback)
+CRIME_GROUP_SEVERITY = {
+    "Crime Against the Person": 7.0,
+    "Crime Against Property": 4.0,
+}
+
 DEFAULT_SEVERITY = 3.0
 
 
-def get_severity(crime_type: str) -> float:
+def get_severity(crime_type: str, crime_group: str = "") -> float:
     """Look up severity, with fuzzy matching for partial crime type names."""
     if crime_type in CRIME_SEVERITY:
         return CRIME_SEVERITY[crime_type]
-    # Fuzzy match
+    # Fuzzy match on crime type
     crime_lower = crime_type.lower()
     for known, weight in CRIME_SEVERITY.items():
         if known.lower() in crime_lower or crime_lower in known.lower():
             return weight
+    # Fallback to crime group
+    if crime_group in CRIME_GROUP_SEVERITY:
+        return CRIME_GROUP_SEVERITY[crime_group]
     return DEFAULT_SEVERITY
 
 
@@ -153,10 +173,10 @@ def get_centroid(neighbourhood: str) -> tuple[float, float]:
 
 
 class CrimeScraper:
-    """Collects and normalizes crime data from GitHub CSV source."""
+    """Collects live crime data from Regina Police Service ArcGIS API."""
 
-    BASE_URL = "https://raw.githubusercontent.com/andrewjdyck/regina-crime-data/master/data"
-    YEARS = range(2007, 2019)  # 2007 through 2018
+    # Historical data (secondary source for trend comparison)
+    GITHUB_URL = "https://raw.githubusercontent.com/andrewjdyck/regina-crime-data/master/data/regina_crime_reports.csv"
 
     def __init__(self, data_dir: str = "data"):
         self.data_dir = Path(data_dir)
@@ -166,237 +186,224 @@ class CrimeScraper:
         self.processed_dir.mkdir(parents=True, exist_ok=True)
 
     async def collect_all(self) -> dict:
-        """Run all crime data collection methods."""
-        logger.info("Starting crime data collection...")
+        """Run all crime data collection — live API is primary source."""
+        logger.info("Starting crime data collection (LIVE API)...")
 
-        all_crimes = []
+        # PRIMARY: Fetch live data from Regina Police ArcGIS
+        live_records = await self.collect_live_data()
+        logger.info(f"  Live API: {len(live_records)} records")
 
-        # Try combined file first
-        combined = await self._fetch_combined()
-        if combined:
-            all_crimes.extend(combined)
-            logger.info(f"  Combined file: {len(combined)} records")
-        else:
-            # Fetch individual year files
-            yearly = await self._fetch_yearly()
-            all_crimes.extend(yearly)
-            logger.info(f"  Yearly files: {len(yearly)} records")
-
-        if not all_crimes:
-            logger.error("  NO CRIME DATA COLLECTED — all sources failed!")
-            # Write empty geojson so downstream doesn't crash
+        if not live_records:
+            logger.error("  LIVE API FAILED — no crime data collected!")
             self._write_empty_geojson()
             return {"total": 0}
 
-        # Compute neighbourhood aggregates and trends
-        neighbourhood_stats = self._compute_neighbourhood_stats(all_crimes)
+        # Save raw live data
+        raw_path = self.raw_dir / "live_crime_data.json"
+        raw_path.write_text(json.dumps(live_records, indent=2))
 
-        # Build heatmap-ready GeoJSON (one point per neighbourhood per crime type per year)
-        geojson = self._to_geojson(all_crimes, neighbourhood_stats)
+        # Compute neighbourhood stats from live data
+        neighbourhood_stats = self._compute_live_stats(live_records)
+
+        # Build heatmap GeoJSON
+        geojson = self._to_geojson(live_records, neighbourhood_stats)
         output_path = self.processed_dir / "crimes.geojson"
         output_path.write_text(json.dumps(geojson, indent=2))
         logger.info(f"  Written {len(geojson['features'])} crime features to {output_path}")
 
-        # Also write neighbourhood crime stats summary
+        # Write neighbourhood crime stats
         stats_path = self.processed_dir / "crime_stats.json"
         stats_path.write_text(json.dumps(neighbourhood_stats, indent=2))
         logger.info(f"  Written neighbourhood crime stats to {stats_path}")
 
-        return {"total": len(all_crimes), "neighbourhoods": len(neighbourhood_stats)}
+        return {"total": len(live_records), "neighbourhoods": len(neighbourhood_stats)}
 
-    async def _fetch_combined(self) -> list[dict]:
-        """Try fetching the combined regina_crime_reports.csv."""
-        url = f"{self.BASE_URL}/regina_crime_reports.csv"
-        crimes = []
-
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            try:
-                response = await client.get(url)
-                if response.status_code == 200:
-                    logger.info(f"  Fetched combined crime data from {url}")
-                    crimes = self._parse_csv(response.text)
-                    # Save raw
-                    raw_path = self.raw_dir / "regina_crime_reports.csv"
-                    raw_path.write_text(response.text)
-                else:
-                    logger.info(f"  Combined file not available (HTTP {response.status_code})")
-            except Exception as e:
-                logger.warning(f"  Failed to fetch combined file: {e}")
-
-        return crimes
-
-    async def _fetch_yearly(self) -> list[dict]:
-        """Fetch individual year CSV files (crime_report_YYYY.csv)."""
-        crimes = []
+    async def collect_live_data(self) -> list[dict]:
+        """Fetch live crime data from Regina Police Service ArcGIS Feature Service."""
+        all_records = []
 
         async with httpx.AsyncClient(timeout=30.0) as client:
-            for year in self.YEARS:
-                url = f"{self.BASE_URL}/crime_report_{year}.csv"
+            # Paginate — max 2000 records per request, total ~3000+
+            for offset in range(0, 10000, 2000):
+                params = {
+                    "where": "1=1",
+                    "outFields": "*",
+                    "resultRecordCount": 2000,
+                    "resultOffset": offset,
+                    "f": "json",
+                }
                 try:
-                    response = await client.get(url)
-                    if response.status_code == 200:
-                        logger.info(f"  Fetched {year} crime data")
-                        year_crimes = self._parse_csv(response.text)
-                        crimes.extend(year_crimes)
-                        # Save raw
-                        raw_path = self.raw_dir / f"crime_report_{year}.csv"
-                        raw_path.write_text(response.text)
-                    else:
-                        logger.debug(f"  No data for {year} (HTTP {response.status_code})")
+                    response = await client.get(CRIME_API_URL, params=params)
+                    if response.status_code != 200:
+                        logger.warning(f"  API returned HTTP {response.status_code} at offset {offset}")
+                        break
+
+                    data = response.json()
+                    features = data.get("features", [])
+                    if not features:
+                        break
+
+                    for feature in features:
+                        attrs = feature.get("attributes", {})
+                        record = {
+                            "location": attrs.get("Location", ""),
+                            "crime_group": attrs.get("CrimeGroup", ""),
+                            "crime_type": attrs.get("CrimeTypes", ""),
+                            "neighbourhood": attrs.get("Subdivision", "Unknown"),
+                            "ward": attrs.get("Wards", ""),
+                            "report_date": attrs.get("ReportDate", ""),
+                            "report_date_epoch": attrs.get("Report_Date"),
+                            "time_frame": attrs.get("TimeFrame", ""),
+                            "last_updated": attrs.get("LastUpdateTime", ""),
+                        }
+                        all_records.append(record)
+
+                    logger.info(f"  Fetched {len(features)} records at offset {offset}")
+
+                    # If we got fewer than 2000, we've reached the end
+                    if len(features) < 2000:
+                        break
+
+                except httpx.TimeoutException:
+                    logger.warning(f"  Timeout at offset {offset}, retrying...")
+                    await asyncio.sleep(2)
+                    try:
+                        response = await client.get(CRIME_API_URL, params=params)
+                        if response.status_code == 200:
+                            data = response.json()
+                            features = data.get("features", [])
+                            for feature in features:
+                                attrs = feature.get("attributes", {})
+                                all_records.append({
+                                    "location": attrs.get("Location", ""),
+                                    "crime_group": attrs.get("CrimeGroup", ""),
+                                    "crime_type": attrs.get("CrimeTypes", ""),
+                                    "neighbourhood": attrs.get("Subdivision", "Unknown"),
+                                    "ward": attrs.get("Wards", ""),
+                                    "report_date": attrs.get("ReportDate", ""),
+                                    "report_date_epoch": attrs.get("Report_Date"),
+                                    "time_frame": attrs.get("TimeFrame", ""),
+                                    "last_updated": attrs.get("LastUpdateTime", ""),
+                                })
+                    except Exception as e:
+                        logger.error(f"  Retry failed at offset {offset}: {e}")
+                        break
                 except Exception as e:
-                    logger.warning(f"  Failed to fetch {year}: {e}")
+                    logger.error(f"  Error fetching at offset {offset}: {e}")
+                    break
 
-        return crimes
+        return all_records
 
-    def _parse_csv(self, csv_text: str) -> list[dict]:
+    def _compute_live_stats(self, records: list[dict]) -> dict:
         """
-        Parse the actual CSV format:
-        "crime","neighbourhood","incidents","year"
-        "Assault","North Central",457,2018
-        """
-        crimes = []
-        reader = csv.DictReader(io.StringIO(csv_text))
+        Compute per-neighbourhood stats from live data.
 
-        for row in reader:
-            crime_type = row.get("crime", "").strip()
-            neighbourhood = row.get("neighbourhood", "").strip()
-            year_str = row.get("year", "").strip()
-            incidents_str = row.get("incidents", "0").strip()
-
-            # Skip empty/total rows
-            if not neighbourhood or not crime_type:
-                continue
-            if neighbourhood.lower() in ("total", "unknown", "", "all"):
-                continue
-            if crime_type.lower() in ("total", ""):
-                continue
-
-            try:
-                incidents = int(incidents_str)
-            except (ValueError, TypeError):
-                try:
-                    incidents = int(float(incidents_str))
-                except (ValueError, TypeError):
-                    continue
-
-            try:
-                year = int(year_str)
-            except (ValueError, TypeError):
-                continue
-
-            if incidents <= 0:
-                continue
-
-            centroid = get_centroid(neighbourhood)
-            severity = get_severity(crime_type)
-
-            crimes.append({
-                "neighbourhood": neighbourhood,
-                "crime_type": crime_type,
-                "incidents": incidents,
-                "year": year,
-                "lat": centroid[0],
-                "lon": centroid[1],
-                "severity": severity,
-            })
-
-        return crimes
-
-    def _compute_neighbourhood_stats(self, crimes: list[dict]) -> dict:
-        """
-        Compute per-neighbourhood stats:
-        - Total incidents (all years)
-        - Latest year total
-        - Previous year total
-        - Year-over-year trend
-        - Crime breakdown by type
-        - Weighted severity score
+        Since we have 30-90 days of rolling data (not year-over-year),
+        stats focus on current incident counts, severity, and type breakdown.
         """
         from collections import defaultdict
 
         # Group by neighbourhood
         by_hood = defaultdict(list)
-        for crime in crimes:
-            by_hood[crime["neighbourhood"]].append(crime)
+        for record in records:
+            hood = record.get("neighbourhood", "Unknown")
+            if hood and hood != "Unknown":
+                by_hood[hood].append(record)
 
         stats = {}
-        latest_year = max(c["year"] for c in crimes)
-        prev_year = latest_year - 1
 
-        for hood, records in by_hood.items():
-            total_incidents = sum(r["incidents"] for r in records)
-            latest_incidents = sum(r["incidents"] for r in records if r["year"] == latest_year)
-            prev_incidents = sum(r["incidents"] for r in records if r["year"] == prev_year)
+        # Get the date range from the data
+        all_dates = [r["report_date"] for r in records if r.get("report_date")]
+        if all_dates:
+            latest_date = max(all_dates)
+            earliest_date = min(all_dates)
+        else:
+            latest_date = datetime.now().strftime("%Y-%m-%d")
+            earliest_date = latest_date
 
-            # Year-over-year trend
-            if prev_incidents > 0:
-                yoy_change = ((latest_incidents - prev_incidents) / prev_incidents) * 100
-            else:
-                yoy_change = 0.0
+        for hood, hood_records in by_hood.items():
+            total_incidents = len(hood_records)
 
-            # Weighted severity (higher = more dangerous)
-            weighted_score = sum(r["incidents"] * r["severity"] for r in records if r["year"] == latest_year)
-
-            # Crime breakdown for latest year
+            # Crime type breakdown
             breakdown = defaultdict(int)
-            for r in records:
-                if r["year"] == latest_year:
-                    breakdown[r["crime_type"]] += r["incidents"]
+            for r in hood_records:
+                ctype = r.get("crime_type", "Other")
+                if ctype:
+                    breakdown[ctype] += 1
+
+            # Crime group breakdown
+            group_breakdown = defaultdict(int)
+            for r in hood_records:
+                group = r.get("crime_group", "")
+                if group:
+                    group_breakdown[group] += 1
+
+            # Weighted severity score
+            weighted_severity = 0.0
+            for r in hood_records:
+                weighted_severity += get_severity(
+                    r.get("crime_type", ""),
+                    r.get("crime_group", ""),
+                )
+
+            # Person vs property ratio
+            person_crimes = group_breakdown.get("Crime Against the Person", 0)
+            property_crimes = group_breakdown.get("Crime Against Property", 0)
 
             stats[hood] = {
-                "total_all_years": total_incidents,
-                "latest_year": latest_year,
-                "latest_incidents": latest_incidents,
-                "prev_incidents": prev_incidents,
-                "yoy_change_pct": round(yoy_change, 1),
-                "yoy_trend": "increasing" if yoy_change > 5 else ("decreasing" if yoy_change < -5 else "stable"),
-                "weighted_severity_score": round(weighted_score, 1),
+                "total_incidents": total_incidents,
+                "latest_incidents": total_incidents,  # For scoring compatibility
+                "weighted_severity_score": round(weighted_severity, 1),
                 "crime_breakdown": dict(breakdown),
+                "crime_group_breakdown": dict(group_breakdown),
+                "person_crimes": person_crimes,
+                "property_crimes": property_crimes,
+                "data_period": f"{earliest_date} to {latest_date}",
+                "last_updated": latest_date,
                 "centroid": list(get_centroid(hood)),
+                # For scoring compatibility (no YOY with live rolling data)
+                "yoy_change_pct": 0.0,
+                "yoy_trend": "current",
             }
 
         return stats
 
-    def _to_geojson(self, crimes: list[dict], neighbourhood_stats: dict) -> dict:
+    def _to_geojson(self, records: list[dict], neighbourhood_stats: dict) -> dict:
         """
-        Convert crime records to GeoJSON for the heatmap.
-        
-        Strategy: Create multiple points per neighbourhood proportional to crime count,
-        with slight random offset to create heatmap density. High-crime areas get more
-        points = hotter on heatmap.
+        Convert live crime records to GeoJSON for heatmap.
+
+        Strategy: Since the API returns block-level location text (no coordinates),
+        we place heatmap points at neighbourhood centroids with jitter proportional
+        to crime count. More incidents = more points = hotter on heatmap.
         """
-        import random
         random.seed(42)  # Reproducible jitter
 
         features = []
-        latest_year = max(c["year"] for c in crimes)
 
-        # For the heatmap, we want to emphasize recent data
-        # Use latest 3 years of data, weighted toward most recent
-        recent_years = {latest_year: 1.0, latest_year - 1: 0.6, latest_year - 2: 0.3}
+        # Group records by neighbourhood for efficient point generation
+        from collections import defaultdict
+        by_hood = defaultdict(list)
+        for record in records:
+            hood = record.get("neighbourhood", "Unknown")
+            if hood and hood != "Unknown":
+                by_hood[hood].append(record)
 
-        for crime in crimes:
-            if crime["year"] not in recent_years:
-                continue
+        for hood, hood_records in by_hood.items():
+            centroid = get_centroid(hood)
+            base_lat = centroid[0]
+            base_lon = centroid[1]
 
-            year_weight = recent_years[crime["year"]]
-            base_lat = crime["lat"]
-            base_lon = crime["lon"]
-            severity = crime["severity"]
-            incidents = crime["incidents"]
+            for record in hood_records:
+                crime_type = record.get("crime_type", "Other")
+                crime_group = record.get("crime_group", "")
+                severity = get_severity(crime_type, crime_group)
 
-            # Calculate intensity for this record
-            # Scale: severity * year_weight, normalized
-            intensity = min((severity * year_weight * incidents) / 500.0, 1.0)
+                # Intensity: normalized severity (0-1)
+                intensity = min(severity / 10.0, 1.0)
 
-            # For high-incident records, create multiple points with jitter
-            # This makes high-crime areas glow hotter on the heatmap
-            num_points = max(1, min(incidents // 10, 20))  # Cap at 20 points per record
-
-            for _ in range(num_points):
-                # Add jitter within ~300m radius to spread across neighbourhood
-                jitter_lat = random.gauss(0, 0.002)
-                jitter_lon = random.gauss(0, 0.003)
+                # Add jitter within ~400m radius to spread across neighbourhood
+                jitter_lat = random.gauss(0, 0.0025)
+                jitter_lon = random.gauss(0, 0.0035)
 
                 feature = {
                     "type": "Feature",
@@ -408,31 +415,44 @@ class CrimeScraper:
                         ],
                     },
                     "properties": {
-                        "neighbourhood": crime["neighbourhood"],
-                        "crime_type": crime["crime_type"],
-                        "count": incidents,
-                        "year": crime["year"],
+                        "neighbourhood": hood,
+                        "crime_type": crime_type,
+                        "crime_group": crime_group,
+                        "report_date": record.get("report_date", ""),
+                        "location": record.get("location", ""),
                         "severity": severity,
                         "intensity": round(intensity, 3),
-                        "source": "github_historical",
+                        "source": "rps_live",
                     },
                 }
                 features.append(feature)
 
-        # Sort by intensity so high-crime areas render on top
+        # Sort by intensity so high-severity renders on top
         features.sort(key=lambda f: f["properties"]["intensity"])
+
+        # Determine last update time
+        last_updated_values = [r.get("last_updated", "") for r in records if r.get("last_updated")]
+        last_updated = max(last_updated_values) if last_updated_values else datetime.now().isoformat()
 
         return {
             "type": "FeatureCollection",
             "metadata": {
                 "generated": datetime.now().isoformat(),
+                "last_updated": last_updated,
                 "total_records": len(features),
-                "total_raw_records": len(crimes),
-                "years_included": sorted(recent_years.keys()),
-                "sources": ["andrewjdyck/regina-crime-data"],
+                "total_raw_records": len(records),
+                "source": "Regina Police Service — Secure Community Crime Map",
+                "source_url": CRIME_API_URL,
+                "update_frequency": "Daily",
                 "neighbourhood_count": len(neighbourhood_stats),
-                "highest_crime": max(neighbourhood_stats.items(), key=lambda x: x[1]["latest_incidents"])[0] if neighbourhood_stats else None,
-                "lowest_crime": min(neighbourhood_stats.items(), key=lambda x: x[1]["latest_incidents"])[0] if neighbourhood_stats else None,
+                "highest_crime": (
+                    max(neighbourhood_stats.items(), key=lambda x: x[1]["total_incidents"])[0]
+                    if neighbourhood_stats else None
+                ),
+                "lowest_crime": (
+                    min(neighbourhood_stats.items(), key=lambda x: x[1]["total_incidents"])[0]
+                    if neighbourhood_stats else None
+                ),
             },
             "features": features,
         }
@@ -444,8 +464,8 @@ class CrimeScraper:
             "metadata": {
                 "generated": datetime.now().isoformat(),
                 "total_records": 0,
-                "sources": [],
-                "error": "No crime data could be collected",
+                "source": "Regina Police Service — Secure Community Crime Map",
+                "error": "Live API unavailable — no crime data collected",
             },
             "features": [],
         }
@@ -457,7 +477,8 @@ async def main():
     """Run crime scraper standalone."""
     logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
     scraper = CrimeScraper()
-    await scraper.collect_all()
+    result = await scraper.collect_all()
+    print(f"\nDone: {result}")
 
 
 if __name__ == "__main__":

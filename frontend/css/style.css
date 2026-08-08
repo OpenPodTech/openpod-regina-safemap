@@ -333,6 +333,18 @@ body {
     margin-bottom: 24px;
 }
 
+#welcome-card .welcome-data-badge {
+    font-size: 0.78rem;
+    color: var(--green);
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 6px 14px;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    border-radius: var(--radius-pill);
+    display: inline-block;
+}
+
 #welcome-card .welcome-cta {
     font-size: 0.82rem;
     color: var(--text-muted);
