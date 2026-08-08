@@ -77,26 +77,36 @@ class NeighbourhoodScorer:
     """
     Calculates livability scores for all Regina neighbourhoods.
 
-    Reads processed GeoJSON data and produces a score for each neighbourhood.
+    Reads processed GeoJSON data and crime_stats.json to produce differentiated scores.
     """
 
     def __init__(self, data_dir: str = "data/processed"):
         self.data_dir = Path(data_dir)
         self.neighbourhoods = []
         self.crimes = []
+        self.crime_stats = {}  # Direct from crime_stats.json
         self.schools = []
         self.transit_stops = []
         self.amenities = []
         self.parks = []
 
     def load_data(self):
-        """Load all processed GeoJSON files."""
+        """Load all processed GeoJSON files and crime_stats.json."""
         self.neighbourhoods = self._load_geojson("neighbourhoods.geojson")
         self.crimes = self._load_geojson("crimes.geojson")
         self.schools = self._load_geojson("schools.geojson")
         self.transit_stops = self._load_geojson("transit_stops.geojson")
         self.amenities = self._load_geojson("amenities.geojson")
         self.parks = self._load_geojson("parks.geojson")
+
+        # Load crime_stats.json directly — this is the authoritative source
+        crime_stats_path = self.data_dir / "crime_stats.json"
+        if crime_stats_path.exists():
+            self.crime_stats = json.loads(crime_stats_path.read_text())
+            logger.info(f"Loaded crime_stats.json with {len(self.crime_stats)} neighbourhoods")
+        else:
+            logger.warning("crime_stats.json not found — safety scores will use defaults")
+            self.crime_stats = {}
 
         logger.info(
             f"Loaded: {len(self.neighbourhoods)} neighbourhoods, "
@@ -110,8 +120,18 @@ class NeighbourhoodScorer:
         self.load_data()
 
         scores = []
-        # Find city-wide crime stats for normalization
-        city_crime_stats = self._city_crime_stats()
+
+        # Build crime stats lookup (case-insensitive)
+        crime_lookup = {k.lower(): v for k, v in self.crime_stats.items()}
+
+        # Calculate min/max for normalization from crime_stats.json
+        if crime_lookup:
+            all_incidents = [v["latest_incidents"] for v in crime_lookup.values() if v.get("latest_incidents")]
+            max_incidents = max(all_incidents) if all_incidents else 1
+            min_incidents = min(all_incidents) if all_incidents else 0
+        else:
+            max_incidents = 1
+            min_incidents = 0
 
         for neighbourhood in self.neighbourhoods:
             props = neighbourhood.get("properties", {})
@@ -123,9 +143,9 @@ class NeighbourhoodScorer:
 
             score = NeighbourhoodScore(name=name)
 
-            # Calculate each dimension
+            # Calculate safety from crime_stats.json directly
             score.safety, score.total_crimes, score.crime_trend = self._score_safety(
-                name, centroid, city_crime_stats
+                name, crime_lookup, max_incidents, min_incidents
             )
             score.schools, score.schools_count = self._score_schools(centroid)
             score.transit, score.transit_stops = self._score_transit(centroid)
@@ -177,76 +197,53 @@ class NeighbourhoodScorer:
     # ─── Scoring Methods ──────────────────────────────────────────────
 
     def _score_safety(
-        self, name: str, centroid: tuple, city_stats: dict
+        self, name: str, crime_lookup: dict, max_incidents: int, min_incidents: int
     ) -> tuple[int, int, float]:
         """
-        Score safety 0-100 based on crime data.
+        Score safety 0-100 based on crime_stats.json data directly.
         
         Higher score = SAFER (less crime).
+        Uses min-max normalization across all neighbourhoods.
         """
-        # Find crimes in this neighbourhood
-        neighbourhood_crimes = [
-            c for c in self.crimes
-            if c.get("properties", {}).get("neighbourhood", "").lower() == name.lower()
-            or self._distance(centroid, self._feature_coords(c)) < 0.006  # ~600m
-        ]
+        # Look up this neighbourhood in crime_stats (case-insensitive)
+        stats = crime_lookup.get(name.lower())
 
-        if not neighbourhood_crimes:
-            # No crime data = assume average (not great, not terrible)
-            return 65, 0, 0.0
+        if not stats:
+            # Try fuzzy match — strip common suffixes/prefixes
+            for key, val in crime_lookup.items():
+                if name.lower() in key or key in name.lower():
+                    stats = val
+                    break
 
-        # Total crime count (latest year)
-        latest_year = max(
-            (c["properties"].get("year", 2024) for c in neighbourhood_crimes),
-            default=2024,
-        )
-        recent_crimes = [
-            c for c in neighbourhood_crimes
-            if c["properties"].get("year", 0) == latest_year
-        ]
-        total_count = sum(c["properties"].get("count", 1) for c in recent_crimes)
+        if not stats:
+            # No crime data — assign middle score
+            return 50, 0, 0.0
 
-        # Severity-weighted score
-        severity_sum = sum(
-            c["properties"].get("count", 1) * c["properties"].get("severity", 2.0)
-            for c in recent_crimes
-        )
+        total_crimes = stats.get("latest_incidents", 0)
+        trend_pct = stats.get("yoy_change_pct", 0.0)
+        severity_score_raw = stats.get("weighted_severity_score", 0)
 
-        # Normalize against city average
-        avg_crimes = city_stats.get("avg_crimes_per_neighbourhood", 100)
-        avg_severity = city_stats.get("avg_severity_per_neighbourhood", 300)
+        # Safety score based on relative crime position
+        # score = 100 - ((this_neighbourhood_incidents / max_incidents) * 100)
+        # This gives lowest-crime neighbourhood ~96-100, highest ~0-5
+        incident_range = max(max_incidents - min_incidents, 1)
+        base_safety = 100 - ((total_crimes - min_incidents) / incident_range * 100)
 
-        # Crime density score (0-100, inverted: less crime = higher score)
-        density_raw = total_count / max(avg_crimes, 1)
-        density_score = max(0, min(100, 100 - (density_raw * 50)))
+        # Apply trend bonus/penalty (up to +/-10 points)
+        trend_bonus = 0
+        if trend_pct < -10:
+            trend_bonus = 10  # Strong improvement
+        elif trend_pct < -5:
+            trend_bonus = 5   # Moderate improvement
+        elif trend_pct > 10:
+            trend_bonus = -8  # Getting worse
+        elif trend_pct > 5:
+            trend_bonus = -4  # Slightly worse
 
-        # Severity score (0-100, inverted)
-        severity_raw = severity_sum / max(avg_severity, 1)
-        severity_score = max(0, min(100, 100 - (severity_raw * 50)))
-
-        # Trend score (year-over-year change)
-        prev_year_crimes = [
-            c for c in neighbourhood_crimes
-            if c["properties"].get("year", 0) == latest_year - 1
-        ]
-        prev_count = sum(c["properties"].get("count", 1) for c in prev_year_crimes)
-
-        trend_pct = 0.0
-        trend_score = 50  # Neutral default
-        if prev_count > 0:
-            trend_pct = ((total_count - prev_count) / prev_count) * 100
-            # Improving (negative trend) = bonus, worsening = penalty
-            trend_score = max(0, min(100, 50 - trend_pct))
-
-        # Combine with sub-weights
-        safety = round(
-            density_score * SAFETY_WEIGHTS["crime_density"]
-            + severity_score * SAFETY_WEIGHTS["crime_severity"]
-            + trend_score * SAFETY_WEIGHTS["crime_trend"]
-        )
+        safety = round(base_safety + trend_bonus)
         safety = max(0, min(100, safety))
 
-        return safety, total_count, round(trend_pct, 1)
+        return safety, total_crimes, round(trend_pct, 1)
 
     def _score_schools(self, centroid: tuple) -> tuple[int, int]:
         """Score schools 0-100 based on proximity and count."""
@@ -389,40 +386,7 @@ class NeighbourhoodScorer:
                     count += 1
         return count
 
-    def _city_crime_stats(self) -> dict:
-        """Calculate city-wide crime averages for normalization."""
-        if not self.crimes:
-            return {"avg_crimes_per_neighbourhood": 100, "avg_severity_per_neighbourhood": 300}
 
-        # Group by neighbourhood
-        from collections import defaultdict
-        by_neighbourhood = defaultdict(lambda: {"count": 0, "severity": 0})
-
-        latest_year = max(
-            (c["properties"].get("year", 2024) for c in self.crimes),
-            default=2024,
-        )
-
-        for crime in self.crimes:
-            props = crime.get("properties", {})
-            if props.get("year") == latest_year:
-                name = props.get("neighbourhood", "Unknown")
-                count = props.get("count", 1)
-                severity = props.get("severity", 2.0)
-                by_neighbourhood[name]["count"] += count
-                by_neighbourhood[name]["severity"] += count * severity
-
-        if not by_neighbourhood:
-            return {"avg_crimes_per_neighbourhood": 100, "avg_severity_per_neighbourhood": 300}
-
-        n = len(by_neighbourhood)
-        avg_crimes = sum(v["count"] for v in by_neighbourhood.values()) / n
-        avg_severity = sum(v["severity"] for v in by_neighbourhood.values()) / n
-
-        return {
-            "avg_crimes_per_neighbourhood": avg_crimes,
-            "avg_severity_per_neighbourhood": avg_severity,
-        }
 
     def _enrich_geojson(self, scores: list[NeighbourhoodScore]):
         """Add scores to the neighbourhoods GeoJSON for frontend consumption."""

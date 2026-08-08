@@ -1,0 +1,110 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": "2026-07-21T12:00:00",
+    "total_features": 20,
+    "source": "OpenStreetMap / Manual compilation for Regina, SK"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6189, 50.4300]},
+      "properties": {"name": "Wascana Centre", "type": "park", "sport": "", "surface": "grass", "lit": "yes"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6350, 50.4650]},
+      "properties": {"name": "Rosemont Park", "type": "park", "sport": "", "surface": "grass", "lit": "yes"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6200, 50.4620]},
+      "properties": {"name": "North Central Park", "type": "park", "sport": "baseball", "surface": "grass", "lit": "yes"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6250, 50.4530]},
+      "properties": {"name": "Victoria Park", "type": "park", "sport": "", "surface": "grass", "lit": "yes"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6450, 50.4360]},
+      "properties": {"name": "Lakeview Park", "type": "park", "sport": "tennis", "surface": "grass", "lit": "yes"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5870, 50.4600]},
+      "properties": {"name": "Coronation Park", "type": "park", "sport": "soccer", "surface": "grass", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6500, 50.4800]},
+      "properties": {"name": "Walsh Acres Park", "type": "park", "sport": "", "surface": "grass", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5700, 50.4100]},
+      "properties": {"name": "Gardiner Park", "type": "park", "sport": "", "surface": "grass", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5880, 50.4750]},
+      "properties": {"name": "Hillsdale Park", "type": "park", "sport": "baseball", "surface": "grass", "lit": "yes"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6550, 50.4200]},
+      "properties": {"name": "Whitmore Park Playground", "type": "playground", "sport": "", "surface": "", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6200, 50.4050]},
+      "properties": {"name": "Twin Lakes Park", "type": "park", "sport": "", "surface": "grass", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5870, 50.4180]},
+      "properties": {"name": "University Park Green", "type": "park", "sport": "running", "surface": "grass", "lit": "yes"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6700, 50.4700]},
+      "properties": {"name": "Normanview Park", "type": "park", "sport": "", "surface": "grass", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5750, 50.4540]},
+      "properties": {"name": "Eastview Park", "type": "park", "sport": "", "surface": "grass", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6100, 50.4770]},
+      "properties": {"name": "Dieppe Park", "type": "park", "sport": "", "surface": "grass", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6250, 50.4850]},
+      "properties": {"name": "Sherwood Estates Park", "type": "park", "sport": "", "surface": "grass", "lit": "yes"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6650, 50.4100]},
+      "properties": {"name": "Prairie View Park", "type": "park", "sport": "soccer", "surface": "grass", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5780, 50.4400]},
+      "properties": {"name": "Boothill Playground", "type": "playground", "sport": "", "surface": "", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5650, 50.4450]},
+      "properties": {"name": "Regent Park Green", "type": "park", "sport": "", "surface": "grass", "lit": "no"}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6360, 50.4180]},
+      "properties": {"name": "Albert Park Playground", "type": "playground", "sport": "", "surface": "", "lit": "no"}
+    }
+  ]
+}

@@ -39,14 +39,20 @@
 async function loadAllData() {
     try {
         // Try API first, fall back to static GeoJSON files
-        const [neighbourhoods, crimes, schools, transit, amenities, parks] = await Promise.allSettled([
+        const [neighbourhoods, crimes, schools, transit, amenities, parks, crimeStats, descriptions] = await Promise.allSettled([
             fetchData('/neighbourhoods'),
             fetchData('/crimes'),
             fetchData('/schools'),
             fetchData('/transit'),
             fetchData('/amenities'),
             fetchData('/parks'),
+            fetchData('/crime_stats'),
+            fetchData('/descriptions'),
         ]);
+
+        // Store crime stats and descriptions globally for panel use
+        window.crimeStats = crimeStats.status === 'fulfilled' ? crimeStats.value : null;
+        window.descriptions = descriptions.status === 'fulfilled' ? descriptions.value : null;
 
         if (neighbourhoods.status === 'fulfilled' && neighbourhoods.value) {
             loadNeighbourhoods(neighbourhoods.value);
@@ -81,6 +87,8 @@ async function fetchData(endpoint) {
         '/transit': 'transit_stops.geojson',
         '/amenities': 'amenities.geojson',
         '/parks': 'parks.geojson',
+        '/crime_stats': 'crime_stats.json',
+        '/descriptions': 'descriptions.json',
     };
 
     // Try API endpoint first (local dev with FastAPI)

@@ -25,14 +25,16 @@ const CONFIG = {
 
     // Heatmap settings
     HEATMAP: {
-        radius: 25,
-        blur: 15,
-        maxZoom: 15,
-        max: 1.0,
+        radius: 20,
+        blur: 20,
+        maxZoom: 14,
+        max: 0.6,
         gradient: {
             0.0: '#2ea043',
-            0.3: '#d29922',
-            0.6: '#f85149',
+            0.2: '#56d364',
+            0.4: '#d29922',
+            0.6: '#f0883e',
+            0.8: '#f85149',
             1.0: '#a40e26',
         },
     },

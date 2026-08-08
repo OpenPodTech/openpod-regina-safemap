@@ -1,0 +1,135 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": "2026-07-21T12:00:00",
+    "total_features": 25,
+    "source": "OpenStreetMap / Manual compilation for Regina, SK"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6185, 50.4621]},
+      "properties": {"name": "Scott Collegiate", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "9-12", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6255, 50.4535]},
+      "properties": {"name": "Sacred Heart Community School", "type": "school", "operator": "Regina Catholic Schools", "school_type": "catholic", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6120, 50.4485]},
+      "properties": {"name": "Campbell Collegiate", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "9-12", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5875, 50.4170]},
+      "properties": {"name": "Dr. Martin LeBoldus High School", "type": "school", "operator": "Regina Catholic Schools", "school_type": "catholic", "grades": "9-12", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6450, 50.4350]},
+      "properties": {"name": "Lakeview School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6500, 50.4700]},
+      "properties": {"name": "W.H. Ford School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6550, 50.4800]},
+      "properties": {"name": "Walsh Acres School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5700, 50.4540]},
+      "properties": {"name": "Eastview School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5850, 50.4600]},
+      "properties": {"name": "Coronation Park School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6350, 50.4680]},
+      "properties": {"name": "Rosemont School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5900, 50.4750]},
+      "properties": {"name": "Hillsdale School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-5", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5700, 50.4100]},
+      "properties": {"name": "Gardiner Park School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6500, 50.4200]},
+      "properties": {"name": "Whitmore Park School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6200, 50.4850]},
+      "properties": {"name": "Sherwood School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6700, 50.4050]},
+      "properties": {"name": "Prairie View School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5780, 50.4410]},
+      "properties": {"name": "Arcola Community School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6100, 50.4770]},
+      "properties": {"name": "Dieppe School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6200, 50.4050]},
+      "properties": {"name": "Twin Lakes School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5870, 50.4170]},
+      "properties": {"name": "University Park School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-5", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6300, 50.4620]},
+      "properties": {"name": "Albert School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6750, 50.4700]},
+      "properties": {"name": "Normanview West School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6180, 50.4300]},
+      "properties": {"name": "Miller Comprehensive High School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "9-12", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5650, 50.4460]},
+      "properties": {"name": "Regent Park School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.5780, 50.4420]},
+      "properties": {"name": "Boothill School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-5", "website": "", "phone": ""}
+    },
+    {
+      "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-104.6360, 50.4180]},
+      "properties": {"name": "Albert Park School", "type": "school", "operator": "Regina Public Schools", "school_type": "public", "grades": "K-8", "website": "", "phone": ""}
+    }
+  ]
+}
