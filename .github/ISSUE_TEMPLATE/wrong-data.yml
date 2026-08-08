@@ -1,0 +1,37 @@
+name: "Wrong or Inaccurate Data"
+description: "Report incorrect crime stats, missing schools, wrong neighbourhood info"
+title: "[DATA] "
+labels: ["data-issue", "community-report"]
+body:
+  - type: dropdown
+    id: data-type
+    attributes:
+      label: What type of data is wrong?
+      options:
+        - Crime data (wrong location, wrong type, missing incident)
+        - School missing or incorrect info
+        - Transit stop missing or moved
+        - Amenity (grocery, clinic, etc.) closed or moved
+        - Neighbourhood boundary incorrect
+        - Score seems wrong for my area
+    validations:
+      required: true
+  - type: input
+    id: neighbourhood
+    attributes:
+      label: Which neighbourhood?
+      placeholder: "e.g., Cathedral, Harbour Landing, North Central"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What's wrong?
+      placeholder: "Tell us what you noticed. Be as specific as possible."
+    validations:
+      required: true
+  - type: textarea
+    id: correct-info
+    attributes:
+      label: What should it say instead? (if you know)
+      placeholder: "e.g., This school closed in 2024, the grocery store moved to 4th Ave..."

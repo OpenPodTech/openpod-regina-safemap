@@ -1,0 +1,27 @@
+name: "Feature Request"
+description: "Suggest a new feature or data layer"
+title: "[FEATURE] "
+labels: ["enhancement", "community-request"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      placeholder: "I'm trying to find out X but the map doesn't show..."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: What would help?
+      placeholder: "It would be great if the map showed..."
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this to you?
+      options:
+        - Nice to have
+        - Would really help me
+        - Critical - I need this to make a decision

@@ -1,0 +1,44 @@
+name: "Neighbourhood Review"
+description: "Share your experience living in a Regina neighbourhood"
+title: "[REVIEW] "
+labels: ["community-knowledge", "neighbourhood-review"]
+body:
+  - type: input
+    id: neighbourhood
+    attributes:
+      label: Which neighbourhood do you live in (or lived in)?
+      placeholder: "e.g., Cathedral, Lakeview, Harbour Landing"
+    validations:
+      required: true
+  - type: input
+    id: years
+    attributes:
+      label: How long have you lived there?
+      placeholder: "e.g., 3 years, just moved, grew up here"
+  - type: dropdown
+    id: rating
+    attributes:
+      label: Overall, how would you rate it?
+      options:
+        - "5 - Love it here"
+        - "4 - Good, would recommend"
+        - "3 - It's okay"
+        - "2 - Not great, looking to move"
+        - "1 - Would not recommend"
+    validations:
+      required: true
+  - type: textarea
+    id: pros
+    attributes:
+      label: What's good about this neighbourhood?
+      placeholder: "Parks, friendly neighbours, quiet streets, good schools..."
+  - type: textarea
+    id: cons
+    attributes:
+      label: What's not so good?
+      placeholder: "Noisy, parking issues, far from transit..."
+  - type: textarea
+    id: advice
+    attributes:
+      label: What would you tell someone thinking of moving here?
+      placeholder: "Any advice for newcomers to this area?"
