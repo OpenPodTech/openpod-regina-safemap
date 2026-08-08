@@ -1,6 +1,6 @@
 /**
  * Regina SafeMap — Configuration
- * OpenPodTech · Premium Palette
+ * OpenPodTech · Light, clean, readable
  */
 
 const CONFIG = {
@@ -18,23 +18,23 @@ const CONFIG = {
     MAP_MIN_ZOOM: 10,
     MAP_MAX_ZOOM: 18,
 
-    // Map tile layer (dark mode)
-    TILE_URL: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    // Map tile layer — LIGHT (readable in sunlight)
+    TILE_URL: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
     TILE_ATTRIBUTION: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> | <a href="https://carto.com/">CARTO</a> | <a href="https://github.com/OpenPodTech">OpenPod</a>',
 
-    // Heatmap settings
+    // Heatmap settings (subtle, not screaming)
     HEATMAP: {
-        radius: 22,
-        blur: 22,
+        radius: 20,
+        blur: 25,
         maxZoom: 14,
-        max: 0.6,
+        max: 0.8,
         gradient: {
-            0.0: '#10b981',
-            0.2: '#34d399',
-            0.4: '#f59e0b',
-            0.6: '#f97316',
-            0.8: '#ef4444',
-            1.0: '#7f1d1d',
+            0.0: 'rgba(16, 185, 129, 0)',
+            0.2: 'rgba(16, 185, 129, 0.3)',
+            0.4: 'rgba(245, 158, 11, 0.4)',
+            0.6: 'rgba(249, 115, 22, 0.5)',
+            0.8: 'rgba(239, 68, 68, 0.5)',
+            1.0: 'rgba(239, 68, 68, 0.6)',
         },
     },
 
@@ -48,26 +48,38 @@ const CONFIG = {
         community: { color: '#f59e0b', icon: '\u{1F4DA}' },
     },
 
-    // Neighbourhood polygon style
+    // Neighbourhood polygon styles — safety-based colouring
     NEIGHBOURHOOD_STYLE: {
         default: {
-            fillColor: '#0EA5E9',
-            fillOpacity: 0.03,
-            color: 'rgba(255, 255, 255, 0.08)',
-            weight: 1,
+            fillColor: '#94a3b8',
+            fillOpacity: 0.08,
+            color: '#cbd5e1',
+            weight: 1.5,
         },
         hover: {
-            fillColor: '#0EA5E9',
-            fillOpacity: 0.12,
+            fillOpacity: 0.2,
             color: '#0EA5E9',
             weight: 2,
         },
         selected: {
-            fillColor: '#0EA5E9',
-            fillOpacity: 0.18,
+            fillOpacity: 0.25,
             color: '#0EA5E9',
             weight: 2.5,
         },
+    },
+
+    // Safety-based fill colours for polygons
+    SAFETY_COLORS: {
+        safe: { fill: '#10b981', border: '#059669' },       // green
+        moderate: { fill: '#f59e0b', border: '#d97706' },   // yellow
+        high: { fill: '#ef4444', border: '#dc2626' },       // red
+        unknown: { fill: '#94a3b8', border: '#64748b' },    // grey
+    },
+
+    // Thresholds for safety colouring (incident counts)
+    SAFETY_THRESHOLDS: {
+        safe: 50,       // < 50 incidents = green
+        moderate: 200,  // < 200 = yellow, >= 200 = red
     },
 
     // Score grade thresholds

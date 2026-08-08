@@ -1,6 +1,6 @@
 /**
  * Regina SafeMap — Map Initialization
- * Sets up the Leaflet map with dark tile layer.
+ * Light tiles, safety-coloured polygons, clean interactions.
  */
 
 let map;
@@ -17,7 +17,7 @@ function initMap() {
         attributionControl: true,
     });
 
-    // Dark tile layer
+    // Light tile layer
     L.tileLayer(CONFIG.TILE_URL, {
         attribution: CONFIG.TILE_ATTRIBUTION,
         subdomains: 'abcd',
@@ -28,25 +28,65 @@ function initMap() {
     map.zoomControl.setPosition('bottomright');
 }
 
+function getNeighbourhoodStyle(feature) {
+    // Determine fill colour based on crime data
+    const props = feature.properties;
+    let incidents = props.total_crimes || props.total_incidents || 0;
+
+    // Also check global crime stats
+    if (window.crimeStats && props.name && window.crimeStats[props.name]) {
+        incidents = window.crimeStats[props.name].total_incidents || incidents;
+    }
+
+    let fillColor = CONFIG.SAFETY_COLORS.unknown.fill;
+    let borderColor = CONFIG.SAFETY_COLORS.unknown.border;
+
+    if (incidents > 0) {
+        if (incidents < CONFIG.SAFETY_THRESHOLDS.safe) {
+            fillColor = CONFIG.SAFETY_COLORS.safe.fill;
+            borderColor = CONFIG.SAFETY_COLORS.safe.border;
+        } else if (incidents < CONFIG.SAFETY_THRESHOLDS.moderate) {
+            fillColor = CONFIG.SAFETY_COLORS.moderate.fill;
+            borderColor = CONFIG.SAFETY_COLORS.moderate.border;
+        } else {
+            fillColor = CONFIG.SAFETY_COLORS.high.fill;
+            borderColor = CONFIG.SAFETY_COLORS.high.border;
+        }
+    }
+
+    return {
+        fillColor: fillColor,
+        fillOpacity: 0.18,
+        color: borderColor,
+        weight: 1.5,
+    };
+}
+
 function loadNeighbourhoods(geojson) {
     if (neighbourhoodLayer) {
         map.removeLayer(neighbourhoodLayer);
     }
 
     neighbourhoodLayer = L.geoJSON(geojson, {
-        style: () => CONFIG.NEIGHBOURHOOD_STYLE.default,
+        style: (feature) => getNeighbourhoodStyle(feature),
         onEachFeature: (feature, layer) => {
             const name = feature.properties.name || 'Unknown';
+            const baseStyle = getNeighbourhoodStyle(feature);
 
             layer.on('mouseover', () => {
                 if (layer !== selectedNeighbourhood) {
-                    layer.setStyle(CONFIG.NEIGHBOURHOOD_STYLE.hover);
+                    layer.setStyle({
+                        ...baseStyle,
+                        fillOpacity: 0.35,
+                        color: '#0EA5E9',
+                        weight: 2,
+                    });
                 }
             });
 
             layer.on('mouseout', () => {
                 if (layer !== selectedNeighbourhood) {
-                    layer.setStyle(CONFIG.NEIGHBOURHOOD_STYLE.default);
+                    layer.setStyle(baseStyle);
                 }
             });
 
@@ -66,53 +106,32 @@ function loadNeighbourhoods(geojson) {
 function selectNeighbourhood(layer, feature) {
     // Reset previous selection
     if (selectedNeighbourhood) {
-        selectedNeighbourhood.setStyle(CONFIG.NEIGHBOURHOOD_STYLE.default);
+        const prevFeature = selectedNeighbourhood.feature;
+        selectedNeighbourhood.setStyle(getNeighbourhoodStyle(prevFeature));
     }
 
     // Highlight new selection
     selectedNeighbourhood = layer;
-    layer.setStyle(CONFIG.NEIGHBOURHOOD_STYLE.selected);
+    const baseStyle = getNeighbourhoodStyle(feature);
+    layer.setStyle({
+        ...baseStyle,
+        fillOpacity: 0.3,
+        color: '#0EA5E9',
+        weight: 2.5,
+    });
 
     // Fit map to neighbourhood
     map.fitBounds(layer.getBounds(), { padding: [50, 400] });
 
-    // Enter browse mode — hide welcome card and collapse header
-    enterBrowseMode();
-
     // Show info panel
     showPanel(feature.properties);
-}
 
-function enterBrowseMode() {
-    // Hide welcome card immediately
-    const welcome = document.getElementById('welcome-card');
-    if (welcome) welcome.classList.add('hidden');
-
-    // Collapse header to minimal mode
-    const header = document.getElementById('app-header');
-    if (header) header.classList.add('collapsed');
-
-    // Collapse layer controls
-    const layers = document.getElementById('layer-controls');
-    if (layers) layers.classList.add('browsing');
-
-    document.body.classList.add('browse-mode');
-}
-
-function exitBrowseMode() {
-    // Show welcome card
-    const welcome = document.getElementById('welcome-card');
-    if (welcome) welcome.classList.remove('hidden');
-
-    // Expand header
-    const header = document.getElementById('app-header');
-    if (header) header.classList.remove('collapsed');
-
-    // Expand layer controls
-    const layers = document.getElementById('layer-controls');
-    if (layers) layers.classList.remove('browsing');
-
-    document.body.classList.remove('browse-mode');
+    // Update profile link
+    const profileLink = document.getElementById('panel-profile-link');
+    if (profileLink && feature.properties.name) {
+        const slug = feature.properties.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        profileLink.href = `neighbourhoods/${slug}.html`;
+    }
 }
 
 function findNeighbourhoodByName(name) {

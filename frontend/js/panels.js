@@ -1,20 +1,21 @@
 /**
  * Regina SafeMap — Info Panel
- * Premium score ring, neighbourhood descriptions, and trend display.
+ * Clean side panel with score, description, and facts.
  */
 
 function showPanel(properties) {
     const panel = document.getElementById('info-panel');
     panel.classList.remove('panel-hidden');
+    panel.classList.add('panel-visible');
 
     const name = properties.name || 'Unknown Neighbourhood';
     document.getElementById('panel-name').textContent = name;
 
-    // Look up real crime data from global crimeStats
+    // Look up real crime data and descriptions
     const crimeData = window.crimeStats ? window.crimeStats[name] : null;
     const description = window.descriptions ? window.descriptions[name] : null;
 
-    // Calculate or fetch scores
+    // Calculate scores
     const scores = properties.overall !== undefined ? properties : calculateQuickScore(properties, crimeData);
     updateScoreRing(scores);
     updateBreakdown(scores);
@@ -25,13 +26,12 @@ function showPanel(properties) {
 
 function hidePanel() {
     const panel = document.getElementById('info-panel');
+    panel.classList.remove('panel-visible');
     panel.classList.add('panel-hidden');
 
-    // Exit browse mode — restore header and welcome
-    exitBrowseMode();
-
     if (selectedNeighbourhood) {
-        selectedNeighbourhood.setStyle(CONFIG.NEIGHBOURHOOD_STYLE.default);
+        const feature = selectedNeighbourhood.feature;
+        selectedNeighbourhood.setStyle(getNeighbourhoodStyle(feature));
         selectedNeighbourhood = null;
     }
 }
@@ -86,34 +86,33 @@ function updateFacts(properties, scores, crimeData) {
     const facts = [];
 
     if (crimeData) {
-        facts.push(`${crimeData.latest_incidents.toLocaleString()} reported incidents (${crimeData.latest_year})`);
+        const count = crimeData.total_incidents || crimeData.latest_incidents || 0;
+        if (count > 0) {
+            facts.push(`${count.toLocaleString()} incidents this period`);
+        }
         if (crimeData.crime_breakdown) {
             const sorted = Object.entries(crimeData.crime_breakdown)
                 .sort((a, b) => b[1] - a[1])
                 .slice(0, 3);
-            const topCrimes = sorted.map(([type, count]) => `${type}: ${count}`).join(', ');
-            facts.push(`Top: ${topCrimes}`);
+            const topCrimes = sorted.map(([type, count]) => `${type} (${count})`).join(', ');
+            if (topCrimes) facts.push(`Top: ${topCrimes}`);
         }
     } else if (properties.total_crimes !== undefined && properties.total_crimes > 0) {
-        facts.push(`${properties.total_crimes} reported incidents (latest year)`);
+        facts.push(`${properties.total_crimes} reported incidents`);
     }
 
-    if (properties.schools_count !== undefined && properties.schools_count > 0) {
-        facts.push(`${properties.schools_count} schools within 1km`);
+    if (properties.schools_count > 0) {
+        facts.push(`${properties.schools_count} schools nearby`);
     }
-    if (properties.transit_stops !== undefined && properties.transit_stops > 0) {
-        facts.push(`${properties.transit_stops} bus stops nearby`);
+    if (properties.transit_stops > 0) {
+        facts.push(`${properties.transit_stops} bus stops`);
     }
-    if (properties.parks_count !== undefined && properties.parks_count > 0) {
+    if (properties.parks_count > 0) {
         facts.push(`${properties.parks_count} parks & green spaces`);
-    }
-    if (properties.grocery_count !== undefined && properties.grocery_count > 0) {
-        facts.push(`${properties.grocery_count} grocery stores within 1km`);
     }
 
     if (facts.length === 0) {
-        facts.push('Click to view detailed neighbourhood data');
-        facts.push('Run data collection to populate scores');
+        facts.push('Click a neighbourhood on the map for details');
     }
 
     facts.forEach((fact) => {
@@ -128,10 +127,10 @@ function updateTrend(properties, crimeData) {
     const trend = crimeData ? crimeData.yoy_change_pct : (properties.crime_trend || 0);
 
     if (trend < -5) {
-        trendEl.textContent = `\u2193 Crime down ${Math.abs(trend).toFixed(1)}% vs last year \u2014 improving`;
+        trendEl.textContent = `\u2193 Down ${Math.abs(trend).toFixed(0)}% vs last period \u2014 improving`;
         trendEl.className = 'trend-down';
     } else if (trend > 5) {
-        trendEl.textContent = `\u2191 Crime up ${trend.toFixed(1)}% vs last year \u2014 declining`;
+        trendEl.textContent = `\u2191 Up ${trend.toFixed(0)}% vs last period`;
         trendEl.className = 'trend-up';
     } else {
         trendEl.textContent = '\u2192 Stable \u2014 no significant change';
@@ -140,28 +139,18 @@ function updateTrend(properties, crimeData) {
 }
 
 function updateDescription(description) {
-    let descEl = document.getElementById('panel-description');
-    if (!descEl) {
-        const panel = document.getElementById('panel-content');
-        if (panel) {
-            descEl = document.createElement('div');
-            descEl.id = 'panel-description';
-            descEl.className = 'panel-description';
-            panel.appendChild(descEl);
-        }
-    }
-
+    const descEl = document.getElementById('panel-description');
     if (!descEl) return;
 
     if (description) {
         descEl.style.display = 'block';
-        descEl.innerHTML = `
-            ${description.vibe ? `<div class="desc-vibe">${description.vibe}</div>` : ''}
-            ${description.description ? `<p class="desc-text">${description.description}</p>` : ''}
-            ${description.best_for ? `<p class="desc-best"><span>Best for:</span> ${description.best_for}</p>` : ''}
-            ${description.watch_out ? `<p class="desc-watch"><span>Watch out:</span> ${description.watch_out}</p>` : ''}
-            ${description.avg_rent ? `<p class="desc-rent"><span>Avg rent:</span> <span class="desc-rent-value">${description.avg_rent}</span></p>` : ''}
-        `;
+        let html = '';
+        if (description.vibe) html += `<div class="desc-vibe">${description.vibe}</div>`;
+        if (description.description) html += `<p class="desc-text">${description.description}</p>`;
+        if (description.best_for) html += `<p class="desc-best"><span>Best for:</span> ${description.best_for}</p>`;
+        if (description.avg_rent) html += `<p class="desc-rent"><span>Rent:</span> ${description.avg_rent}</p>`;
+        if (description.watch_out) html += `<p class="desc-watch"><span>Note:</span> ${description.watch_out}</p>`;
+        descEl.innerHTML = html;
     } else {
         descEl.style.display = 'none';
         descEl.innerHTML = '';
@@ -170,10 +159,10 @@ function updateDescription(description) {
 
 function calculateQuickScore(properties, crimeData) {
     let safety = 65;
-    if (crimeData && crimeData.latest_incidents !== undefined) {
+    if (crimeData && (crimeData.total_incidents || crimeData.latest_incidents)) {
         const maxCrime = 4751;
         const minCrime = 28;
-        const incidents = crimeData.latest_incidents;
+        const incidents = crimeData.total_incidents || crimeData.latest_incidents;
         safety = Math.round(100 - ((incidents - minCrime) / (maxCrime - minCrime)) * 100);
         safety = Math.max(0, Math.min(100, safety));
     }
@@ -190,9 +179,7 @@ function calculateQuickScore(properties, crimeData) {
 
 function getGrade(score) {
     for (const g of CONFIG.GRADES) {
-        if (score >= g.min) {
-            return g;
-        }
+        if (score >= g.min) return g;
     }
     return CONFIG.GRADES[CONFIG.GRADES.length - 1];
 }

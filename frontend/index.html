@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regina SafeMap — City Intelligence Dashboard</title>
-    <meta name="description" content="Live crime stats, neighbourhood safety rankings, 12-year trends, and city intelligence for Regina, Saskatchewan. Free, open source, updated daily.">
+    <title>Regina SafeMap — Know your neighbourhood before you move</title>
+    <meta name="description" content="Free neighbourhood safety scores for Regina, Saskatchewan. Search any area to see crime data, schools, transit, and livability ratings. Updated daily from Regina Police Service.">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Regina SafeMap — City Intelligence Dashboard">
-    <meta property="og:description" content="3,000+ incidents tracked. See which neighbourhoods are safest, what's trending, and explore 12 years of crime data for Regina.">
+    <meta property="og:title" content="Regina SafeMap — Know your neighbourhood before you move">
+    <meta property="og:description" content="Free neighbourhood safety tool for Regina. Search any area for crime stats, scores, and local info.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://reginasafemap.ca/">
-    <meta property="og:image" content="https://reginasafemap.ca/og-image.png">
     <link rel="canonical" href="https://reginasafemap.ca/">
+
+    <!-- Inter font (fast — variable weight) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -27,202 +31,83 @@
       "@type": "WebApplication",
       "name": "Regina SafeMap",
       "url": "https://reginasafemap.ca",
-      "description": "City intelligence dashboard: live crime stats, safety rankings, historical trends, and neighbourhood profiles for Regina, Saskatchewan.",
+      "description": "Neighbourhood safety scores and crime data for Regina, Saskatchewan. Free, open source, updated daily.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "CAD"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "OpenPodTech",
-        "url": "https://github.com/OpenPodTech"
-      }
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+      "author": { "@type": "Organization", "name": "OpenPodTech", "url": "https://github.com/OpenPodTech" }
     }
     </script>
 </head>
-<body class="dashboard-mode">
-    <!-- Header -->
+<body>
+    <!-- ═══ HEADER ═══ -->
     <header id="app-header">
-        <div class="header-left">
-            <div class="header-brand">
-                <span class="brand-mark">&#9672; OpenPod</span>
-                <span class="brand-badge">SafeMap</span>
-            </div>
-            <span class="tagline" data-i18n="tagline">City intelligence, open source</span>
+        <div class="header-brand">
+            <span class="brand-icon">&#9672;</span>
+            <span>Regina SafeMap</span>
         </div>
         <nav class="header-nav">
-            <a href="#dashboard-hero" class="nav-link active">Dashboard</a>
-            <a href="#map-section" class="nav-link">Map</a>
             <a href="neighbourhoods/" class="nav-link">Neighbourhoods</a>
             <a href="trends/" class="nav-link">Trends</a>
-            <a href="insights/" class="nav-link">Insights</a>
-            <a href="best-for/" class="nav-link">Best For</a>
-            <a href="quiz/" class="nav-link">Quiz</a>
-            <a href="report/" class="nav-link">Report</a>
+            <a href="faq/" class="nav-link">About</a>
         </nav>
-        <div class="header-right">
-            <!-- Language Selector -->
-            <div style="position:relative;display:inline-block;" id="lang-dropdown">
-                <button id="lang-btn" class="lang-toggle" aria-label="Change language">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
-                    <span id="lang-current">EN</span>
-                </button>
-                <div id="lang-menu" style="display:none;position:absolute;top:100%;right:0;margin-top:6px;background:rgba(15,23,42,0.95);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:6px;min-width:130px;z-index:2000;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
-                    <div class="lang-option" data-lang="en" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">English</div>
-                    <div class="lang-option" data-lang="pa" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">&#2602;&#2672;&#2588;&#2622;&#2604;&#2624;</div>
-                    <div class="lang-option" data-lang="hi" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;</div>
-                    <div class="lang-option" data-lang="tl" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">Tagalog</div>
-                    <div class="lang-option" data-lang="uk" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">&#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;</div>
-                    <div class="lang-option" data-lang="ar" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</div>
-                    <div class="lang-option" data-lang="zh" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">&#20013;&#25991;</div>
-                </div>
-            </div>
-            <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank" class="github-link" aria-label="View on GitHub">
-                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-        </div>
     </header>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         HERO DASHBOARD — What hits you on first load
-         ═══════════════════════════════════════════════════════════ -->
-    <section id="dashboard-hero">
-        <div class="dashboard-container">
-            <!-- Stats Cards Row -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">&#128200;</div>
-                    <div class="stat-number" id="stat-total">--</div>
-                    <div class="stat-label">incidents tracked</div>
-                    <div class="stat-sub" id="stat-period">loading...</div>
-                </div>
-                <div class="stat-card stat-safe">
-                    <div class="stat-icon">&#128154;</div>
-                    <div class="stat-number" id="stat-safest">--</div>
-                    <div class="stat-label">safest neighbourhood</div>
-                    <div class="stat-sub" id="stat-safest-count">lowest crime rate</div>
-                </div>
-                <div class="stat-card stat-hot">
-                    <div class="stat-icon">&#128293;</div>
-                    <div class="stat-number" id="stat-hottest">--</div>
-                    <div class="stat-label">highest activity</div>
-                    <div class="stat-sub" id="stat-hottest-count">most incidents</div>
-                </div>
-                <div class="stat-card stat-trend-card">
-                    <div class="stat-icon">&#128202;</div>
-                    <div class="stat-number" id="stat-trend">--</div>
-                    <div class="stat-label">12-year city trend</div>
-                    <div class="stat-sub" id="stat-trend-note">2007 vs 2018</div>
-                </div>
-            </div>
+    <!-- ═══ HERO — SEARCH FIRST ═══ -->
+    <section class="hero">
+        <h1>Know your neighbourhood before you move.</h1>
+        <p>Safety scores for every area in Regina, powered by real police data.</p>
 
-            <!-- Quick Actions -->
-            <div class="quick-actions">
-                <a href="#map-section" class="action-card">
-                    <span class="action-icon">&#128506;</span>
-                    <span class="action-text">Explore the Map</span>
-                </a>
-                <a href="trends/" class="action-card">
-                    <span class="action-icon">&#128200;</span>
-                    <span class="action-text">12 Years of Trends</span>
-                </a>
-                <a href="quiz/" class="action-card">
-                    <span class="action-icon">&#127919;</span>
-                    <span class="action-text">Find My Area</span>
-                </a>
-                <a href="#snow-section" class="action-card">
-                    <span class="action-icon">&#10052;</span>
-                    <span class="action-text">Snow Routes</span>
-                </a>
-                <a href="best-for/" class="action-card">
-                    <span class="action-icon">&#11088;</span>
-                    <span class="action-text">Best Neighbourhoods</span>
-                </a>
-                <a href="insights/" class="action-card">
-                    <span class="action-icon">&#128218;</span>
-                    <span class="action-text">Data Insights</span>
-                </a>
-            </div>
+        <div class="search-container">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" id="search-input" placeholder="Search a neighbourhood..." autocomplete="off" aria-label="Search neighbourhoods">
+            <div class="search-dropdown" id="search-dropdown"></div>
+        </div>
 
-            <!-- Trending Now -->
-            <div class="trending-section">
-                <h3 class="section-title">Trending Now</h3>
-                <div id="trending-items" class="trending-grid">
-                    <div class="trending-placeholder">Loading live insights...</div>
-                </div>
-            </div>
-
-            <!-- Top 5 vs Bottom 5 Comparison -->
-            <div class="comparison-section">
-                <h3 class="section-title">Safest vs Highest Crime</h3>
-                <p class="section-subtitle">Based on current incident counts (90-day rolling window)</p>
-                <div class="comparison-wrapper">
-                    <div class="comparison-col">
-                        <h4 class="comp-header comp-safe">&#128154; Safest Areas</h4>
-                        <div id="safest-bars" class="comparison-bars"></div>
-                    </div>
-                    <div class="comparison-col">
-                        <h4 class="comp-header comp-hot">&#128293; Highest Activity</h4>
-                        <div id="hottest-bars" class="comparison-bars"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Data Source Badge -->
-            <div class="data-badge">
-                <span class="badge-dot"></span>
-                <span id="data-freshness-text">Live data from Regina Police Service</span>
-            </div>
+        <div class="popular-links">
+            <span>Popular:</span>
+            <a href="#" class="popular-link" data-neighbourhood="Cathedral">Cathedral</a>
+            <a href="#" class="popular-link" data-neighbourhood="Harbour Landing">Harbour Landing</a>
+            <a href="#" class="popular-link" data-neighbourhood="North Central">North Central</a>
+            <a href="#" class="popular-link" data-neighbourhood="Whitmore Park">Whitmore Park</a>
+            <a href="#" class="popular-link" data-neighbourhood="Lakeview">Lakeview</a>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         MAP SECTION — Full interactive crime map
-         ═══════════════════════════════════════════════════════════ -->
+    <!-- ═══ MAP ═══ -->
     <section id="map-section">
-        <div class="section-header-bar">
-            <h2>Explore the Crime Map</h2>
-            <p>Click any neighbourhood for detailed safety scores, schools, transit, and trends.</p>
-        </div>
-
-        <!-- Layer Toggle Bar -->
         <div id="layer-controls">
             <button class="layer-btn active" data-layer="crime" title="Crime Heatmap">
-                <span class="layer-icon">&#128293;</span> <span data-i18n="layer_crime">Crime</span>
+                <span class="layer-icon">&#128293;</span> Crime
             </button>
             <button class="layer-btn" data-layer="schools" title="Schools">
-                <span class="layer-icon">&#127979;</span> <span data-i18n="layer_schools">Schools</span>
+                <span class="layer-icon">&#127979;</span> Schools
             </button>
-            <button class="layer-btn" data-layer="transit" title="Transit Stops">
-                <span class="layer-icon">&#128652;</span> <span data-i18n="layer_transit">Transit</span>
+            <button class="layer-btn" data-layer="transit" title="Transit">
+                <span class="layer-icon">&#128652;</span> Transit
             </button>
             <button class="layer-btn" data-layer="amenities" title="Amenities">
-                <span class="layer-icon">&#127978;</span> <span data-i18n="layer_amenities">Amenities</span>
+                <span class="layer-icon">&#127978;</span> Amenities
             </button>
             <button class="layer-btn" data-layer="parks" title="Parks">
-                <span class="layer-icon">&#127795;</span> <span data-i18n="layer_parks">Parks</span>
+                <span class="layer-icon">&#127795;</span> Parks
             </button>
         </div>
 
-        <!-- Map Container -->
-        <div id="map"></div>
-
-        <!-- Legend -->
-        <div id="legend">
-            <h4>Crime Density</h4>
-            <div class="legend-scale">
-                <span class="legend-low">Low</span>
-                <div class="legend-gradient"></div>
-                <span class="legend-high">High</span>
+        <div class="map-wrapper">
+            <div id="map"></div>
+            <div id="legend">
+                <h4>Crime Density</h4>
+                <div class="legend-scale">
+                    <span class="legend-low">Low</span>
+                    <div class="legend-gradient"></div>
+                    <span class="legend-high">High</span>
+                </div>
             </div>
-            <div id="legend-updated" style="font-size:0.7rem;color:#64748b;margin-top:8px;text-align:center;"></div>
         </div>
     </section>
 
-    <!-- Neighbourhood Info Panel -->
+    <!-- ═══ INFO PANEL ═══ -->
     <div id="info-panel" class="panel-hidden">
         <button id="panel-close" aria-label="Close panel">&times;</button>
         <div id="panel-content">
@@ -238,6 +123,7 @@
                     <span class="score-grade">--</span>
                 </div>
             </div>
+            <div id="panel-description" class="panel-description" style="display:none;"></div>
             <div id="panel-breakdown">
                 <div class="score-row"><span class="score-label">Safety</span><div class="score-bar"><div class="score-fill safety" style="width:0%"></div></div><span class="score-value">--</span></div>
                 <div class="score-row"><span class="score-label">Schools</span><div class="score-bar"><div class="score-fill schools" style="width:0%"></div></div><span class="score-value">--</span></div>
@@ -247,60 +133,46 @@
             </div>
             <div id="panel-details"><h3>Quick Facts</h3><ul id="panel-facts"></ul></div>
             <div id="panel-trend"><h3>Crime Trend</h3><p id="trend-text">--</p></div>
+            <div class="panel-links">
+                <a href="#" id="panel-profile-link" class="panel-link">View Full Profile &rarr;</a>
+            </div>
         </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         SNOW ROUTES SECTION
-         ═══════════════════════════════════════════════════════════ -->
-    <section id="snow-section">
-        <div class="section-header-bar">
-            <h2>&#10052; Winter Info: Snow Routes</h2>
-            <p>When snow routes are declared, no parking for 24 hours on blue-snowflake-signed streets. $120 ticket if you don't move.</p>
-        </div>
-        <div class="snow-grid">
-            <div class="snow-card priority-1">
-                <h4>Priority 1 — Major Roads</h4>
-                <p>Albert St, Victoria Ave, Ring Road, Lewvan Dr, Pasqua St — cleared FIRST within 6 hours of declaration</p>
+    <!-- ═══ QUICK PICKS ═══ -->
+    <section class="quick-picks">
+        <h2>At a glance</h2>
+        <div class="picks-grid" id="quick-picks-grid">
+            <div class="pick-card">
+                <div class="pick-label">Safest</div>
+                <div class="pick-name" id="pick-safest">Loading...</div>
+                <div class="pick-detail" id="pick-safest-detail"></div>
             </div>
-            <div class="snow-card priority-2">
-                <h4>Priority 2 — Collector Roads</h4>
-                <p>Bus routes, school zones, emergency access roads — cleared within 12 hours</p>
+            <div class="pick-card">
+                <div class="pick-label">Most active</div>
+                <div class="pick-name" id="pick-hottest">Loading...</div>
+                <div class="pick-detail" id="pick-hottest-detail"></div>
             </div>
-            <div class="snow-card priority-3">
-                <h4>Priority 3 — Residential</h4>
-                <p>Only plowed after 15cm+ accumulation. Snow pushed to curb line, not removed.</p>
+            <div class="pick-card">
+                <div class="pick-label">Improving</div>
+                <div class="pick-name" id="pick-improving">Loading...</div>
+                <div class="pick-detail" id="pick-improving-detail"></div>
             </div>
-        </div>
-        <div class="snow-tip">
-            &#128161; Sign up for snow route notifications at <a href="https://regina.ca/SnowRoutes" target="_blank" rel="noopener">Regina.ca/SnowRoutes</a>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════
-         CITY QUICK FACTS
-         ═══════════════════════════════════════════════════════════ -->
-    <section id="city-facts">
-        <div class="section-header-bar">
-            <h2>Regina at a Glance</h2>
-        </div>
-        <div class="facts-grid">
-            <div class="fact-item"><span class="fact-icon">&#128101;</span><span class="fact-text">Population: ~230,000</span></div>
-            <div class="fact-item"><span class="fact-icon">&#127968;</span><span class="fact-text">Neighbourhoods: 135+</span></div>
-            <div class="fact-item"><span class="fact-icon">&#128176;</span><span class="fact-text">Average rent: $1,100/month</span></div>
-            <div class="fact-item"><span class="fact-icon">&#127777;</span><span class="fact-text">Winter: -30&#176;C to -40&#176;C common</span></div>
-            <div class="fact-item"><span class="fact-icon">&#128652;</span><span class="fact-text">Transit: Regina Transit (bus only)</span></div>
-            <div class="fact-item"><span class="fact-icon">&#9992;</span><span class="fact-text">Airport: YQR (in city limits)</span></div>
-        </div>
-    </section>
+    <!-- ═══ DATA SOURCE ═══ -->
+    <div class="data-source" id="data-source">
+        <span class="source-dot"></span>
+        <span id="data-freshness-text">Live data from Regina Police Service</span>
+    </div>
 
-    <!-- Footer -->
+    <!-- ═══ FOOTER ═══ -->
     <footer id="app-footer">
-        <p>Open source civic intelligence &middot; Built by <a href="https://github.com/OpenPodTech" target="_blank">OpenPodTech</a> &middot; Free forever</p>
-        <p class="footer-sub">Data: Regina Police Service Open Data &middot; Historical: andrewjdyck/regina-crime-data</p>
+        <p>Live data from Regina Police Service &middot; Built by <a href="https://github.com/OpenPodTech" target="_blank">OpenPodTech</a> &middot; Free forever</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- ═══ SCRIPTS ═══ -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
     <script src="js/config.js"></script>
@@ -308,49 +180,6 @@
     <script src="js/layers.js"></script>
     <script src="js/panels.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/i18n.js"></script>
     <script src="js/dashboard.js"></script>
-
-    <!-- Language dropdown logic -->
-    <script>
-    (function() {
-        var btn = document.getElementById('lang-btn');
-        var menu = document.getElementById('lang-menu');
-        var current = document.getElementById('lang-current');
-        if (!btn || !menu) return;
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-        });
-        document.addEventListener('click', function() { menu.style.display = 'none'; });
-        menu.addEventListener('click', function(e) { e.stopPropagation(); });
-        var options = menu.querySelectorAll('.lang-option');
-        options.forEach(function(opt) {
-            opt.addEventListener('mouseenter', function() { this.style.background = 'rgba(14,165,233,0.1)'; this.style.color = '#f0f6fc'; });
-            opt.addEventListener('mouseleave', function() { this.style.background = 'transparent'; this.style.color = '#94a3b8'; });
-            opt.addEventListener('click', function() {
-                var lang = this.getAttribute('data-lang');
-                if (window.i18n) window.i18n.setLanguage(lang);
-                current.textContent = lang.toUpperCase();
-                menu.style.display = 'none';
-            });
-        });
-        var saved = localStorage.getItem('safemap_lang');
-        if (saved) current.textContent = saved.toUpperCase();
-    })();
-    </script>
-
-    <!-- Smooth scrolling for anchor links -->
-    <script>
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-        a.addEventListener('click', function(e) {
-            var target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-    </script>
 </body>
 </html>
