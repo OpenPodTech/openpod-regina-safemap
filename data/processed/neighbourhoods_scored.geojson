@@ -1,0 +1,3888 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": "2026-08-08T00:50:55.450601",
+    "total_neighbourhoods": 68,
+    "city": "Regina",
+    "province": "Saskatchewan",
+    "source": "centroid_approximation"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.604504,
+              50.43915
+            ],
+            [
+              -104.6097,
+              50.4411
+            ],
+            [
+              -104.614896,
+              50.43915
+            ],
+            [
+              -104.614896,
+              50.43525
+            ],
+            [
+              -104.6097,
+              50.4333
+            ],
+            [
+              -104.604504,
+              50.43525
+            ],
+            [
+              -104.604504,
+              50.43915
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Al Ritchie",
+        "source": "centroid_approximation",
+        "overall": 10,
+        "grade": "F",
+        "safety": 35,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 14476,
+        "crime_trend": 1.8,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.630804,
+              50.41995
+            ],
+            [
+              -104.636,
+              50.4219
+            ],
+            [
+              -104.641196,
+              50.41995
+            ],
+            [
+              -104.641196,
+              50.41605
+            ],
+            [
+              -104.636,
+              50.4141
+            ],
+            [
+              -104.630804,
+              50.41605
+            ],
+            [
+              -104.630804,
+              50.41995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Albert Park",
+        "source": "centroid_approximation",
+        "overall": 2,
+        "grade": "F",
+        "safety": 5,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 30445,
+        "crime_trend": 30.1,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.574804,
+              50.42395
+            ],
+            [
+              -104.58,
+              50.4259
+            ],
+            [
+              -104.585196,
+              50.42395
+            ],
+            [
+              -104.585196,
+              50.42005
+            ],
+            [
+              -104.58,
+              50.4181
+            ],
+            [
+              -104.574804,
+              50.42005
+            ],
+            [
+              -104.574804,
+              50.42395
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Arcola East",
+        "source": "centroid_approximation",
+        "overall": 22,
+        "grade": "F",
+        "safety": 74,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 376,
+        "crime_trend": 70.9,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.584804,
+              50.43695
+            ],
+            [
+              -104.59,
+              50.4389
+            ],
+            [
+              -104.595196,
+              50.43695
+            ],
+            [
+              -104.595196,
+              50.43305
+            ],
+            [
+              -104.59,
+              50.4311
+            ],
+            [
+              -104.584804,
+              50.43305
+            ],
+            [
+              -104.584804,
+              50.43695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Argyle Park",
+        "source": "centroid_approximation",
+        "overall": 19,
+        "grade": "F",
+        "safety": 62,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 6053,
+        "crime_trend": 29.9,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.572804,
+              50.44295
+            ],
+            [
+              -104.578,
+              50.4449
+            ],
+            [
+              -104.583196,
+              50.44295
+            ],
+            [
+              -104.583196,
+              50.43905
+            ],
+            [
+              -104.578,
+              50.4371
+            ],
+            [
+              -104.572804,
+              50.43905
+            ],
+            [
+              -104.572804,
+              50.44295
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Boothill",
+        "source": "centroid_approximation",
+        "overall": 28,
+        "grade": "F",
+        "safety": 93,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 576,
+        "crime_trend": -31.7,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.589804,
+              50.43295
+            ],
+            [
+              -104.595,
+              50.4349
+            ],
+            [
+              -104.600196,
+              50.43295
+            ],
+            [
+              -104.600196,
+              50.42905
+            ],
+            [
+              -104.595,
+              50.4271
+            ],
+            [
+              -104.589804,
+              50.42905
+            ],
+            [
+              -104.589804,
+              50.43295
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Broder Annex",
+        "source": "centroid_approximation",
+        "overall": 21,
+        "grade": "F",
+        "safety": 71,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 2922,
+        "crime_trend": 33.4,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.619804,
+              50.45495
+            ],
+            [
+              -104.625,
+              50.4569
+            ],
+            [
+              -104.630196,
+              50.45495
+            ],
+            [
+              -104.630196,
+              50.45105
+            ],
+            [
+              -104.625,
+              50.4491
+            ],
+            [
+              -104.619804,
+              50.45105
+            ],
+            [
+              -104.619804,
+              50.45495
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Cathedral",
+        "source": "centroid_approximation",
+        "overall": 5,
+        "grade": "F",
+        "safety": 18,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 20185,
+        "crime_trend": -1.5,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.599804,
+              50.44995
+            ],
+            [
+              -104.605,
+              50.4519
+            ],
+            [
+              -104.610196,
+              50.44995
+            ],
+            [
+              -104.610196,
+              50.44605
+            ],
+            [
+              -104.605,
+              50.4441
+            ],
+            [
+              -104.599804,
+              50.44605
+            ],
+            [
+              -104.599804,
+              50.44995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Centre Square",
+        "source": "centroid_approximation",
+        "overall": 6,
+        "grade": "F",
+        "safety": 19,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 80067,
+        "crime_trend": -24.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.594804,
+              50.40195
+            ],
+            [
+              -104.6,
+              50.4039
+            ],
+            [
+              -104.605196,
+              50.40195
+            ],
+            [
+              -104.605196,
+              50.39805
+            ],
+            [
+              -104.6,
+              50.3961
+            ],
+            [
+              -104.594804,
+              50.39805
+            ],
+            [
+              -104.594804,
+              50.40195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Churchill Downs",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.579804,
+              50.46195
+            ],
+            [
+              -104.585,
+              50.4639
+            ],
+            [
+              -104.590196,
+              50.46195
+            ],
+            [
+              -104.590196,
+              50.45805
+            ],
+            [
+              -104.585,
+              50.4561
+            ],
+            [
+              -104.579804,
+              50.45805
+            ],
+            [
+              -104.579804,
+              50.46195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Coronation Park",
+        "source": "centroid_approximation",
+        "overall": 12,
+        "grade": "F",
+        "safety": 39,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 15312,
+        "crime_trend": -17.8,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.604804,
+              50.45195
+            ],
+            [
+              -104.61,
+              50.4539
+            ],
+            [
+              -104.615196,
+              50.45195
+            ],
+            [
+              -104.615196,
+              50.44805
+            ],
+            [
+              -104.61,
+              50.4461
+            ],
+            [
+              -104.604804,
+              50.44805
+            ],
+            [
+              -104.604804,
+              50.45195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Core",
+        "source": "centroid_approximation",
+        "overall": 5,
+        "grade": "F",
+        "safety": 17,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 85359,
+        "crime_trend": -18.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.614804,
+              50.44495
+            ],
+            [
+              -104.62,
+              50.4469
+            ],
+            [
+              -104.625196,
+              50.44495
+            ],
+            [
+              -104.625196,
+              50.44105
+            ],
+            [
+              -104.62,
+              50.4391
+            ],
+            [
+              -104.614804,
+              50.44105
+            ],
+            [
+              -104.614804,
+              50.44495
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Crescents",
+        "source": "centroid_approximation",
+        "overall": 5,
+        "grade": "F",
+        "safety": 16,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 35600,
+        "crime_trend": -15.8,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.584804,
+              50.45795
+            ],
+            [
+              -104.59,
+              50.4599
+            ],
+            [
+              -104.595196,
+              50.45795
+            ],
+            [
+              -104.595196,
+              50.45405
+            ],
+            [
+              -104.59,
+              50.4521
+            ],
+            [
+              -104.584804,
+              50.45405
+            ],
+            [
+              -104.584804,
+              50.45795
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Dewdney East",
+        "source": "centroid_approximation",
+        "overall": 5,
+        "grade": "F",
+        "safety": 18,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 22592,
+        "crime_trend": -22.4,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.604804,
+              50.47895
+            ],
+            [
+              -104.61,
+              50.4809
+            ],
+            [
+              -104.615196,
+              50.47895
+            ],
+            [
+              -104.615196,
+              50.47505
+            ],
+            [
+              -104.61,
+              50.4731
+            ],
+            [
+              -104.604804,
+              50.47505
+            ],
+            [
+              -104.604804,
+              50.47895
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Dieppe",
+        "source": "centroid_approximation",
+        "overall": 26,
+        "grade": "F",
+        "safety": 88,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 272,
+        "crime_trend": -7.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.634804,
+              50.42695
+            ],
+            [
+              -104.64,
+              50.4289
+            ],
+            [
+              -104.645196,
+              50.42695
+            ],
+            [
+              -104.645196,
+              50.42305
+            ],
+            [
+              -104.64,
+              50.4211
+            ],
+            [
+              -104.634804,
+              50.42305
+            ],
+            [
+              -104.634804,
+              50.42695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Douglas Park",
+        "source": "centroid_approximation",
+        "overall": 21,
+        "grade": "F",
+        "safety": 69,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 3932,
+        "crime_trend": 22.4,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.606804,
+              50.45095
+            ],
+            [
+              -104.612,
+              50.4529
+            ],
+            [
+              -104.617196,
+              50.45095
+            ],
+            [
+              -104.617196,
+              50.44705
+            ],
+            [
+              -104.612,
+              50.4451
+            ],
+            [
+              -104.606804,
+              50.44705
+            ],
+            [
+              -104.606804,
+              50.45095
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Downtown",
+        "source": "centroid_approximation",
+        "overall": 5,
+        "grade": "F",
+        "safety": 18,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 70430,
+        "crime_trend": -21.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.562804,
+              50.45595
+            ],
+            [
+              -104.568,
+              50.4579
+            ],
+            [
+              -104.573196,
+              50.45595
+            ],
+            [
+              -104.573196,
+              50.45205
+            ],
+            [
+              -104.568,
+              50.4501
+            ],
+            [
+              -104.562804,
+              50.45205
+            ],
+            [
+              -104.562804,
+              50.45595
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Eastview",
+        "source": "centroid_approximation",
+        "overall": 23,
+        "grade": "F",
+        "safety": 78,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 3901,
+        "crime_trend": -17.1,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.629804,
+              50.45495
+            ],
+            [
+              -104.635,
+              50.4569
+            ],
+            [
+              -104.640196,
+              50.45495
+            ],
+            [
+              -104.640196,
+              50.45105
+            ],
+            [
+              -104.635,
+              50.4491
+            ],
+            [
+              -104.629804,
+              50.45105
+            ],
+            [
+              -104.629804,
+              50.45495
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Elphinstone",
+        "source": "centroid_approximation",
+        "overall": 24,
+        "grade": "F",
+        "safety": 80,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 1634,
+        "crime_trend": 8.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.564804,
+              50.41195
+            ],
+            [
+              -104.57,
+              50.4139
+            ],
+            [
+              -104.575196,
+              50.41195
+            ],
+            [
+              -104.575196,
+              50.40805
+            ],
+            [
+              -104.57,
+              50.4061
+            ],
+            [
+              -104.564804,
+              50.40805
+            ],
+            [
+              -104.564804,
+              50.41195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Gardiner Park",
+        "source": "centroid_approximation",
+        "overall": 3,
+        "grade": "F",
+        "safety": 9,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 20571,
+        "crime_trend": 58.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.579804,
+              50.44495
+            ],
+            [
+              -104.585,
+              50.4469
+            ],
+            [
+              -104.590196,
+              50.44495
+            ],
+            [
+              -104.590196,
+              50.44105
+            ],
+            [
+              -104.585,
+              50.4391
+            ],
+            [
+              -104.579804,
+              50.44105
+            ],
+            [
+              -104.579804,
+              50.44495
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "General Hospital",
+        "source": "centroid_approximation",
+        "overall": 24,
+        "grade": "F",
+        "safety": 79,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 475,
+        "crime_trend": 27.3,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.614804,
+              50.46695
+            ],
+            [
+              -104.62,
+              50.4689
+            ],
+            [
+              -104.625196,
+              50.46695
+            ],
+            [
+              -104.625196,
+              50.46305
+            ],
+            [
+              -104.62,
+              50.4611
+            ],
+            [
+              -104.614804,
+              50.46305
+            ],
+            [
+              -104.614804,
+              50.46695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Gladmer Park",
+        "source": "centroid_approximation",
+        "overall": 5,
+        "grade": "F",
+        "safety": 17,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 63983,
+        "crime_trend": -16.1,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.569804,
+              50.43995
+            ],
+            [
+              -104.575,
+              50.4419
+            ],
+            [
+              -104.580196,
+              50.43995
+            ],
+            [
+              -104.580196,
+              50.43605
+            ],
+            [
+              -104.575,
+              50.4341
+            ],
+            [
+              -104.569804,
+              50.43605
+            ],
+            [
+              -104.569804,
+              50.43995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Glen Elm",
+        "source": "centroid_approximation",
+        "overall": 30,
+        "grade": "F",
+        "safety": 99,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 263,
+        "crime_trend": -52.6,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.629804,
+              50.47495
+            ],
+            [
+              -104.635,
+              50.4769
+            ],
+            [
+              -104.640196,
+              50.47495
+            ],
+            [
+              -104.640196,
+              50.47105
+            ],
+            [
+              -104.635,
+              50.4691
+            ],
+            [
+              -104.629804,
+              50.47105
+            ],
+            [
+              -104.629804,
+              50.47495
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Glencairn",
+        "source": "centroid_approximation",
+        "overall": 23,
+        "grade": "F",
+        "safety": 76,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 3819,
+        "crime_trend": -8.8,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.644804,
+              50.40695
+            ],
+            [
+              -104.65,
+              50.4089
+            ],
+            [
+              -104.655196,
+              50.40695
+            ],
+            [
+              -104.655196,
+              50.40305
+            ],
+            [
+              -104.65,
+              50.4011
+            ],
+            [
+              -104.644804,
+              50.40305
+            ],
+            [
+              -104.644804,
+              50.40695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Harbour Landing",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.654804,
+              50.39695
+            ],
+            [
+              -104.66,
+              50.3989
+            ],
+            [
+              -104.665196,
+              50.39695
+            ],
+            [
+              -104.665196,
+              50.39305
+            ],
+            [
+              -104.66,
+              50.3911
+            ],
+            [
+              -104.654804,
+              50.39305
+            ],
+            [
+              -104.654804,
+              50.39695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Hawkstone",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.604804,
+              50.42295
+            ],
+            [
+              -104.61,
+              50.4249
+            ],
+            [
+              -104.615196,
+              50.42295
+            ],
+            [
+              -104.615196,
+              50.41905
+            ],
+            [
+              -104.61,
+              50.4171
+            ],
+            [
+              -104.604804,
+              50.41905
+            ],
+            [
+              -104.604804,
+              50.42295
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Heritage",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.584804,
+              50.47695
+            ],
+            [
+              -104.59,
+              50.4789
+            ],
+            [
+              -104.595196,
+              50.47695
+            ],
+            [
+              -104.595196,
+              50.47305
+            ],
+            [
+              -104.59,
+              50.4711
+            ],
+            [
+              -104.584804,
+              50.47305
+            ],
+            [
+              -104.584804,
+              50.47695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Hillsdale",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 68,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 4187,
+        "crime_trend": 23.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.564804,
+              50.42895
+            ],
+            [
+              -104.57,
+              50.4309
+            ],
+            [
+              -104.575196,
+              50.42895
+            ],
+            [
+              -104.575196,
+              50.42505
+            ],
+            [
+              -104.57,
+              50.4231
+            ],
+            [
+              -104.564804,
+              50.42505
+            ],
+            [
+              -104.564804,
+              50.42895
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Hollywood Hill",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.614804,
+              50.41195
+            ],
+            [
+              -104.62,
+              50.4139
+            ],
+            [
+              -104.625196,
+              50.41195
+            ],
+            [
+              -104.625196,
+              50.40805
+            ],
+            [
+              -104.62,
+              50.4061
+            ],
+            [
+              -104.614804,
+              50.40805
+            ],
+            [
+              -104.614804,
+              50.41195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Kensington",
+        "source": "centroid_approximation",
+        "overall": 25,
+        "grade": "F",
+        "safety": 82,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 1036,
+        "crime_trend": 7.9,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.584804,
+              50.40995
+            ],
+            [
+              -104.59,
+              50.4119
+            ],
+            [
+              -104.595196,
+              50.40995
+            ],
+            [
+              -104.595196,
+              50.40605
+            ],
+            [
+              -104.59,
+              50.4041
+            ],
+            [
+              -104.584804,
+              50.40605
+            ],
+            [
+              -104.584804,
+              50.40995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Lakeridge",
+        "source": "centroid_approximation",
+        "overall": 30,
+        "grade": "F",
+        "safety": 100,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 35,
+        "crime_trend": -60.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.641804,
+              50.43695
+            ],
+            [
+              -104.647,
+              50.4389
+            ],
+            [
+              -104.652196,
+              50.43695
+            ],
+            [
+              -104.652196,
+              50.43305
+            ],
+            [
+              -104.647,
+              50.4311
+            ],
+            [
+              -104.641804,
+              50.43305
+            ],
+            [
+              -104.641804,
+              50.43695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Lakeview",
+        "source": "centroid_approximation",
+        "overall": 26,
+        "grade": "F",
+        "safety": 85,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 3351,
+        "crime_trend": -36.8,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.554804,
+              50.41895
+            ],
+            [
+              -104.56,
+              50.4209
+            ],
+            [
+              -104.565196,
+              50.41895
+            ],
+            [
+              -104.565196,
+              50.41505
+            ],
+            [
+              -104.56,
+              50.4131
+            ],
+            [
+              -104.554804,
+              50.41505
+            ],
+            [
+              -104.554804,
+              50.41895
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Lakewood",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.599804,
+              50.45095
+            ],
+            [
+              -104.605,
+              50.4529
+            ],
+            [
+              -104.610196,
+              50.45095
+            ],
+            [
+              -104.610196,
+              50.44705
+            ],
+            [
+              -104.605,
+              50.4451
+            ],
+            [
+              -104.599804,
+              50.44705
+            ],
+            [
+              -104.599804,
+              50.45095
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Market Square",
+        "source": "centroid_approximation",
+        "overall": 6,
+        "grade": "F",
+        "safety": 19,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 84037,
+        "crime_trend": -25.3,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.584804,
+              50.49095
+            ],
+            [
+              -104.59,
+              50.4929
+            ],
+            [
+              -104.595196,
+              50.49095
+            ],
+            [
+              -104.595196,
+              50.48705
+            ],
+            [
+              -104.59,
+              50.4851
+            ],
+            [
+              -104.584804,
+              50.48705
+            ],
+            [
+              -104.584804,
+              50.49095
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "McCarthy Park",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.564804,
+              50.46195
+            ],
+            [
+              -104.57,
+              50.4639
+            ],
+            [
+              -104.575196,
+              50.46195
+            ],
+            [
+              -104.575196,
+              50.45805
+            ],
+            [
+              -104.57,
+              50.4561
+            ],
+            [
+              -104.564804,
+              50.45805
+            ],
+            [
+              -104.564804,
+              50.46195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "McNab",
+        "source": "centroid_approximation",
+        "overall": 26,
+        "grade": "F",
+        "safety": 86,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 1498,
+        "crime_trend": -13.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.619804,
+              50.43195
+            ],
+            [
+              -104.625,
+              50.4339
+            ],
+            [
+              -104.630196,
+              50.43195
+            ],
+            [
+              -104.630196,
+              50.42805
+            ],
+            [
+              -104.625,
+              50.4261
+            ],
+            [
+              -104.619804,
+              50.42805
+            ],
+            [
+              -104.619804,
+              50.43195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Mount Royal",
+        "source": "centroid_approximation",
+        "overall": 28,
+        "grade": "F",
+        "safety": 92,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 648,
+        "crime_trend": -28.4,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.594804,
+              50.48195
+            ],
+            [
+              -104.6,
+              50.4839
+            ],
+            [
+              -104.605196,
+              50.48195
+            ],
+            [
+              -104.605196,
+              50.47805
+            ],
+            [
+              -104.6,
+              50.4761
+            ],
+            [
+              -104.594804,
+              50.47805
+            ],
+            [
+              -104.594804,
+              50.48195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Normandy Heights",
+        "source": "centroid_approximation",
+        "overall": 22,
+        "grade": "F",
+        "safety": 74,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 285,
+        "crime_trend": 70.7,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.614804,
+              50.46395
+            ],
+            [
+              -104.62,
+              50.4659
+            ],
+            [
+              -104.625196,
+              50.46395
+            ],
+            [
+              -104.625196,
+              50.46005
+            ],
+            [
+              -104.62,
+              50.4581
+            ],
+            [
+              -104.614804,
+              50.46005
+            ],
+            [
+              -104.614804,
+              50.46395
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "North Central",
+        "source": "centroid_approximation",
+        "overall": 5,
+        "grade": "F",
+        "safety": 17,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 82754,
+        "crime_trend": -19.1,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.654804,
+              50.47195
+            ],
+            [
+              -104.66,
+              50.4739
+            ],
+            [
+              -104.665196,
+              50.47195
+            ],
+            [
+              -104.665196,
+              50.46805
+            ],
+            [
+              -104.66,
+              50.4661
+            ],
+            [
+              -104.654804,
+              50.46805
+            ],
+            [
+              -104.654804,
+              50.47195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Normanview",
+        "source": "centroid_approximation",
+        "overall": 22,
+        "grade": "F",
+        "safety": 75,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 649,
+        "crime_trend": 42.3,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.669804,
+              50.47195
+            ],
+            [
+              -104.675,
+              50.4739
+            ],
+            [
+              -104.680196,
+              50.47195
+            ],
+            [
+              -104.680196,
+              50.46805
+            ],
+            [
+              -104.675,
+              50.4661
+            ],
+            [
+              -104.669804,
+              50.46805
+            ],
+            [
+              -104.669804,
+              50.47195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Normanview West",
+        "source": "centroid_approximation",
+        "overall": 30,
+        "grade": "F",
+        "safety": 99,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 372,
+        "crime_trend": -59.1,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.544804,
+              50.41195
+            ],
+            [
+              -104.55,
+              50.4139
+            ],
+            [
+              -104.555196,
+              50.41195
+            ],
+            [
+              -104.555196,
+              50.40805
+            ],
+            [
+              -104.55,
+              50.4061
+            ],
+            [
+              -104.544804,
+              50.40805
+            ],
+            [
+              -104.544804,
+              50.41195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Oakwood",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.641804,
+              50.43195
+            ],
+            [
+              -104.647,
+              50.4339
+            ],
+            [
+              -104.652196,
+              50.43195
+            ],
+            [
+              -104.652196,
+              50.42805
+            ],
+            [
+              -104.647,
+              50.4261
+            ],
+            [
+              -104.641804,
+              50.42805
+            ],
+            [
+              -104.641804,
+              50.43195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Old Lakeview",
+        "source": "centroid_approximation",
+        "overall": 27,
+        "grade": "F",
+        "safety": 91,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 2240,
+        "crime_trend": -43.1,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.634804,
+              50.44695
+            ],
+            [
+              -104.64,
+              50.4489
+            ],
+            [
+              -104.645196,
+              50.44695
+            ],
+            [
+              -104.645196,
+              50.44305
+            ],
+            [
+              -104.64,
+              50.4411
+            ],
+            [
+              -104.634804,
+              50.44305
+            ],
+            [
+              -104.634804,
+              50.44695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Parliament Place",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.589804,
+              50.45495
+            ],
+            [
+              -104.595,
+              50.4569
+            ],
+            [
+              -104.600196,
+              50.45495
+            ],
+            [
+              -104.600196,
+              50.45105
+            ],
+            [
+              -104.595,
+              50.4491
+            ],
+            [
+              -104.589804,
+              50.45105
+            ],
+            [
+              -104.589804,
+              50.45495
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Parkdale",
+        "source": "centroid_approximation",
+        "overall": 16,
+        "grade": "F",
+        "safety": 53,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 10858,
+        "crime_trend": -22.6,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.664804,
+              50.41195
+            ],
+            [
+              -104.67,
+              50.4139
+            ],
+            [
+              -104.675196,
+              50.41195
+            ],
+            [
+              -104.675196,
+              50.40805
+            ],
+            [
+              -104.67,
+              50.4061
+            ],
+            [
+              -104.664804,
+              50.40805
+            ],
+            [
+              -104.664804,
+              50.41195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Prairie View",
+        "source": "centroid_approximation",
+        "overall": 24,
+        "grade": "F",
+        "safety": 81,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 1050,
+        "crime_trend": 10.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.564804,
+              50.44795
+            ],
+            [
+              -104.57,
+              50.4499
+            ],
+            [
+              -104.575196,
+              50.44795
+            ],
+            [
+              -104.575196,
+              50.44405
+            ],
+            [
+              -104.57,
+              50.4421
+            ],
+            [
+              -104.564804,
+              50.44405
+            ],
+            [
+              -104.564804,
+              50.44795
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Regent Park",
+        "source": "centroid_approximation",
+        "overall": 27,
+        "grade": "F",
+        "safety": 89,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 1376,
+        "crime_trend": -27.7,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.554804,
+              50.45195
+            ],
+            [
+              -104.56,
+              50.4539
+            ],
+            [
+              -104.565196,
+              50.45195
+            ],
+            [
+              -104.565196,
+              50.44805
+            ],
+            [
+              -104.56,
+              50.4461
+            ],
+            [
+              -104.554804,
+              50.44805
+            ],
+            [
+              -104.554804,
+              50.45195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Richmond Place",
+        "source": "centroid_approximation",
+        "overall": 29,
+        "grade": "F",
+        "safety": 98,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 362,
+        "crime_trend": -48.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.629804,
+              50.46995
+            ],
+            [
+              -104.635,
+              50.4719
+            ],
+            [
+              -104.640196,
+              50.46995
+            ],
+            [
+              -104.640196,
+              50.46605
+            ],
+            [
+              -104.635,
+              50.4641
+            ],
+            [
+              -104.629804,
+              50.46605
+            ],
+            [
+              -104.629804,
+              50.46995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Rosemont",
+        "source": "centroid_approximation",
+        "overall": 18,
+        "grade": "F",
+        "safety": 59,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 7477,
+        "crime_trend": 9.8,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.544804,
+              50.46095
+            ],
+            [
+              -104.55,
+              50.4629
+            ],
+            [
+              -104.555196,
+              50.46095
+            ],
+            [
+              -104.555196,
+              50.45705
+            ],
+            [
+              -104.55,
+              50.4551
+            ],
+            [
+              -104.544804,
+              50.45705
+            ],
+            [
+              -104.544804,
+              50.46095
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Ross Industrial",
+        "source": "centroid_approximation",
+        "overall": 27,
+        "grade": "F",
+        "safety": 89,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 2446,
+        "crime_trend": -40.3,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.614804,
+              50.48695
+            ],
+            [
+              -104.62,
+              50.4889
+            ],
+            [
+              -104.625196,
+              50.48695
+            ],
+            [
+              -104.625196,
+              50.48305
+            ],
+            [
+              -104.62,
+              50.4811
+            ],
+            [
+              -104.614804,
+              50.48305
+            ],
+            [
+              -104.614804,
+              50.48695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Sherwood Estates",
+        "source": "centroid_approximation",
+        "overall": 30,
+        "grade": "F",
+        "safety": 99,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 343,
+        "crime_trend": -55.5,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.634804,
+              50.41695
+            ],
+            [
+              -104.64,
+              50.4189
+            ],
+            [
+              -104.645196,
+              50.41695
+            ],
+            [
+              -104.645196,
+              50.41305
+            ],
+            [
+              -104.64,
+              50.4111
+            ],
+            [
+              -104.634804,
+              50.41305
+            ],
+            [
+              -104.634804,
+              50.41695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Skyview",
+        "source": "centroid_approximation",
+        "overall": 5,
+        "grade": "F",
+        "safety": 18,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 20317,
+        "crime_trend": 15.9,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.641804,
+              50.42995
+            ],
+            [
+              -104.647,
+              50.4319
+            ],
+            [
+              -104.652196,
+              50.42995
+            ],
+            [
+              -104.652196,
+              50.42605
+            ],
+            [
+              -104.647,
+              50.4241
+            ],
+            [
+              -104.641804,
+              50.42605
+            ],
+            [
+              -104.641804,
+              50.42995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "South Lakeview",
+        "source": "centroid_approximation",
+        "overall": 29,
+        "grade": "F",
+        "safety": 97,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 903,
+        "crime_trend": -77.3,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.534804,
+              50.41195
+            ],
+            [
+              -104.54,
+              50.4139
+            ],
+            [
+              -104.545196,
+              50.41195
+            ],
+            [
+              -104.545196,
+              50.40805
+            ],
+            [
+              -104.54,
+              50.4061
+            ],
+            [
+              -104.534804,
+              50.40805
+            ],
+            [
+              -104.534804,
+              50.41195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Southeast Industrial",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.579804,
+              50.44695
+            ],
+            [
+              -104.585,
+              50.4489
+            ],
+            [
+              -104.590196,
+              50.44695
+            ],
+            [
+              -104.590196,
+              50.44305
+            ],
+            [
+              -104.585,
+              50.4411
+            ],
+            [
+              -104.579804,
+              50.44305
+            ],
+            [
+              -104.579804,
+              50.44695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Tuxedo Park",
+        "source": "centroid_approximation",
+        "overall": 23,
+        "grade": "F",
+        "safety": 78,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 154,
+        "crime_trend": 33.9,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.614804,
+              50.40695
+            ],
+            [
+              -104.62,
+              50.4089
+            ],
+            [
+              -104.625196,
+              50.40695
+            ],
+            [
+              -104.625196,
+              50.40305
+            ],
+            [
+              -104.62,
+              50.4011
+            ],
+            [
+              -104.614804,
+              50.40305
+            ],
+            [
+              -104.614804,
+              50.40695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Twin Lakes",
+        "source": "centroid_approximation",
+        "overall": 23,
+        "grade": "F",
+        "safety": 78,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 1899,
+        "crime_trend": 10.3,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.581804,
+              50.41895
+            ],
+            [
+              -104.587,
+              50.4209
+            ],
+            [
+              -104.592196,
+              50.41895
+            ],
+            [
+              -104.592196,
+              50.41505
+            ],
+            [
+              -104.587,
+              50.4131
+            ],
+            [
+              -104.581804,
+              50.41505
+            ],
+            [
+              -104.581804,
+              50.41895
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "University Park",
+        "source": "centroid_approximation",
+        "overall": 28,
+        "grade": "F",
+        "safety": 93,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 1317,
+        "crime_trend": -39.2,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.564804,
+              50.47195
+            ],
+            [
+              -104.57,
+              50.4739
+            ],
+            [
+              -104.575196,
+              50.47195
+            ],
+            [
+              -104.575196,
+              50.46805
+            ],
+            [
+              -104.57,
+              50.4661
+            ],
+            [
+              -104.564804,
+              50.46805
+            ],
+            [
+              -104.564804,
+              50.47195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Uplands",
+        "source": "centroid_approximation",
+        "overall": 28,
+        "grade": "F",
+        "safety": 93,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 631,
+        "crime_trend": -32.5,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.644804,
+              50.48195
+            ],
+            [
+              -104.65,
+              50.4839
+            ],
+            [
+              -104.655196,
+              50.48195
+            ],
+            [
+              -104.655196,
+              50.47805
+            ],
+            [
+              -104.65,
+              50.4761
+            ],
+            [
+              -104.644804,
+              50.47805
+            ],
+            [
+              -104.644804,
+              50.48195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Walsh Acres",
+        "source": "centroid_approximation",
+        "overall": 16,
+        "grade": "F",
+        "safety": 53,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 7151,
+        "crime_trend": 54.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.609804,
+              50.43695
+            ],
+            [
+              -104.615,
+              50.4389
+            ],
+            [
+              -104.620196,
+              50.43695
+            ],
+            [
+              -104.620196,
+              50.43305
+            ],
+            [
+              -104.615,
+              50.4311
+            ],
+            [
+              -104.609804,
+              50.43305
+            ],
+            [
+              -104.609804,
+              50.43695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Washington Park",
+        "source": "centroid_approximation",
+        "overall": 18,
+        "grade": "F",
+        "safety": 59,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 8724,
+        "crime_trend": -7.6,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.609804,
+              50.43195
+            ],
+            [
+              -104.615,
+              50.4339
+            ],
+            [
+              -104.620196,
+              50.43195
+            ],
+            [
+              -104.620196,
+              50.42805
+            ],
+            [
+              -104.615,
+              50.4261
+            ],
+            [
+              -104.609804,
+              50.42805
+            ],
+            [
+              -104.609804,
+              50.43195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Wascana Centre",
+        "source": "centroid_approximation",
+        "overall": 23,
+        "grade": "F",
+        "safety": 76,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 1473,
+        "crime_trend": 26.9,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.544804,
+              50.40895
+            ],
+            [
+              -104.55,
+              50.4109
+            ],
+            [
+              -104.555196,
+              50.40895
+            ],
+            [
+              -104.555196,
+              50.40505
+            ],
+            [
+              -104.55,
+              50.4031
+            ],
+            [
+              -104.544804,
+              50.40505
+            ],
+            [
+              -104.544804,
+              50.40895
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Wascana View",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.644804,
+              50.44695
+            ],
+            [
+              -104.65,
+              50.4489
+            ],
+            [
+              -104.655196,
+              50.44695
+            ],
+            [
+              -104.655196,
+              50.44305
+            ],
+            [
+              -104.65,
+              50.4411
+            ],
+            [
+              -104.644804,
+              50.44305
+            ],
+            [
+              -104.644804,
+              50.44695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Westhill",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.644804,
+              50.42195
+            ],
+            [
+              -104.65,
+              50.4239
+            ],
+            [
+              -104.655196,
+              50.42195
+            ],
+            [
+              -104.655196,
+              50.41805
+            ],
+            [
+              -104.65,
+              50.4161
+            ],
+            [
+              -104.644804,
+              50.41805
+            ],
+            [
+              -104.644804,
+              50.42195
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Whitmore Park",
+        "source": "centroid_approximation",
+        "overall": 29,
+        "grade": "F",
+        "safety": 98,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 479,
+        "crime_trend": -99.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.554804,
+              50.43695
+            ],
+            [
+              -104.56,
+              50.4389
+            ],
+            [
+              -104.565196,
+              50.43695
+            ],
+            [
+              -104.565196,
+              50.43305
+            ],
+            [
+              -104.56,
+              50.4311
+            ],
+            [
+              -104.554804,
+              50.43305
+            ],
+            [
+              -104.554804,
+              50.43695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Windsor Park",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.634804,
+              50.48695
+            ],
+            [
+              -104.64,
+              50.4889
+            ],
+            [
+              -104.645196,
+              50.48695
+            ],
+            [
+              -104.645196,
+              50.48305
+            ],
+            [
+              -104.64,
+              50.4811
+            ],
+            [
+              -104.634804,
+              50.48305
+            ],
+            [
+              -104.634804,
+              50.48695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Rochdale",
+        "source": "centroid_approximation",
+        "overall": 26,
+        "grade": "F",
+        "safety": 87,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 14,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.634804,
+              50.39995
+            ],
+            [
+              -104.64,
+              50.4019
+            ],
+            [
+              -104.645196,
+              50.39995
+            ],
+            [
+              -104.645196,
+              50.39605
+            ],
+            [
+              -104.64,
+              50.3941
+            ],
+            [
+              -104.634804,
+              50.39605
+            ],
+            [
+              -104.634804,
+              50.39995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Wood Meadows",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.624804,
+              50.39795
+            ],
+            [
+              -104.63,
+              50.3999
+            ],
+            [
+              -104.635196,
+              50.39795
+            ],
+            [
+              -104.635196,
+              50.39405
+            ],
+            [
+              -104.63,
+              50.3921
+            ],
+            [
+              -104.624804,
+              50.39405
+            ],
+            [
+              -104.624804,
+              50.39795
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "The Creeks",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 65,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 0,
+        "crime_trend": 0.0,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -104.559804,
+              50.40695
+            ],
+            [
+              -104.565,
+              50.4089
+            ],
+            [
+              -104.570196,
+              50.40695
+            ],
+            [
+              -104.570196,
+              50.40305
+            ],
+            [
+              -104.565,
+              50.4011
+            ],
+            [
+              -104.559804,
+              50.40305
+            ],
+            [
+              -104.559804,
+              50.40695
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Greens on Gardiner",
+        "source": "centroid_approximation",
+        "overall": 20,
+        "grade": "F",
+        "safety": 67,
+        "schools": 0,
+        "transit": 0,
+        "amenities": 0,
+        "walkability": 0,
+        "total_crimes": 4524,
+        "crime_trend": 24.8,
+        "schools_count": 0,
+        "transit_stops": 0,
+        "grocery_count": 0,
+        "healthcare_count": 0,
+        "parks_count": 0,
+        "community_count": 0
+      }
+    }
+  ]
+}

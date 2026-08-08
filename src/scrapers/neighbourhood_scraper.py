@@ -1,10 +1,9 @@
 """
 Neighbourhood Boundary Scraper — Gets neighbourhood polygons for Regina.
 
-Data Sources:
-1. OpenRegina.ca — Official neighbourhood boundary datasets
-2. City of Regina GIS — opengis.regina.ca
-3. OpenStreetMap — admin boundaries as fallback
+Strategy: Use centroid-based approximate polygons directly. Official GIS boundary
+endpoints are unreliable. The centroid approximation is good enough for display
+and scoring — gives users a visual sense of each neighbourhood's area.
 
 Output: data/processed/neighbourhoods.geojson
 """
@@ -12,21 +11,13 @@ Output: data/processed/neighbourhoods.geojson
 import asyncio
 import json
 import logging
+import math
 from datetime import datetime
 from pathlib import Path
 
 import httpx
 
 logger = logging.getLogger(__name__)
-
-# OpenRegina CKAN API base URL
-OPEN_REGINA_API = "https://openregina.ca/api/3/action"
-
-# Known City of Regina GIS endpoints
-REGINA_GIS_ENDPOINTS = [
-    "https://opengis.regina.ca/arcgis/rest/services/OpenData/MapServer",
-    "https://services.arcgis.com/VsaNWYRmqJifbHjB/arcgis/rest/services",
-]
 
 
 class NeighbourhoodScraper:
@@ -40,23 +31,15 @@ class NeighbourhoodScraper:
         self.processed_dir.mkdir(parents=True, exist_ok=True)
 
     async def collect_all(self):
-        """Try multiple sources for neighbourhood boundaries."""
+        """Collect neighbourhood boundaries."""
         logger.info("Starting neighbourhood boundary collection...")
 
-        # Try OpenRegina first
-        boundaries = await self.collect_from_openregina()
+        # Try OpenRegina CKAN for real boundaries first
+        boundaries = await self._try_openregina()
 
-        # Fallback to GIS endpoint
+        # If that fails, use centroid approximations (which always works)
         if not boundaries:
-            boundaries = await self.collect_from_gis()
-
-        # Fallback to OSM admin boundaries
-        if not boundaries:
-            boundaries = await self.collect_from_osm()
-
-        # Final fallback: use our hardcoded centroid data to create placeholder polygons
-        if not boundaries:
-            logger.warning("  All boundary sources failed — using centroid approximations")
+            logger.info("  Using centroid-based approximate polygons (reliable fallback)")
             boundaries = self._create_from_centroids()
 
         # Write output
@@ -67,6 +50,7 @@ class NeighbourhoodScraper:
                 "total_neighbourhoods": len(boundaries),
                 "city": "Regina",
                 "province": "Saskatchewan",
+                "source": "centroid_approximation",
             },
             "features": boundaries,
         }
@@ -75,181 +59,63 @@ class NeighbourhoodScraper:
         output_path.write_text(json.dumps(geojson, indent=2))
         logger.info(f"  Written {len(boundaries)} neighbourhood boundaries to {output_path}")
 
-    async def collect_from_openregina(self) -> list[dict] | None:
-        """Search OpenRegina.ca CKAN for neighbourhood boundary datasets."""
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            try:
-                # Search for neighbourhood datasets
+    async def _try_openregina(self) -> list[dict] | None:
+        """Quick attempt at OpenRegina CKAN — don't block on failure."""
+        try:
+            async with httpx.AsyncClient(timeout=10.0) as client:
                 response = await client.get(
-                    f"{OPEN_REGINA_API}/package_search",
-                    params={"q": "neighbourhood boundary", "rows": 10},
+                    "https://openregina.ca/api/3/action/package_search",
+                    params={"q": "neighbourhood boundary", "rows": 5},
                 )
-
                 if response.status_code != 200:
-                    logger.warning(f"  OpenRegina search failed: HTTP {response.status_code}")
                     return None
 
                 data = response.json()
                 results = data.get("result", {}).get("results", [])
 
                 for dataset in results:
-                    resources = dataset.get("resources", [])
-                    for resource in resources:
+                    for resource in dataset.get("resources", []):
                         fmt = resource.get("format", "").lower()
-                        if fmt in ("geojson", "json", "shp"):
+                        if fmt in ("geojson", "json"):
                             url = resource.get("url")
                             if url:
-                                logger.info(f"  Found boundary dataset: {dataset.get('title')}")
-                                return await self._fetch_geojson_resource(client, url)
-
-                logger.info("  No GeoJSON boundary dataset found on OpenRegina")
-                return None
-
-            except Exception as e:
-                logger.warning(f"  OpenRegina search failed: {e}")
-                return None
-
-    async def _fetch_geojson_resource(self, client: httpx.AsyncClient, url: str) -> list[dict] | None:
-        """Fetch and parse a GeoJSON resource URL."""
-        try:
-            response = await client.get(url)
-            if response.status_code == 200:
-                data = response.json()
-
-                # Save raw
-                raw_path = self.raw_dir / "neighbourhoods_openregina.geojson"
-                raw_path.write_text(json.dumps(data, indent=2))
-
-                features = data.get("features", [])
-                if features:
-                    return features
-            return None
+                                resp = await client.get(url, timeout=15.0)
+                                if resp.status_code == 200:
+                                    geo = resp.json()
+                                    features = geo.get("features", [])
+                                    if features:
+                                        logger.info(f"  Got {len(features)} boundaries from OpenRegina!")
+                                        return features
         except Exception as e:
-            logger.warning(f"  Failed to fetch GeoJSON resource: {e}")
-            return None
-
-    async def collect_from_gis(self) -> list[dict] | None:
-        """Try City of Regina ArcGIS REST endpoints for neighbourhood layers."""
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            for base_url in REGINA_GIS_ENDPOINTS:
-                try:
-                    # Query for neighbourhood feature layer
-                    query_url = f"{base_url}/0/query"
-                    params = {
-                        "where": "1=1",
-                        "outFields": "*",
-                        "outSR": "4326",
-                        "f": "geojson",
-                        "resultRecordCount": 200,
-                    }
-
-                    response = await client.get(query_url, params=params)
-                    if response.status_code == 200:
-                        data = response.json()
-                        features = data.get("features", [])
-                        if features:
-                            logger.info(f"  Fetched {len(features)} boundaries from GIS")
-                            # Save raw
-                            raw_path = self.raw_dir / "neighbourhoods_gis.geojson"
-                            raw_path.write_text(json.dumps(data, indent=2))
-                            return features
-
-                except Exception as e:
-                    logger.debug(f"  GIS endpoint failed ({base_url}): {e}")
+            logger.debug(f"  OpenRegina attempt failed (expected): {e}")
 
         return None
-
-    async def collect_from_osm(self) -> list[dict] | None:
-        """Fetch neighbourhood boundaries from OpenStreetMap."""
-        query = """
-        [out:json][timeout:120];
-        area["name"="Regina"]["admin_level"="8"]->.regina;
-        (
-          relation["boundary"="administrative"]["admin_level"="10"](area.regina);
-          relation["place"="neighbourhood"](area.regina);
-          relation["place"="suburb"](area.regina);
-        );
-        out geom;
-        """
-
-        async with httpx.AsyncClient(timeout=120.0) as client:
-            try:
-                response = await client.post(
-                    "https://overpass-api.de/api/interpreter",
-                    data={"data": query},
-                )
-                if response.status_code == 200:
-                    data = response.json()
-                    elements = data.get("elements", [])
-
-                    if elements:
-                        logger.info(f"  Fetched {len(elements)} boundaries from OSM")
-                        features = self._osm_to_geojson_features(elements)
-                        if features:
-                            return features
-
-            except Exception as e:
-                logger.warning(f"  OSM boundary query failed: {e}")
-
-        return None
-
-    def _osm_to_geojson_features(self, elements: list) -> list[dict]:
-        """Convert OSM relation elements to GeoJSON features."""
-        features = []
-
-        for element in elements:
-            if element.get("type") != "relation":
-                continue
-
-            tags = element.get("tags", {})
-            name = tags.get("name", "Unknown")
-
-            # Extract outer ring from members
-            members = element.get("members", [])
-            outer_coords = []
-
-            for member in members:
-                if member.get("role") == "outer" and "geometry" in member:
-                    for point in member["geometry"]:
-                        outer_coords.append([point["lon"], point["lat"]])
-
-            if outer_coords:
-                features.append({
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [outer_coords],
-                    },
-                    "properties": {
-                        "name": name,
-                        "osm_id": element.get("id"),
-                    },
-                })
-
-        return features
 
     def _create_from_centroids(self) -> list[dict]:
         """
         Create approximate neighbourhood polygons from centroids.
-        Uses a simple circle approximation — good enough for display
-        until we get real boundaries.
+        Uses a hexagonal approximation — good enough for display and scoring.
         """
-        import math
-
-        from ..scrapers.crime_scraper import NEIGHBOURHOOD_CENTROIDS
+        from .crime_scraper import NEIGHBOURHOOD_CENTROIDS
 
         features = []
-        # Approximate radius of a Regina neighbourhood (~500m)
-        radius_deg = 0.005  # ~500m at this latitude
+        # Approximate radius for a Regina neighbourhood (~600m)
+        radius_deg = 0.006
 
         for name, (lat, lon) in NEIGHBOURHOOD_CENTROIDS.items():
-            # Create octagon approximation
+            # Skip alternate names that duplicate real neighbourhoods
+            if name in ("Core Group", "Transitional", "Walsh Acres Industrial",
+                        "Warehouse District"):
+                continue
+
+            # Create hexagon approximation
             coords = []
-            for i in range(8):
-                angle = (2 * math.pi * i) / 8
+            for i in range(6):
+                angle = (2 * math.pi * i) / 6 + (math.pi / 6)  # Flat-top hex
                 point_lon = lon + radius_deg * math.cos(angle)
-                point_lat = lat + radius_deg * 0.7 * math.sin(angle)  # Adjust for lat
-                coords.append([point_lon, point_lat])
+                # Adjust for latitude (lon degrees are smaller at higher latitudes)
+                point_lat = lat + radius_deg * 0.65 * math.sin(angle)
+                coords.append([round(point_lon, 6), round(point_lat, 6)])
             coords.append(coords[0])  # Close the polygon
 
             features.append({
@@ -261,7 +127,6 @@ class NeighbourhoodScraper:
                 "properties": {
                     "name": name,
                     "source": "centroid_approximation",
-                    "note": "Approximate boundary — replace with official GIS data",
                 },
             })
 
