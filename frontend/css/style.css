@@ -763,46 +763,98 @@ body {
     color: var(--text-muted) !important;
 }
 
-/* ─── Responsive — Mobile ─────────────────────────────────────── */
+/* ─── Mobile Overhaul ─────────────────────────────────────────── */
 
 @media (max-width: 768px) {
     #app-header {
         top: 8px;
         left: 8px;
         right: 8px;
-        padding: 10px 14px;
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 6px;
     }
 
-    .header-left .tagline {
+    #app-header .header-left {
+        flex: 1;
+        min-width: 0;
+    }
+
+    #app-header .header-left .tagline {
         display: none;
     }
 
-    #search-input {
-        width: 120px;
-        font-size: 0.78rem;
-        padding: 6px 12px;
+    #app-header .header-right {
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
-    #search-input:focus {
-        width: 160px;
+    #app-header .header-right .nav-links {
+        display: none;
+    }
+
+    #app-header #search-input {
+        width: 100px;
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+
+    #app-header #search-input:focus {
+        width: 140px;
+    }
+
+    .brand-mark {
+        font-size: 1rem !important;
+    }
+
+    .brand-badge {
+        font-size: 0.6rem !important;
+        padding: 2px 6px !important;
     }
 
     #layer-controls {
-        top: 66px;
+        top: 56px;
         left: 8px;
         right: 8px;
         transform: none;
         overflow-x: auto;
-        border-radius: var(--radius-sm);
-        gap: 4px;
-        padding: 4px;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
         justify-content: flex-start;
+        padding: 4px;
+        gap: 4px;
+        border-radius: 10px;
     }
 
     .layer-btn {
-        padding: 6px 12px;
-        font-size: 0.72rem;
+        padding: 6px 10px;
+        font-size: 0.7rem;
         flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .layer-icon {
+        font-size: 0.75rem;
+    }
+
+    #welcome-card {
+        width: 88%;
+        padding: 28px 20px;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    #welcome-card .welcome-brand {
+        font-size: 1.3rem;
+    }
+
+    #welcome-card .welcome-product {
+        font-size: 0.95rem;
+    }
+
+    #welcome-card .welcome-body {
+        font-size: 0.85rem;
     }
 
     #info-panel {
@@ -811,47 +863,91 @@ body {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 55vh;
-        border-radius: var(--radius) var(--radius) 0 0;
-        border: none;
+        max-height: 60vh;
+        border-radius: 16px 16px 0 0;
+        border-left: none;
         border-top: 1px solid var(--border-subtle);
-        animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 20px 16px;
     }
 
     #info-panel.panel-hidden {
         transform: translateY(100%);
     }
 
+    #panel-name {
+        font-size: 1.1rem;
+    }
+
     .score-ring {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
 
     .score-ring .score-value {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
-    #welcome-card {
-        padding: 32px 24px;
-        width: 92%;
+    .score-label {
+        width: 60px;
+        font-size: 0.7rem;
     }
 
-    #welcome-card .welcome-brand {
-        font-size: 1.3rem;
+    #legend {
+        bottom: 12px;
+        left: 8px;
+        padding: 8px 12px;
     }
 
     #app-watermark {
         display: none;
     }
+
+    .feedback-float {
+        bottom: 12px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        right: auto !important;
+    }
 }
 
 @media (max-width: 480px) {
-    .header-brand .brand-badge {
+    #app-header {
+        padding: 6px 10px;
+    }
+
+    .brand-badge {
+        display: none !important;
+    }
+
+    #search-input {
         display: none;
     }
 
+    #layer-controls {
+        top: 50px;
+    }
+
+    .layer-btn {
+        padding: 5px 8px;
+        font-size: 0.65rem;
+    }
+
+    #welcome-card {
+        padding: 24px 16px;
+    }
+
     #info-panel {
-        height: 60vh;
+        max-height: 65vh;
+        padding: 16px 12px;
+    }
+
+    .score-ring {
+        width: 80px;
+        height: 80px;
+    }
+
+    .score-ring .score-value {
+        font-size: 1.6rem;
     }
 }
 

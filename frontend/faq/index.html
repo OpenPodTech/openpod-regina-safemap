@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regina Neighbourhood FAQ — Safety, Rent, Best Areas to Live | SafeMap</title>
+    <meta name="description" content="Answers to common questions about living in Regina: safest areas, average rent, best neighbourhoods for families, students, and newcomers. Based on real police data.">
+    <link rel="canonical" href="https://reginasafemap.ca/faq/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Regina Neighbourhood FAQ — Safety, Rent, Best Areas to Live">
+    <meta property="og:description" content="Answers to common questions about living in Regina based on real police data and community intelligence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reginasafemap.ca/faq/">
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the safest neighbourhood in Regina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based on police-reported crime data, the safest neighbourhoods in Regina are Whitmore Park (safety score: 96/100), Dieppe (94/100), Sherwood Estates (93/100), and Normanview West (91/100)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the most dangerous area in Regina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "North Central reports the highest crime rates with 4,751 incidents in 2018. However, crime has decreased approximately 25% year-over-year due to community investment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where should newcomers live in Regina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For immigrants and newcomers, recommended areas include Harbour Landing (very safe, new builds), Normanview West (affordable, quiet), Walsh Acres (good schools), and Dieppe (safe, established)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the average rent in Regina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Regina rents vary: North Central ($700-900/month), Cathedral ($1,000-1,400), Harbour Landing ($1,400-1,800), Whitmore Park ($1,200-1,500)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Cathedral a good area in Regina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cathedral is Regina's most walkable neighbourhood with character homes and cafes. It has moderate property crime but is generally safe. Best for young professionals who value walkability. Safety score: 58/100."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --accent: #0EA5E9;
+            --accent-glow: rgba(14, 165, 233, 0.4);
+            --bg-deep: #0f0f23;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --text-primary: #f0f6fc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --green: #10b981;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --glass-blur: blur(16px);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #0d1117 50%, #0a1628 100%);
+            color: var(--text-secondary);
+            min-height: 100vh;
+            max-width: 100%;
+            overflow-x: hidden;
+            padding: 24px;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 100;
+        }
+        .back-link:hover { color: var(--text-primary); text-decoration: none; }
+
+        .page-container {
+            max-width: 720px;
+            margin: 60px auto 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .page-header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .page-header p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--border-hover);
+        }
+
+        .faq-item h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .faq-item p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .faq-item a {
+            font-weight: 500;
+        }
+
+        .nav-footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .nav-footer a {
+            display: inline-block;
+            margin: 0 12px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .nav-footer a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .page-container {
+                margin: 48px auto 24px;
+            }
+            .page-header h1 {
+                font-size: 1.3rem;
+            }
+            .faq-item {
+                padding: 20px 18px;
+            }
+            .faq-item h2 {
+                font-size: 0.95rem;
+            }
+            .back-link {
+                top: 12px;
+                left: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Map
+    </a>
+
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Regina Neighbourhood FAQ — Everything You Need to Know Before Moving</h1>
+            <p>Real answers based on police data, census stats, and local knowledge.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Is Regina safe to live in?</h2>
+            <p>Regina has both very safe and higher-crime areas. Neighbourhoods like Whitmore Park, Harbour Landing, and Dieppe have very low crime rates (under 200 incidents/year). Areas like North Central have higher crime but are improving year-over-year. Use our safety scores to compare specific neighbourhoods.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>What is the safest neighbourhood in Regina?</h2>
+            <p>Based on police-reported crime data, the safest neighbourhoods in Regina are: Whitmore Park (safety score: 96/100), Dieppe (94/100), Sherwood Estates (93/100), and Normanview West (91/100). These areas have the lowest incident rates per capita. <a href="../best-for/#safest">See full safety rankings &rarr;</a></p>
+        </div>
+
+        <div class="faq-item">
+            <h2>What is the most dangerous area in Regina?</h2>
+            <p>North Central consistently reports the highest crime rates in Regina with 4,751 incidents in 2018. Market Square/Downtown (3,156) and Core Group (2,843) follow. However, crime in North Central has been decreasing — down 25% over recent years due to community investment. <a href="../neighbourhoods/neighbourhood.html?name=North+Central">See North Central profile &rarr;</a></p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Where should newcomers live in Regina?</h2>
+            <p>For immigrants and newcomers, we recommend: Harbour Landing (very safe, new builds, all amenities), Normanview West (affordable, quiet, family-friendly), Walsh Acres (good schools, near shopping), and Dieppe (safe, affordable, established). <a href="../best-for/#newcomers">See newcomer recommendations &rarr;</a></p>
+        </div>
+
+        <div class="faq-item">
+            <h2>What is the average rent in Regina by neighbourhood?</h2>
+            <p>Regina rents vary significantly: North Central ($700-900/month), Cathedral ($1,000-1,400), Harbour Landing ($1,400-1,800), Whitmore Park ($1,200-1,500). Our neighbourhood profiles include average rent estimates for every area. <a href="../neighbourhoods/">Browse all neighbourhoods &rarr;</a></p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Is Cathedral a good area in Regina?</h2>
+            <p>Cathedral is Regina's most walkable neighbourhood with character homes, cafes, and independent shops. It has moderate crime (mainly property crime like vehicle break-ins) but is generally safe on main streets. Best for young professionals who value walkability over suburban quiet. Safety score: 58/100. <a href="../neighbourhoods/neighbourhood.html?name=Cathedral">Full Cathedral profile &rarr;</a></p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Is Harbour Landing safe?</h2>
+            <p>Yes. Harbour Landing is one of Regina's safest neighbourhoods with very low crime rates. It's a new suburb with modern homes, big-box retail, and family-friendly amenities. The tradeoff: zero walkability (you need a car for everything) and limited character. Safety score: 92/100. <a href="../neighbourhoods/neighbourhood.html?name=Harbour+Landing">Full Harbour Landing profile &rarr;</a></p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Best neighbourhood in Regina for families?</h2>
+            <p>Top family neighbourhoods: Harbour Landing (safe, new schools, parks), Lakeview (established, great schools, Wascana Lake nearby), Walsh Acres (affordable family area, good schools), and Whitmore Park (safest in the city). <a href="../best-for/#families">See family rankings &rarr;</a></p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Is North Central getting better?</h2>
+            <p>Yes. Crime in North Central has decreased approximately 25% year-over-year based on police data. Community organizations, increased policing, and neighbourhood investment are driving improvement. However, it remains Regina's highest-crime area and the gap is still significant.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>Where can students live in Regina?</h2>
+            <p>Near the University of Regina: University Park (closest, safe), Cathedral (walkable, social, transit access), Hillsdale (affordable family area near campus), and Gardiner Park (affordable, bus access). <a href="../best-for/#students">See student recommendations &rarr;</a></p>
+        </div>
+
+        <div class="faq-item">
+            <h2>How does Regina compare to Saskatoon for safety?</h2>
+            <p>Both cities have similar overall crime rates. Regina's crime is more concentrated in specific neighbourhoods (North Central, downtown) while safer suburbs have very low rates. The key is choosing the right neighbourhood — which is exactly what this tool helps with.</p>
+        </div>
+
+        <div class="faq-item">
+            <h2>What data does Regina SafeMap use?</h2>
+            <p>We use publicly available data from: Regina Police Service crime reports (2007-2018), City of Regina Open Data portal, OpenStreetMap (schools, transit, amenities), and Statistics Canada census data. All sources are cited and the code is open source on GitHub.</p>
+        </div>
+
+        <div class="nav-footer">
+            <a href="../">Map</a>
+            <a href="../neighbourhoods/">Neighbourhoods</a>
+            <a href="../best-for/">Best For</a>
+            <a href="../quiz/">Find My Area</a>
+            <a href="../report/">Report</a>
+        </div>
+    </div>
+</body>
+</html>
