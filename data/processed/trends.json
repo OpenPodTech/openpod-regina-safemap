@@ -1,0 +1,2058 @@
+{
+  "metadata": {
+    "years_available": [
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2026
+    ],
+    "total_neighbourhoods": 123,
+    "generated": "2026-08-08T06:07:57.158351",
+    "data_sources": [
+      "github.com/andrewjdyck/regina-crime-data (2007-2018)",
+      "Regina Police Service Open Data (2026)"
+    ],
+    "note": "2019-2025 data gap \u2014 FOIA request pending to Regina Police Service"
+  },
+  "city_summary": {
+    "yearly_totals": {
+      "2007": 29233,
+      "2008": 31752,
+      "2009": 27267,
+      "2010": 32929,
+      "2011": 35535,
+      "2012": 51951,
+      "2013": 64500,
+      "2014": 60327,
+      "2015": 50529,
+      "2016": 56308,
+      "2017": 41777,
+      "2018": 34437,
+      "2026": 3012
+    },
+    "peak_year": 2013,
+    "peak_total": 64500,
+    "lowest_year": 2026,
+    "lowest_total": 3012
+  },
+  "neighbourhoods": {
+    "Al Ritchie": {
+      "yearly_totals": {
+        "2007": 1291,
+        "2008": 1298,
+        "2009": 1258,
+        "2010": 1249,
+        "2011": 1380,
+        "2012": 1772,
+        "2013": 2310,
+        "2014": 2107,
+        "2015": 1733,
+        "2016": 696,
+        "2017": 1441,
+        "2018": 1344
+      },
+      "peak_year": 2013,
+      "peak_total": 2310,
+      "lowest_year": 2016,
+      "lowest_total": 696,
+      "overall_change_pct": 4.1,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 17879
+    },
+    "Albert Park": {
+      "yearly_totals": {
+        "2007": 909,
+        "2008": 1202,
+        "2009": 1308,
+        "2010": 1180,
+        "2011": 1348,
+        "2012": 1747,
+        "2013": 2483,
+        "2014": 2758,
+        "2015": 2222,
+        "2016": 2170,
+        "2017": 1820,
+        "2018": 2111,
+        "2026": 43
+      },
+      "peak_year": 2014,
+      "peak_total": 2758,
+      "lowest_year": 2026,
+      "lowest_total": 43,
+      "overall_change_pct": 132.2,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 21301
+    },
+    "Argyle Park": {
+      "yearly_totals": {
+        "2007": 374,
+        "2008": 459,
+        "2009": 562,
+        "2010": 555,
+        "2011": 545,
+        "2012": 633,
+        "2013": 863,
+        "2014": 924,
+        "2015": 887,
+        "2016": 2238,
+        "2017": 729,
+        "2018": 706,
+        "2026": 17
+      },
+      "peak_year": 2016,
+      "peak_total": 2238,
+      "lowest_year": 2026,
+      "lowest_total": 17,
+      "overall_change_pct": 88.8,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Shoplift Under",
+      "total_all_years": 9492
+    },
+    "Boothill": {
+      "yearly_totals": {
+        "2007": 166,
+        "2008": 191,
+        "2009": 220,
+        "2010": 190,
+        "2011": 204,
+        "2012": 240,
+        "2013": 325,
+        "2014": 318,
+        "2015": 296,
+        "2016": 749,
+        "2017": 263,
+        "2018": 212
+      },
+      "peak_year": 2016,
+      "peak_total": 749,
+      "lowest_year": 2007,
+      "lowest_total": 166,
+      "overall_change_pct": 27.7,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 3374
+    },
+    "Cathedral": {
+      "yearly_totals": {
+        "2007": 1384,
+        "2008": 1618,
+        "2009": 1497,
+        "2010": 1524,
+        "2011": 1535,
+        "2012": 1888,
+        "2013": 2338,
+        "2014": 2004,
+        "2015": 2061,
+        "2016": 943,
+        "2017": 1495,
+        "2018": 1511
+      },
+      "peak_year": 2013,
+      "peak_total": 2338,
+      "lowest_year": 2016,
+      "lowest_total": 943,
+      "overall_change_pct": 9.2,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 19798
+    },
+    "Centre Square": {
+      "yearly_totals": {
+        "2007": 607,
+        "2008": 590,
+        "2009": 565,
+        "2010": 572,
+        "2011": 673,
+        "2012": 958,
+        "2013": 1128,
+        "2014": 1094,
+        "2015": 950,
+        "2016": 1817,
+        "2017": 855,
+        "2018": 786
+      },
+      "peak_year": 2016,
+      "peak_total": 1817,
+      "lowest_year": 2009,
+      "lowest_total": 565,
+      "overall_change_pct": 29.5,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 10595
+    },
+    "Core Group": {
+      "yearly_totals": {
+        "2007": 2157,
+        "2008": 2316,
+        "2009": 2461,
+        "2010": 2727,
+        "2011": 3015,
+        "2012": 4971,
+        "2013": 6022,
+        "2014": 5697,
+        "2015": 4326,
+        "2016": 2450,
+        "2017": 3111,
+        "2018": 2843
+      },
+      "peak_year": 2013,
+      "peak_total": 6022,
+      "lowest_year": 2007,
+      "lowest_total": 2157,
+      "overall_change_pct": 31.8,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Provincial Statutes",
+      "total_all_years": 42096
+    },
+    "Coronation Park": {
+      "yearly_totals": {
+        "2007": 1349,
+        "2008": 1219,
+        "2009": 1455,
+        "2010": 1295,
+        "2011": 1414,
+        "2012": 1945,
+        "2013": 2282,
+        "2014": 2330,
+        "2015": 2008,
+        "2016": 4120,
+        "2017": 1336,
+        "2018": 1255,
+        "2026": 54
+      },
+      "peak_year": 2016,
+      "peak_total": 4120,
+      "lowest_year": 2026,
+      "lowest_total": 54,
+      "overall_change_pct": -7.0,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 22062
+    },
+    "Dewdney East": {
+      "yearly_totals": {
+        "2007": 1574,
+        "2008": 1584,
+        "2009": 1960,
+        "2010": 1873,
+        "2011": 1843,
+        "2012": 2449,
+        "2013": 3094,
+        "2014": 3080,
+        "2015": 2452,
+        "2016": 2311,
+        "2017": 1845,
+        "2018": 1533
+      },
+      "peak_year": 2013,
+      "peak_total": 3094,
+      "lowest_year": 2018,
+      "lowest_total": 1533,
+      "overall_change_pct": -2.6,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 25598
+    },
+    "Dieppe": {
+      "yearly_totals": {
+        "2007": 130,
+        "2008": 143,
+        "2009": 159,
+        "2010": 153,
+        "2011": 236,
+        "2012": 208,
+        "2013": 293,
+        "2014": 351,
+        "2015": 235,
+        "2016": 1803,
+        "2017": 204,
+        "2018": 183
+      },
+      "peak_year": 2016,
+      "peak_total": 1803,
+      "lowest_year": 2007,
+      "lowest_total": 130,
+      "overall_change_pct": 40.8,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 4098
+    },
+    "Eastview": {
+      "yearly_totals": {
+        "2007": 998,
+        "2008": 1039,
+        "2009": 883,
+        "2010": 884,
+        "2011": 941,
+        "2012": 1121,
+        "2013": 1289,
+        "2014": 1219,
+        "2015": 911,
+        "2016": 600,
+        "2017": 794,
+        "2018": 689,
+        "2026": 17
+      },
+      "peak_year": 2013,
+      "peak_total": 1289,
+      "lowest_year": 2026,
+      "lowest_total": 17,
+      "overall_change_pct": -31.0,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Seized Vehicles",
+      "total_all_years": 11385
+    },
+    "Gardiner Park": {
+      "yearly_totals": {
+        "2007": 855,
+        "2008": 813,
+        "2009": 1280,
+        "2010": 1125,
+        "2011": 1377,
+        "2012": 1588,
+        "2013": 1968,
+        "2014": 2135,
+        "2015": 1799,
+        "2016": 1462,
+        "2017": 1394,
+        "2018": 1618,
+        "2026": 2
+      },
+      "peak_year": 2014,
+      "peak_total": 2135,
+      "lowest_year": 2026,
+      "lowest_total": 2,
+      "overall_change_pct": 89.2,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Shoplift Under",
+      "total_all_years": 17416
+    },
+    "Gladmer Park": {
+      "yearly_totals": {
+        "2007": 230,
+        "2008": 261,
+        "2010": 277,
+        "2011": 353,
+        "2012": 428,
+        "2013": 505,
+        "2014": 495,
+        "2015": 431,
+        "2016": 1465,
+        "2017": 411,
+        "2018": 425
+      },
+      "peak_year": 2016,
+      "peak_total": 1465,
+      "lowest_year": 2007,
+      "lowest_total": 230,
+      "overall_change_pct": 84.8,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 5281
+    },
+    "Hillsdale": {
+      "yearly_totals": {
+        "2007": 680,
+        "2008": 713,
+        "2009": 758,
+        "2010": 741,
+        "2011": 886,
+        "2012": 1091,
+        "2013": 1241,
+        "2014": 1201,
+        "2015": 919,
+        "2016": 639,
+        "2017": 709,
+        "2018": 694,
+        "2026": 119
+      },
+      "peak_year": 2013,
+      "peak_total": 1241,
+      "lowest_year": 2026,
+      "lowest_total": 119,
+      "overall_change_pct": 2.1,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 10391
+    },
+    "Lakeview": {
+      "yearly_totals": {
+        "2007": 653,
+        "2008": 890,
+        "2009": 869,
+        "2010": 945,
+        "2011": 966,
+        "2012": 1107,
+        "2013": 1333,
+        "2014": 1391,
+        "2015": 1204,
+        "2016": 996,
+        "2017": 853,
+        "2018": 650,
+        "2026": 12
+      },
+      "peak_year": 2014,
+      "peak_total": 1391,
+      "lowest_year": 2026,
+      "lowest_total": 12,
+      "overall_change_pct": -0.5,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 11869
+    },
+    "Market Square": {
+      "yearly_totals": {
+        "2007": 1316,
+        "2008": 1548,
+        "2009": 1822,
+        "2010": 1681,
+        "2011": 1968,
+        "2012": 6907,
+        "2013": 8033,
+        "2014": 6894,
+        "2015": 5691,
+        "2016": 3091,
+        "2017": 4563,
+        "2018": 3156
+      },
+      "peak_year": 2013,
+      "peak_total": 8033,
+      "lowest_year": 2007,
+      "lowest_total": 1316,
+      "overall_change_pct": 139.8,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "OtherCriminalCode (A)",
+      "total_all_years": 46670
+    },
+    "McNab": {
+      "yearly_totals": {
+        "2007": 235,
+        "2008": 217,
+        "2009": 198,
+        "2010": 214,
+        "2011": 260,
+        "2012": 383,
+        "2013": 468,
+        "2014": 423,
+        "2015": 365,
+        "2016": 4280,
+        "2017": 258,
+        "2018": 244
+      },
+      "peak_year": 2016,
+      "peak_total": 4280,
+      "lowest_year": 2009,
+      "lowest_total": 198,
+      "overall_change_pct": 3.8,
+      "overall_trend": "stable",
+      "dominant_crime_type": "OtherCriminalCode (A)",
+      "total_all_years": 7545
+    },
+    "Mount Royal": {
+      "yearly_totals": {
+        "2007": 284,
+        "2008": 259,
+        "2009": 247,
+        "2010": 251,
+        "2011": 352,
+        "2012": 387,
+        "2013": 418,
+        "2014": 429,
+        "2015": 372,
+        "2016": 450,
+        "2017": 346,
+        "2018": 278,
+        "2026": 9
+      },
+      "peak_year": 2016,
+      "peak_total": 450,
+      "lowest_year": 2026,
+      "lowest_total": 9,
+      "overall_change_pct": -2.1,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 4082
+    },
+    "Normanview": {
+      "yearly_totals": {
+        "2007": 352,
+        "2008": 378,
+        "2010": 309,
+        "2011": 336,
+        "2012": 462,
+        "2013": 539,
+        "2014": 499,
+        "2015": 399,
+        "2016": 468,
+        "2017": 241,
+        "2018": 268,
+        "2026": 26
+      },
+      "peak_year": 2013,
+      "peak_total": 539,
+      "lowest_year": 2026,
+      "lowest_total": 26,
+      "overall_change_pct": -23.9,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 4277
+    },
+    "Normanview West": {
+      "yearly_totals": {
+        "2007": 326,
+        "2008": 429,
+        "2010": 358,
+        "2011": 484,
+        "2012": 440,
+        "2013": 604,
+        "2014": 526,
+        "2015": 444,
+        "2016": 432,
+        "2017": 360,
+        "2018": 242,
+        "2026": 6
+      },
+      "peak_year": 2013,
+      "peak_total": 604,
+      "lowest_year": 2026,
+      "lowest_total": 6,
+      "overall_change_pct": -25.8,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 4651
+    },
+    "North Central": {
+      "yearly_totals": {
+        "2007": 4962,
+        "2008": 5876,
+        "2010": 5856,
+        "2011": 5620,
+        "2012": 8202,
+        "2013": 10272,
+        "2014": 9256,
+        "2015": 7942,
+        "2016": 3394,
+        "2017": 5804,
+        "2018": 4751
+      },
+      "peak_year": 2013,
+      "peak_total": 10272,
+      "lowest_year": 2016,
+      "lowest_total": 3394,
+      "overall_change_pct": -4.3,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 71935
+    },
+    "North East": {
+      "yearly_totals": {
+        "2007": 1638,
+        "2008": 1688,
+        "2009": 1754,
+        "2010": 1785,
+        "2011": 1764,
+        "2012": 2030,
+        "2013": 2356,
+        "2014": 2534,
+        "2015": 2133,
+        "2016": 6426,
+        "2017": 1634,
+        "2018": 1326
+      },
+      "peak_year": 2016,
+      "peak_total": 6426,
+      "lowest_year": 2018,
+      "lowest_total": 1326,
+      "overall_change_pct": -19.0,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 27068
+    },
+    "Prairie View": {
+      "yearly_totals": {
+        "2007": 277,
+        "2008": 270,
+        "2009": 373,
+        "2010": 264,
+        "2011": 279,
+        "2012": 350,
+        "2013": 495,
+        "2014": 463,
+        "2015": 480,
+        "2016": 1717,
+        "2017": 369,
+        "2018": 337
+      },
+      "peak_year": 2016,
+      "peak_total": 1717,
+      "lowest_year": 2010,
+      "lowest_total": 264,
+      "overall_change_pct": 21.7,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 5674
+    },
+    "Regent Park": {
+      "yearly_totals": {
+        "2007": 369,
+        "2008": 359,
+        "2009": 398,
+        "2010": 292,
+        "2011": 360,
+        "2012": 503,
+        "2013": 543,
+        "2014": 597,
+        "2015": 524,
+        "2016": 588,
+        "2017": 407,
+        "2018": 347,
+        "2026": 29
+      },
+      "peak_year": 2014,
+      "peak_total": 597,
+      "lowest_year": 2026,
+      "lowest_total": 29,
+      "overall_change_pct": -6.0,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 5316
+    },
+    "Rosemont": {
+      "yearly_totals": {
+        "2007": 827,
+        "2008": 745,
+        "2009": 717,
+        "2010": 743,
+        "2011": 809,
+        "2012": 933,
+        "2013": 1313,
+        "2014": 1250,
+        "2015": 1050,
+        "2016": 828,
+        "2017": 988,
+        "2018": 959,
+        "2026": 5
+      },
+      "peak_year": 2013,
+      "peak_total": 1313,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 16.0,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 11167
+    },
+    "Ross Industrial": {
+      "yearly_totals": {
+        "2007": 544,
+        "2008": 570,
+        "2009": 768,
+        "2010": 683,
+        "2011": 823,
+        "2012": 855,
+        "2013": 1004,
+        "2014": 905,
+        "2015": 764,
+        "2016": 1144,
+        "2017": 655,
+        "2018": 565
+      },
+      "peak_year": 2016,
+      "peak_total": 1144,
+      "lowest_year": 2007,
+      "lowest_total": 544,
+      "overall_change_pct": 3.9,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Special Inq(8660-8814)",
+      "total_all_years": 9280
+    },
+    "Rural": {
+      "yearly_totals": {
+        "2007": 21,
+        "2008": 29,
+        "2009": 30,
+        "2010": 30,
+        "2011": 34,
+        "2012": 62,
+        "2013": 111,
+        "2014": 102,
+        "2015": 82,
+        "2016": 586,
+        "2017": 75,
+        "2018": 28
+      },
+      "peak_year": 2016,
+      "peak_total": 586,
+      "lowest_year": 2007,
+      "lowest_total": 21,
+      "overall_change_pct": 33.3,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8660-8814)",
+      "total_all_years": 1190
+    },
+    "Sherwood Estates": {
+      "yearly_totals": {
+        "2007": 277,
+        "2008": 304,
+        "2009": 358,
+        "2010": 299,
+        "2011": 306,
+        "2012": 397,
+        "2013": 552,
+        "2014": 498,
+        "2015": 471,
+        "2016": 262,
+        "2017": 309,
+        "2018": 206,
+        "2026": 10
+      },
+      "peak_year": 2013,
+      "peak_total": 552,
+      "lowest_year": 2026,
+      "lowest_total": 10,
+      "overall_change_pct": -25.6,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 4249
+    },
+    "Twin Lakes": {
+      "yearly_totals": {
+        "2007": 428,
+        "2008": 432,
+        "2009": 415,
+        "2010": 400,
+        "2011": 424,
+        "2012": 566,
+        "2013": 728,
+        "2014": 736,
+        "2015": 685,
+        "2016": 509,
+        "2017": 502,
+        "2018": 483
+      },
+      "peak_year": 2014,
+      "peak_total": 736,
+      "lowest_year": 2010,
+      "lowest_total": 400,
+      "overall_change_pct": 12.9,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 6308
+    },
+    "University Park": {
+      "yearly_totals": {
+        "2007": 272,
+        "2008": 315,
+        "2009": 370,
+        "2010": 375,
+        "2011": 389,
+        "2012": 425,
+        "2013": 600,
+        "2014": 576,
+        "2015": 462,
+        "2016": 570,
+        "2017": 505,
+        "2018": 361,
+        "2026": 6
+      },
+      "peak_year": 2013,
+      "peak_total": 600,
+      "lowest_year": 2026,
+      "lowest_total": 6,
+      "overall_change_pct": 32.7,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 5226
+    },
+    "Unverified Address": {
+      "yearly_totals": {
+        "2007": 1184,
+        "2008": 1350,
+        "2009": 1616,
+        "2010": 1381,
+        "2011": 1288,
+        "2012": 3359,
+        "2013": 4405,
+        "2014": 3614,
+        "2015": 2942,
+        "2016": 1579,
+        "2017": 1858,
+        "2018": 1797
+      },
+      "peak_year": 2013,
+      "peak_total": 4405,
+      "lowest_year": 2007,
+      "lowest_total": 1184,
+      "overall_change_pct": 51.8,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 26373
+    },
+    "Uplands": {
+      "yearly_totals": {
+        "2007": 315,
+        "2008": 254,
+        "2009": 323,
+        "2010": 303,
+        "2011": 341,
+        "2012": 384,
+        "2013": 505,
+        "2014": 403,
+        "2015": 425,
+        "2016": 2181,
+        "2017": 325,
+        "2018": 255,
+        "2026": 12
+      },
+      "peak_year": 2016,
+      "peak_total": 2181,
+      "lowest_year": 2026,
+      "lowest_total": 12,
+      "overall_change_pct": -19.0,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 6026
+    },
+    "Walsh Acres": {
+      "yearly_totals": {
+        "2007": 659,
+        "2008": 773,
+        "2009": 842,
+        "2010": 804,
+        "2011": 925,
+        "2012": 965,
+        "2013": 1329,
+        "2014": 1207,
+        "2015": 1062,
+        "2016": 669,
+        "2017": 818,
+        "2018": 819,
+        "2026": 12
+      },
+      "peak_year": 2013,
+      "peak_total": 1329,
+      "lowest_year": 2026,
+      "lowest_total": 12,
+      "overall_change_pct": 24.3,
+      "overall_trend": "worsening",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 10884
+    },
+    "Warehouse District": {
+      "yearly_totals": {
+        "2007": 1050,
+        "2008": 1068,
+        "2009": 1078,
+        "2010": 1047,
+        "2011": 1400,
+        "2012": 1336,
+        "2013": 1666,
+        "2014": 1219,
+        "2015": 938,
+        "2016": 1165,
+        "2017": 854,
+        "2018": 981
+      },
+      "peak_year": 2013,
+      "peak_total": 1666,
+      "lowest_year": 2017,
+      "lowest_total": 854,
+      "overall_change_pct": -6.6,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Seized Vehicles",
+      "total_all_years": 13802
+    },
+    "Wascana Park": {
+      "yearly_totals": {
+        "2007": 381,
+        "2008": 350,
+        "2009": 519,
+        "2010": 371,
+        "2011": 436,
+        "2012": 624,
+        "2013": 744,
+        "2014": 742,
+        "2015": 611,
+        "2016": 860,
+        "2017": 428,
+        "2018": 310,
+        "2026": 36
+      },
+      "peak_year": 2016,
+      "peak_total": 860,
+      "lowest_year": 2026,
+      "lowest_total": 36,
+      "overall_change_pct": -18.6,
+      "overall_trend": "improving",
+      "dominant_crime_type": "Special Inq(8510-8640)",
+      "total_all_years": 6412
+    },
+    "Whitmore Park": {
+      "yearly_totals": {
+        "2007": 159,
+        "2008": 202,
+        "2009": 204,
+        "2010": 193,
+        "2011": 221,
+        "2012": 235,
+        "2013": 341,
+        "2014": 350,
+        "2015": 253,
+        "2016": 650,
+        "2017": 3218,
+        "2018": 164,
+        "2026": 27
+      },
+      "peak_year": 2017,
+      "peak_total": 3218,
+      "lowest_year": 2026,
+      "lowest_total": 27,
+      "overall_change_pct": 3.1,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 6217
+    },
+    "Rosemont North": {
+      "yearly_totals": {
+        "2026": 20
+      },
+      "peak_year": 2026,
+      "peak_total": 20,
+      "lowest_year": 2026,
+      "lowest_total": 20,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 20
+    },
+    "Hawkstone": {
+      "yearly_totals": {
+        "2026": 128
+      },
+      "peak_year": 2026,
+      "peak_total": 128,
+      "lowest_year": 2026,
+      "lowest_total": 128,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 128
+    },
+    "Washington Park": {
+      "yearly_totals": {
+        "2026": 147
+      },
+      "peak_year": 2026,
+      "peak_total": 147,
+      "lowest_year": 2026,
+      "lowest_total": 147,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 147
+    },
+    "Old 33": {
+      "yearly_totals": {
+        "2026": 955
+      },
+      "peak_year": 2026,
+      "peak_total": 955,
+      "lowest_year": 2026,
+      "lowest_total": 955,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 955
+    },
+    "Spruce Meadows": {
+      "yearly_totals": {
+        "2026": 189
+      },
+      "peak_year": 2026,
+      "peak_total": 189,
+      "lowest_year": 2026,
+      "lowest_total": 189,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 189
+    },
+    "Broders Annex": {
+      "yearly_totals": {
+        "2026": 54
+      },
+      "peak_year": 2026,
+      "peak_total": 54,
+      "lowest_year": 2026,
+      "lowest_total": 54,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft from Auto",
+      "total_all_years": 54
+    },
+    "Lakeridge Addition": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 1
+    },
+    "Mount Pleasant": {
+      "yearly_totals": {
+        "2026": 16
+      },
+      "peak_year": 2026,
+      "peak_total": 16,
+      "lowest_year": 2026,
+      "lowest_total": 16,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 16
+    },
+    "Belvedere": {
+      "yearly_totals": {
+        "2026": 33
+      },
+      "peak_year": 2026,
+      "peak_total": 33,
+      "lowest_year": 2026,
+      "lowest_total": 33,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 33
+    },
+    "Harbour Landing": {
+      "yearly_totals": {
+        "2026": 68
+      },
+      "peak_year": 2026,
+      "peak_total": 68,
+      "lowest_year": 2026,
+      "lowest_total": 68,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 68
+    },
+    "Windsor Park": {
+      "yearly_totals": {
+        "2026": 16
+      },
+      "peak_year": 2026,
+      "peak_total": 16,
+      "lowest_year": 2026,
+      "lowest_total": 16,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 16
+    },
+    "Industrial Centre": {
+      "yearly_totals": {
+        "2026": 7
+      },
+      "peak_year": 2026,
+      "peak_total": 7,
+      "lowest_year": 2026,
+      "lowest_total": 7,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 7
+    },
+    "North Annex": {
+      "yearly_totals": {
+        "2026": 31
+      },
+      "peak_year": 2026,
+      "peak_total": 31,
+      "lowest_year": 2026,
+      "lowest_total": 31,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 31
+    },
+    "Industrial Ross": {
+      "yearly_totals": {
+        "2026": 32
+      },
+      "peak_year": 2026,
+      "peak_total": 32,
+      "lowest_year": 2026,
+      "lowest_total": 32,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Break & Enter",
+      "total_all_years": 32
+    },
+    "Wascana View": {
+      "yearly_totals": {
+        "2026": 7
+      },
+      "peak_year": 2026,
+      "peak_total": 7,
+      "lowest_year": 2026,
+      "lowest_total": 7,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 7
+    },
+    "Rothwell Place": {
+      "yearly_totals": {
+        "2026": 21
+      },
+      "peak_year": 2026,
+      "peak_total": 21,
+      "lowest_year": 2026,
+      "lowest_total": 21,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 21
+    },
+    "Mirror Sun Gardens": {
+      "yearly_totals": {
+        "2026": 3
+      },
+      "peak_year": 2026,
+      "peak_total": 3,
+      "lowest_year": 2026,
+      "lowest_total": 3,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft from Auto",
+      "total_all_years": 3
+    },
+    "Wascana Addition": {
+      "yearly_totals": {
+        "2026": 33
+      },
+      "peak_year": 2026,
+      "peak_total": 33,
+      "lowest_year": 2026,
+      "lowest_total": 33,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 33
+    },
+    "Highland Park": {
+      "yearly_totals": {
+        "2026": 30
+      },
+      "peak_year": 2026,
+      "peak_total": 30,
+      "lowest_year": 2026,
+      "lowest_total": 30,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 30
+    },
+    "Glencairn": {
+      "yearly_totals": {
+        "2026": 28
+      },
+      "peak_year": 2026,
+      "peak_total": 28,
+      "lowest_year": 2026,
+      "lowest_total": 28,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 28
+    },
+    "Glen Elm Park": {
+      "yearly_totals": {
+        "2026": 46
+      },
+      "peak_year": 2026,
+      "peak_total": 46,
+      "lowest_year": 2026,
+      "lowest_total": 46,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 46
+    },
+    "Parliament Place": {
+      "yearly_totals": {
+        "2026": 30
+      },
+      "peak_year": 2026,
+      "peak_total": 30,
+      "lowest_year": 2026,
+      "lowest_total": 30,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 30
+    },
+    "Glencairn Village": {
+      "yearly_totals": {
+        "2026": 16
+      },
+      "peak_year": 2026,
+      "peak_total": 16,
+      "lowest_year": 2026,
+      "lowest_total": 16,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 16
+    },
+    "Lakeview South": {
+      "yearly_totals": {
+        "2026": 6
+      },
+      "peak_year": 2026,
+      "peak_total": 6,
+      "lowest_year": 2026,
+      "lowest_total": 6,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 6
+    },
+    "Industrial Park": {
+      "yearly_totals": {
+        "2026": 22
+      },
+      "peak_year": 2026,
+      "peak_total": 22,
+      "lowest_year": 2026,
+      "lowest_total": 22,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 22
+    },
+    "Coventry Place": {
+      "yearly_totals": {
+        "2026": 8
+      },
+      "peak_year": 2026,
+      "peak_total": 8,
+      "lowest_year": 2026,
+      "lowest_total": 8,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 8
+    },
+    "Wascana Crescents": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 1
+    },
+    "Lakeridge": {
+      "yearly_totals": {
+        "2026": 92
+      },
+      "peak_year": 2026,
+      "peak_total": 92,
+      "lowest_year": 2026,
+      "lowest_total": 92,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 92
+    },
+    "Mayfair": {
+      "yearly_totals": {
+        "2026": 26
+      },
+      "peak_year": 2026,
+      "peak_total": 26,
+      "lowest_year": 2026,
+      "lowest_total": 26,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 26
+    },
+    "Pasqua Place": {
+      "yearly_totals": {
+        "2026": 18
+      },
+      "peak_year": 2026,
+      "peak_total": 18,
+      "lowest_year": 2026,
+      "lowest_total": 18,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 18
+    },
+    "The Towns": {
+      "yearly_totals": {
+        "2026": 24
+      },
+      "peak_year": 2026,
+      "peak_total": 24,
+      "lowest_year": 2026,
+      "lowest_total": 24,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 24
+    },
+    "The Greens on Gardiner": {
+      "yearly_totals": {
+        "2026": 19
+      },
+      "peak_year": 2026,
+      "peak_total": 19,
+      "lowest_year": 2026,
+      "lowest_total": 19,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 19
+    },
+    "Lakeview Centre": {
+      "yearly_totals": {
+        "2026": 7
+      },
+      "peak_year": 2026,
+      "peak_total": 7,
+      "lowest_year": 2026,
+      "lowest_total": 7,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Break & Enter",
+      "total_all_years": 7
+    },
+    "Normanview W. Addn.": {
+      "yearly_totals": {
+        "2026": 7
+      },
+      "peak_year": 2026,
+      "peak_total": 7,
+      "lowest_year": 2026,
+      "lowest_total": 7,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 7
+    },
+    "Premier Place": {
+      "yearly_totals": {
+        "2026": 20
+      },
+      "peak_year": 2026,
+      "peak_total": 20,
+      "lowest_year": 2026,
+      "lowest_total": 20,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 20
+    },
+    "Assiniboia  Place": {
+      "yearly_totals": {
+        "2026": 28
+      },
+      "peak_year": 2026,
+      "peak_total": 28,
+      "lowest_year": 2026,
+      "lowest_total": 28,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Break & Enter",
+      "total_all_years": 28
+    },
+    "Cpr Annex": {
+      "yearly_totals": {
+        "2026": 21
+      },
+      "peak_year": 2026,
+      "peak_total": 21,
+      "lowest_year": 2026,
+      "lowest_total": 21,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 21
+    },
+    "Dewdney Place": {
+      "yearly_totals": {
+        "2026": 8
+      },
+      "peak_year": 2026,
+      "peak_total": 8,
+      "lowest_year": 2026,
+      "lowest_total": 8,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 8
+    },
+    "Richmond Place": {
+      "yearly_totals": {
+        "2026": 4
+      },
+      "peak_year": 2026,
+      "peak_total": 4,
+      "lowest_year": 2026,
+      "lowest_total": 4,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Break & Enter",
+      "total_all_years": 4
+    },
+    "Englewood": {
+      "yearly_totals": {
+        "2026": 4
+      },
+      "peak_year": 2026,
+      "peak_total": 4,
+      "lowest_year": 2026,
+      "lowest_total": 4,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 4
+    },
+    "UNDEVELOP": {
+      "yearly_totals": {
+        "2026": 4
+      },
+      "peak_year": 2026,
+      "peak_total": 4,
+      "lowest_year": 2026,
+      "lowest_total": 4,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 4
+    },
+    "Lakewood": {
+      "yearly_totals": {
+        "2026": 19
+      },
+      "peak_year": 2026,
+      "peak_total": 19,
+      "lowest_year": 2026,
+      "lowest_total": 19,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 19
+    },
+    "East Victoria Lands": {
+      "yearly_totals": {
+        "2026": 22
+      },
+      "peak_year": 2026,
+      "peak_total": 22,
+      "lowest_year": 2026,
+      "lowest_total": 22,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 22
+    },
+    "Transcona": {
+      "yearly_totals": {
+        "2026": 13
+      },
+      "peak_year": 2026,
+      "peak_total": 13,
+      "lowest_year": 2026,
+      "lowest_total": 13,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 13
+    },
+    "Global Transportation Hub": {
+      "yearly_totals": {
+        "2026": 2
+      },
+      "peak_year": 2026,
+      "peak_total": 2,
+      "lowest_year": 2026,
+      "lowest_total": 2,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 2
+    },
+    "Eastern Annex": {
+      "yearly_totals": {
+        "2026": 11
+      },
+      "peak_year": 2026,
+      "peak_total": 11,
+      "lowest_year": 2026,
+      "lowest_total": 11,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 11
+    },
+    "Westerra": {
+      "yearly_totals": {
+        "2026": 5
+      },
+      "peak_year": 2026,
+      "peak_total": 5,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 5
+    },
+    "Cityview": {
+      "yearly_totals": {
+        "2026": 19
+      },
+      "peak_year": 2026,
+      "peak_total": 19,
+      "lowest_year": 2026,
+      "lowest_total": 19,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 19
+    },
+    "Assiniboia East": {
+      "yearly_totals": {
+        "2026": 8
+      },
+      "peak_year": 2026,
+      "peak_total": 8,
+      "lowest_year": 2026,
+      "lowest_total": 8,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 8
+    },
+    "Crescents": {
+      "yearly_totals": {
+        "2026": 8
+      },
+      "peak_year": 2026,
+      "peak_total": 8,
+      "lowest_year": 2026,
+      "lowest_total": 8,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft from Auto",
+      "total_all_years": 8
+    },
+    "Tuxedo Park": {
+      "yearly_totals": {
+        "2026": 5
+      },
+      "peak_year": 2026,
+      "peak_total": 5,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 5
+    },
+    "River Heights": {
+      "yearly_totals": {
+        "2026": 5
+      },
+      "peak_year": 2026,
+      "peak_total": 5,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft from Auto",
+      "total_all_years": 5
+    },
+    "Parkdale": {
+      "yearly_totals": {
+        "2026": 25
+      },
+      "peak_year": 2026,
+      "peak_total": 25,
+      "lowest_year": 2026,
+      "lowest_total": 25,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 25
+    },
+    "Coronation Park N.": {
+      "yearly_totals": {
+        "2026": 33
+      },
+      "peak_year": 2026,
+      "peak_total": 33,
+      "lowest_year": 2026,
+      "lowest_total": 33,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 33
+    },
+    "Eastgate": {
+      "yearly_totals": {
+        "2026": 15
+      },
+      "peak_year": 2026,
+      "peak_total": 15,
+      "lowest_year": 2026,
+      "lowest_total": 15,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 15
+    },
+    "Innismore": {
+      "yearly_totals": {
+        "2026": 8
+      },
+      "peak_year": 2026,
+      "peak_total": 8,
+      "lowest_year": 2026,
+      "lowest_total": 8,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Impaired Operation of Motor Vehicle",
+      "total_all_years": 8
+    },
+    "Glen Elm Park S.": {
+      "yearly_totals": {
+        "2026": 19
+      },
+      "peak_year": 2026,
+      "peak_total": 19,
+      "lowest_year": 2026,
+      "lowest_total": 19,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 19
+    },
+    "Windsor Place": {
+      "yearly_totals": {
+        "2026": 5
+      },
+      "peak_year": 2026,
+      "peak_total": 5,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft from Auto",
+      "total_all_years": 5
+    },
+    "Arcola Sub": {
+      "yearly_totals": {
+        "2026": 36
+      },
+      "peak_year": 2026,
+      "peak_total": 36,
+      "lowest_year": 2026,
+      "lowest_total": 36,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 36
+    },
+    "Westhill Park": {
+      "yearly_totals": {
+        "2026": 2
+      },
+      "peak_year": 2026,
+      "peak_total": 2,
+      "lowest_year": 2026,
+      "lowest_total": 2,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 2
+    },
+    "Rosemont South": {
+      "yearly_totals": {
+        "2026": 11
+      },
+      "peak_year": 2026,
+      "peak_total": 11,
+      "lowest_year": 2026,
+      "lowest_total": 11,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 11
+    },
+    "Rochdale Park": {
+      "yearly_totals": {
+        "2026": 3
+      },
+      "peak_year": 2026,
+      "peak_total": 3,
+      "lowest_year": 2026,
+      "lowest_total": 3,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 3
+    },
+    "Arnheim Place": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 1
+    },
+    "Lewvan Park": {
+      "yearly_totals": {
+        "2026": 4
+      },
+      "peak_year": 2026,
+      "peak_total": 4,
+      "lowest_year": 2026,
+      "lowest_total": 4,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft from Auto",
+      "total_all_years": 4
+    },
+    "Wood Meadows": {
+      "yearly_totals": {
+        "2026": 5
+      },
+      "peak_year": 2026,
+      "peak_total": 5,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 5
+    },
+    "Parkridge": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 1
+    },
+    "Dieppe Place": {
+      "yearly_totals": {
+        "2026": 6
+      },
+      "peak_year": 2026,
+      "peak_total": 6,
+      "lowest_year": 2026,
+      "lowest_total": 6,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 6
+    },
+    "Douglas Place": {
+      "yearly_totals": {
+        "2026": 5
+      },
+      "peak_year": 2026,
+      "peak_total": 5,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft from Auto",
+      "total_all_years": 5
+    },
+    "Skyview": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Other Criminal Code Traffic Violation",
+      "total_all_years": 1
+    },
+    "The Creeks": {
+      "yearly_totals": {
+        "2026": 3
+      },
+      "peak_year": 2026,
+      "peak_total": 3,
+      "lowest_year": 2026,
+      "lowest_total": 3,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Break & Enter",
+      "total_all_years": 3
+    },
+    "University Park East": {
+      "yearly_totals": {
+        "2026": 2
+      },
+      "peak_year": 2026,
+      "peak_total": 2,
+      "lowest_year": 2026,
+      "lowest_total": 2,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft from Auto",
+      "total_all_years": 2
+    },
+    "Normandy Heights": {
+      "yearly_totals": {
+        "2026": 3
+      },
+      "peak_year": 2026,
+      "peak_total": 3,
+      "lowest_year": 2026,
+      "lowest_total": 3,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft of Auto",
+      "total_all_years": 3
+    },
+    "Garden Ridge": {
+      "yearly_totals": {
+        "2026": 5
+      },
+      "peak_year": 2026,
+      "peak_total": 5,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 5
+    },
+    "Churchill Downs": {
+      "yearly_totals": {
+        "2026": 5
+      },
+      "peak_year": 2026,
+      "peak_total": 5,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 5
+    },
+    "Churchill Place": {
+      "yearly_totals": {
+        "2026": 2
+      },
+      "peak_year": 2026,
+      "peak_total": 2,
+      "lowest_year": 2026,
+      "lowest_total": 2,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 2
+    },
+    "Balbriggan Place": {
+      "yearly_totals": {
+        "2026": 3
+      },
+      "peak_year": 2026,
+      "peak_total": 3,
+      "lowest_year": 2026,
+      "lowest_total": 3,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Break & Enter",
+      "total_all_years": 3
+    },
+    "Mccarthy Park": {
+      "yearly_totals": {
+        "2026": 4
+      },
+      "peak_year": 2026,
+      "peak_total": 4,
+      "lowest_year": 2026,
+      "lowest_total": 4,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Assault",
+      "total_all_years": 4
+    },
+    "Creekside": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 1
+    },
+    "River Bend": {
+      "yearly_totals": {
+        "2026": 5
+      },
+      "peak_year": 2026,
+      "peak_total": 5,
+      "lowest_year": 2026,
+      "lowest_total": 5,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 5
+    },
+    "Grand Trunk Annex": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Mischief",
+      "total_all_years": 1
+    },
+    "Woodland Grove": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Break & Enter",
+      "total_all_years": 1
+    },
+    "Dominion Heights": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft from Auto",
+      "total_all_years": 1
+    },
+    "Lakeview A": {
+      "yearly_totals": {
+        "2026": 2
+      },
+      "peak_year": 2026,
+      "peak_total": 2,
+      "lowest_year": 2026,
+      "lowest_total": 2,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Impaired Operation of Motor Vehicle",
+      "total_all_years": 2
+    },
+    "Connaught Park": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Impaired Operation of Motor Vehicle",
+      "total_all_years": 1
+    },
+    "Gardiner Heights": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Break & Enter",
+      "total_all_years": 1
+    },
+    "Kensington Greens": {
+      "yearly_totals": {
+        "2026": 2
+      },
+      "peak_year": 2026,
+      "peak_total": 2,
+      "lowest_year": 2026,
+      "lowest_total": 2,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft of Auto",
+      "total_all_years": 2
+    },
+    "Parkview": {
+      "yearly_totals": {
+        "2026": 1
+      },
+      "peak_year": 2026,
+      "peak_total": 1,
+      "lowest_year": 2026,
+      "lowest_total": 1,
+      "overall_change_pct": 0.0,
+      "overall_trend": "stable",
+      "dominant_crime_type": "Theft",
+      "total_all_years": 1
+    }
+  }
+}

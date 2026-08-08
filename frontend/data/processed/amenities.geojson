@@ -1,0 +1,40 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": "2026-07-21T12:00:00",
+    "total_features": 30,
+    "source": "OpenStreetMap / Manual compilation for Regina, SK"
+  },
+  "features": [
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6100, 50.4450]}, "properties": {"name": "Safeway Downtown", "type": "supermarket", "category": "grocery", "opening_hours": "7:00-22:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6360, 50.4180]}, "properties": {"name": "Superstore South", "type": "supermarket", "category": "grocery", "opening_hours": "7:00-23:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6500, 50.4700]}, "properties": {"name": "Co-op Normanview", "type": "supermarket", "category": "grocery", "opening_hours": "8:00-21:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.5700, 50.4100]}, "properties": {"name": "Walmart Supercentre East", "type": "supermarket", "category": "grocery", "opening_hours": "7:00-23:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6250, 50.4530]}, "properties": {"name": "Cathedral Area Co-op", "type": "supermarket", "category": "grocery", "opening_hours": "8:00-21:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.5900, 50.4750]}, "properties": {"name": "Save-On-Foods Hillsdale", "type": "supermarket", "category": "grocery", "opening_hours": "7:00-22:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6200, 50.4620]}, "properties": {"name": "North Central Convenience", "type": "convenience", "category": "grocery", "opening_hours": "7:00-23:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6550, 50.4200]}, "properties": {"name": "Sobeys Whitmore Park", "type": "supermarket", "category": "grocery", "opening_hours": "8:00-21:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6350, 50.4650]}, "properties": {"name": "Rosemont Convenience", "type": "convenience", "category": "grocery", "opening_hours": "6:00-24:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6200, 50.4050]}, "properties": {"name": "Superstore Twin Lakes", "type": "supermarket", "category": "grocery", "opening_hours": "7:00-23:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6189, 50.4400]}, "properties": {"name": "Regina General Hospital", "type": "hospital", "category": "healthcare", "opening_hours": "24/7", "phone": "306-766-4444", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6000, 50.4350]}, "properties": {"name": "Pasqua Hospital", "type": "hospital", "category": "healthcare", "opening_hours": "24/7", "phone": "306-766-2222", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6300, 50.4520]}, "properties": {"name": "Cathedral Medical Clinic", "type": "doctors", "category": "healthcare", "opening_hours": "Mon-Fri 8:00-17:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6500, 50.4750]}, "properties": {"name": "Walsh Acres Medical", "type": "clinic", "category": "healthcare", "opening_hours": "Mon-Fri 8:00-17:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.5870, 50.4600]}, "properties": {"name": "Coronation Park Clinic", "type": "doctors", "category": "healthcare", "opening_hours": "Mon-Fri 9:00-16:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.5750, 50.4100]}, "properties": {"name": "Gardiner Park Pharmacy", "type": "pharmacy", "category": "healthcare", "opening_hours": "9:00-21:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6250, 50.4620]}, "properties": {"name": "North Central Pharmacy", "type": "pharmacy", "category": "healthcare", "opening_hours": "9:00-18:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.5870, 50.4170]}, "properties": {"name": "University Health Clinic", "type": "clinic", "category": "healthcare", "opening_hours": "Mon-Fri 8:30-16:30", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6350, 50.4700]}, "properties": {"name": "Rosemont Pharmacy", "type": "pharmacy", "category": "healthcare", "opening_hours": "9:00-21:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6200, 50.4850]}, "properties": {"name": "Sherwood Pharmacy", "type": "pharmacy", "category": "healthcare", "opening_hours": "9:00-18:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6189, 50.4500]}, "properties": {"name": "Regina Public Library - Central", "type": "library", "category": "community", "opening_hours": "Mon-Sat 9:30-21:00", "phone": "306-777-6000", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6350, 50.4680]}, "properties": {"name": "Albert Branch Library", "type": "library", "category": "community", "opening_hours": "Mon-Sat 9:30-18:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.5900, 50.4600]}, "properties": {"name": "Regent Place Library", "type": "library", "category": "community", "opening_hours": "Mon-Sat 9:30-18:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6500, 50.4800]}, "properties": {"name": "Walsh Acres Library", "type": "library", "category": "community", "opening_hours": "Mon-Sat 9:30-18:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.5700, 50.4150]}, "properties": {"name": "Gardiner Park Community Centre", "type": "community_centre", "category": "community", "opening_hours": "Mon-Fri 8:00-21:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6200, 50.4620]}, "properties": {"name": "North Central Community Association", "type": "community_centre", "category": "community", "opening_hours": "Mon-Fri 9:00-17:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6250, 50.4550]}, "properties": {"name": "Cathedral Community Centre", "type": "community_centre", "category": "community", "opening_hours": "Mon-Fri 9:00-21:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6450, 50.4380]}, "properties": {"name": "Lakeview Community Centre", "type": "community_centre", "category": "community", "opening_hours": "Mon-Fri 9:00-21:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.6200, 50.4050]}, "properties": {"name": "Twin Lakes Recreation Centre", "type": "community_centre", "category": "community", "opening_hours": "Mon-Fri 6:00-21:00", "phone": "", "website": ""}},
+    {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-104.5870, 50.4780]}, "properties": {"name": "Hillsdale Community Centre", "type": "community_centre", "category": "community", "opening_hours": "Mon-Fri 9:00-21:00", "phone": "", "website": ""}}
+  ]
+}

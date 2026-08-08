@@ -1,0 +1,142 @@
+{
+  "North Central": {
+    "vibe": "Historic but troubled",
+    "description": "One of Regina's oldest neighbourhoods with strong community roots. Higher crime rates due to poverty and addiction issues. Active community organizations working on revitalization. Very affordable housing.",
+    "best_for": "Budget-conscious residents who value community programs",
+    "watch_out": "Property crime, avoid walking alone at night in some areas",
+    "avg_rent": "$700-900/month"
+  },
+  "Cathedral": {
+    "vibe": "Artsy and walkable",
+    "description": "Regina's most walkable neighbourhood. Independent shops, cafes, character homes. Mix of young professionals and families. Some property crime but generally safe on main streets.",
+    "best_for": "Young professionals, artists, people who hate driving",
+    "watch_out": "Vehicle break-ins, some noise from bars on 13th Ave",
+    "avg_rent": "$1000-1400/month"
+  },
+  "Harbour Landing": {
+    "vibe": "New suburban development",
+    "description": "Regina's newest neighbourhood on the south side. Modern homes, big box stores, new schools being built. Very car-dependent but growing rapidly with young families. Low crime due to newness.",
+    "best_for": "Young families wanting new builds, people who don't mind driving",
+    "watch_out": "Limited transit, construction noise, few established trees",
+    "avg_rent": "$1400-1800/month"
+  },
+  "Lakeview": {
+    "vibe": "Established family neighbourhood",
+    "description": "Mature trees, winding streets, and solid 1960s-70s homes near Wascana Lake. Quiet and safe with good schools nearby. Walking distance to Wascana Park trails.",
+    "best_for": "Families, retirees, nature lovers who want city convenience",
+    "watch_out": "Garage break-ins, older homes may need updates",
+    "avg_rent": "$1200-1600/month"
+  },
+  "University Park": {
+    "vibe": "Academic and quiet",
+    "description": "Adjacent to the University of Regina campus. Mix of students and established families. Good access to campus facilities, indoor pools, and athletic trails. Very safe overall.",
+    "best_for": "Students, university staff, families near campus amenities",
+    "watch_out": "Vehicle thefts in parking areas, limited nightlife",
+    "avg_rent": "$1000-1400/month"
+  },
+  "Normanview West": {
+    "vibe": "Quiet suburban pocket",
+    "description": "Small, tucked-away neighbourhood on the west side. Mostly single-family homes from the 1970s-80s. Very low crime, good for families who want peace and quiet. Limited walkable amenities.",
+    "best_for": "Families wanting affordable, safe, quiet streets",
+    "watch_out": "Car-dependent, limited shopping without driving",
+    "avg_rent": "$1100-1400/month"
+  },
+  "Albert Park": {
+    "vibe": "Commercial corridor hub",
+    "description": "Centered around Albert Street's commercial strip. Mix of retail, fast food, and residential. Higher crime stats partly due to shoplifting at stores. Affordable with good bus access.",
+    "best_for": "People needing transit access and nearby shopping",
+    "watch_out": "Shoplifting inflates crime numbers, vehicle theft in parking lots",
+    "avg_rent": "$900-1200/month"
+  },
+  "Walsh Acres": {
+    "vibe": "Suburban family favourite",
+    "description": "Popular northwest neighbourhood with good schools, parks, and the Normanview Mall nearby. Mix of 1980s-90s homes. Safe, well-maintained, with strong community feel.",
+    "best_for": "Families with school-age kids, people wanting suburban comfort",
+    "watch_out": "Some retail crime near mall area, otherwise very safe",
+    "avg_rent": "$1200-1500/month"
+  },
+  "Coronation Park": {
+    "vibe": "Working-class residential",
+    "description": "Northeast neighbourhood with a mix of older homes and some newer infill. Close to industrial areas but has its own parks and schools. Affordable option with decent transit.",
+    "best_for": "Budget-minded families, people working in north-end industries",
+    "watch_out": "Higher property crime than average, some drug activity",
+    "avg_rent": "$800-1100/month"
+  },
+  "Rosemont": {
+    "vibe": "Central and connected",
+    "description": "Mid-city neighbourhood with easy access to downtown and major routes. Mix of older character homes and newer builds. Good parks and the Albert Library nearby. Moderate crime.",
+    "best_for": "People wanting central location without downtown prices",
+    "watch_out": "Garage break-ins, vehicle theft, some assault near bars",
+    "avg_rent": "$1000-1300/month"
+  },
+  "Hillsdale": {
+    "vibe": "Established northeast family area",
+    "description": "Mature neighbourhood near Broad Street with good schools and shopping. Mix of 1960s-70s homes. Stable crime rates, well-connected by bus to downtown.",
+    "best_for": "Families wanting established area with good infrastructure",
+    "watch_out": "Vehicle theft, some property crime",
+    "avg_rent": "$1000-1300/month"
+  },
+  "Gardiner Park": {
+    "vibe": "East side retail centre",
+    "description": "East Regina neighbourhood anchored by Victoria Square Mall. Good mix of shopping, schools, and parks. Crime stats partly inflated by retail theft. Solid family area away from mall.",
+    "best_for": "Families who want shopping convenience on the east side",
+    "watch_out": "Shoplifting skews stats, some vehicle theft near mall",
+    "avg_rent": "$1000-1300/month"
+  },
+  "Whitmore Park": {
+    "vibe": "Safe and suburban",
+    "description": "Southwest neighbourhood with some of Regina's lowest crime rates. Quiet residential streets, good schools, close to Wascana trails. Mostly 1970s-80s homes in good condition.",
+    "best_for": "Safety-conscious families, retirees, newcomers wanting low-risk area",
+    "watch_out": "Car-dependent, limited nightlife or walkable dining",
+    "avg_rent": "$1200-1600/month"
+  },
+  "Eastview": {
+    "vibe": "Industrial-adjacent residential",
+    "description": "East side neighbourhood near industrial areas. Affordable housing, some newer developments. Crime is decreasing year over year. Good highway access for commuters.",
+    "best_for": "Commuters, budget-conscious people comfortable with industrial neighbours",
+    "watch_out": "Break and enters (business), some drug activity",
+    "avg_rent": "$900-1200/month"
+  },
+  "Dieppe": {
+    "vibe": "Quiet northeast pocket",
+    "description": "Small residential area in the northeast with low crime and family-friendly streets. Older homes but well-maintained. Close to parks and schools. Often overlooked by newcomers.",
+    "best_for": "Families wanting affordable, safe, quiet living",
+    "watch_out": "Limited amenities within walking distance",
+    "avg_rent": "$1000-1300/month"
+  },
+  "Sherwood Estates": {
+    "vibe": "Upscale north-end",
+    "description": "One of Regina's more affluent areas in the north. Larger lots, newer homes, very low crime. Close to Wascana and the Legislative grounds via Broad Street. Quiet and private.",
+    "best_for": "Professionals wanting larger homes in a safe area",
+    "watch_out": "Vehicle theft, property crime targeting garages",
+    "avg_rent": "$1400-1800/month"
+  },
+  "Twin Lakes": {
+    "vibe": "South side family area",
+    "description": "Southern neighbourhood near the Lewvan Drive corridor. Mix of 1980s-90s homes with some newer builds. Family parks, a man-made lake feature, and decent schools nearby.",
+    "best_for": "Families with kids, people who like green space",
+    "watch_out": "Some vehicle theft, mischief near parks",
+    "avg_rent": "$1100-1500/month"
+  },
+  "Prairie View": {
+    "vibe": "Affordable southwest suburb",
+    "description": "Quiet southwest area with mostly residential streets. Mix of older and newer homes. Low crime, good parks, but limited transit. Popular with families wanting space without high costs.",
+    "best_for": "Families wanting safe, affordable southwest living",
+    "watch_out": "Break-ins to residences, limited bus service",
+    "avg_rent": "$1100-1400/month"
+  },
+  "Boothill": {
+    "vibe": "Small and overlooked",
+    "description": "Compact east-side neighbourhood that flies under the radar. Older homes, affordable rents, and improving crime stats. Close to parks and schools. Good starter neighbourhood.",
+    "best_for": "First-time renters, newcomers on a budget",
+    "watch_out": "Garage break-ins, vehicle theft from autos",
+    "avg_rent": "$800-1100/month"
+  },
+  "Regent Park": {
+    "vibe": "Quiet eastern residential",
+    "description": "Small east-side neighbourhood with a mix of older homes. Crime is decreasing and the area is stable. Close to parks and some schools. Affordable and quiet.",
+    "best_for": "People wanting quiet, affordable east-side living",
+    "watch_out": "Some assault incidents, limited nighttime activity",
+    "avg_rent": "$900-1200/month"
+  }
+}
