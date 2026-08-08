@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Reports — Regina SafeMap</title>
+    <meta name="description" content="Report safety concerns, road issues, or positive community events in Regina neighbourhoods.">
+    <link rel="canonical" href="https://reginasafemap.ca/report/">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --accent: #0EA5E9;
+            --accent-glow: rgba(14, 165, 233, 0.4);
+            --bg-deep: #0f0f23;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --text-primary: #f0f6fc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --green: #10b981;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-pill: 100px;
+            --glass-blur: blur(16px);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #0d1117 50%, #0a1628 100%);
+            color: var(--text-secondary);
+            min-height: 100vh;
+            padding: 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 100;
+        }
+        .back-link:hover { color: var(--text-primary); text-decoration: none; }
+
+        .page-container {
+            max-width: 600px;
+            margin: 60px auto 40px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .page-header h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+        .page-header p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* Form Card */
+        .form-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-xl);
+            padding: 32px;
+            margin-bottom: 32px;
+            animation: fadeUp 0.5s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { transform: translateY(16px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            background: rgba(15, 23, 42, 0.6);
+            color: var(--text-primary);
+            font-size: 0.88rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+        }
+
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .form-group select option {
+            background: #0d1117;
+            color: var(--text-primary);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .submit-btn:hover {
+            background: #38bdf8;
+            box-shadow: 0 4px 16px var(--accent-glow);
+        }
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .form-note {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Recent Reports */
+        .reports-section {
+            animation: fadeUp 0.5s ease-out 0.2s both;
+        }
+        .reports-section h2 {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .report-item {
+            background: var(--bg-card);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+        .report-item:hover {
+            border-color: var(--border-hover);
+        }
+        .report-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .report-meta {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+        .report-body {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .no-reports {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 24px;
+        }
+
+        .page-footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 16px; }
+            .page-container { margin-top: 48px; }
+            .form-card { padding: 24px 18px; }
+            .page-header h1 { font-size: 1.3rem; }
+            .back-link { top: 12px; left: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="../" class="back-link">&larr; Back to Map</a>
+
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Community Reports</h1>
+            <p>Help make Regina safer. Report issues or share positive experiences.</p>
+        </div>
+
+        <div class="form-card">
+            <form id="report-form" onsubmit="submitReport(event)">
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select a category...</option>
+                        <option value="Safety Concern">Safety Concern</option>
+                        <option value="Road Issue">Road Issue</option>
+                        <option value="Noise">Noise</option>
+                        <option value="Positive Report">Positive Report</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="neighbourhood">Neighbourhood</label>
+                    <select id="neighbourhood" required>
+                        <option value="">Select neighbourhood...</option>
+                        <option value="Albert Park">Albert Park</option>
+                        <option value="Cathedral">Cathedral</option>
+                        <option value="Coronation Park">Coronation Park</option>
+                        <option value="Core">Core</option>
+                        <option value="Downtown">Downtown</option>
+                        <option value="Eastview">Eastview</option>
+                        <option value="Gardiner Park">Gardiner Park</option>
+                        <option value="Harbour Landing">Harbour Landing</option>
+                        <option value="Hillsdale">Hillsdale</option>
+                        <option value="Lakeview">Lakeview</option>
+                        <option value="North Central">North Central</option>
+                        <option value="Normanview">Normanview</option>
+                        <option value="Normanview West">Normanview West</option>
+                        <option value="Rosemont">Rosemont</option>
+                        <option value="Twin Lakes">Twin Lakes</option>
+                        <option value="University Park">University Park</option>
+                        <option value="Walsh Acres">Walsh Acres</option>
+                        <option value="Whitmore Park">Whitmore Park</option>
+                        <option value="Sherwood Estates">Sherwood Estates</option>
+                        <option value="Glencairn">Glencairn</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Describe what happened, when, and where specifically..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Report</button>
+                <p class="form-note">Reports are submitted as GitHub Issues and are publicly visible.</p>
+            </form>
+        </div>
+
+        <div class="reports-section">
+            <h2>Recent Community Reports</h2>
+            <div id="reports-list">
+                <p class="no-reports">Loading reports...</p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            Open source civic intelligence &middot; Built by OpenPodTech &middot; Free forever
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // Submit report via GitHub Issues
+        window.submitReport = function(e) {
+            e.preventDefault();
+            const category = document.getElementById('category').value;
+            const neighbourhood = document.getElementById('neighbourhood').value;
+            const description = document.getElementById('description').value;
+
+            if (!category || !neighbourhood || !description) return;
+
+            const title = encodeURIComponent('[REPORT] ' + category + ' in ' + neighbourhood);
+            const body = encodeURIComponent(
+                description + '\n\n---\n' +
+                'Category: ' + category + '\n' +
+                'Neighbourhood: ' + neighbourhood + '\n' +
+                'Submitted via: Regina SafeMap Community Reports'
+            );
+
+            const url = 'https://github.com/OpenPodTech/openpod-regina-safemap/issues/new?title=' + title + '&body=' + body + '&labels=community-report';
+            window.open(url, '_blank');
+        };
+
+        // Fetch recent community reports
+        function loadReports() {
+            fetch('https://api.github.com/repos/OpenPodTech/openpod-regina-safemap/issues?labels=community-report&state=open&per_page=5')
+                .then(r => {
+                    if (!r.ok) throw new Error('GitHub API error');
+                    return r.json();
+                })
+                .then(issues => {
+                    const container = document.getElementById('reports-list');
+                    if (!issues || issues.length === 0) {
+                        container.innerHTML = '<p class="no-reports">No community reports yet. Be the first to submit one!</p>';
+                        return;
+                    }
+                    container.innerHTML = '';
+                    issues.forEach(issue => {
+                        const date = new Date(issue.created_at).toLocaleDateString('en-CA');
+                        const div = document.createElement('div');
+                        div.className = 'report-item';
+                        div.innerHTML = `
+                            <div class="report-title">${escapeHtml(issue.title.replace('[REPORT] ', ''))}</div>
+                            <div class="report-meta">Reported ${date}</div>
+                            <div class="report-body">${escapeHtml(truncate(issue.body, 150))}</div>
+                        `;
+                        container.appendChild(div);
+                    });
+                })
+                .catch(err => {
+                    console.warn('Could not load reports:', err);
+                    document.getElementById('reports-list').innerHTML =
+                        '<p class="no-reports">Could not load reports. <a href="https://github.com/OpenPodTech/openpod-regina-safemap/issues?q=label%3Acommunity-report" target="_blank">View on GitHub</a></p>';
+                });
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        }
+
+        function truncate(str, max) {
+            if (!str) return '';
+            // Remove markdown formatting for display
+            str = str.split('\n---')[0].trim();
+            if (str.length <= max) return str;
+            return str.substring(0, max) + '...';
+        }
+
+        loadReports();
+    })();
+    </script>
+</body>
+</html>

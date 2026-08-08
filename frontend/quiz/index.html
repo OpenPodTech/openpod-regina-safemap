@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find My Neighbourhood — Regina SafeMap</title>
+    <meta name="description" content="Answer 5 quick questions and we'll match you with the best Regina neighbourhoods for your lifestyle.">
+    <link rel="canonical" href="https://reginasafemap.ca/quiz/">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --accent: #0EA5E9;
+            --accent-glow: rgba(14, 165, 233, 0.4);
+            --bg-deep: #0f0f23;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --text-primary: #f0f6fc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --green: #10b981;
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-pill: 100px;
+            --glass-blur: blur(16px);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #0d1117 50%, #0a1628 100%);
+            color: var(--text-secondary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 100;
+        }
+        .back-link:hover { color: var(--text-primary); text-decoration: none; }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            max-width: 520px;
+            margin-bottom: 24px;
+        }
+        .progress-bar {
+            height: 4px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 0%;
+        }
+        .progress-text {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* Quiz Card */
+        .quiz-card {
+            width: 100%;
+            max-width: 520px;
+            background: var(--bg-card);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-xl);
+            padding: 40px 32px;
+            text-align: center;
+            animation: fadeUp 0.5s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { transform: translateY(16px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeOut {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-16px); opacity: 0; }
+        }
+
+        .quiz-card.exit {
+            animation: fadeOut 0.3s ease-in forwards;
+        }
+
+        .quiz-card h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-btn {
+            padding: 14px 20px;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            background: rgba(15, 23, 42, 0.5);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .option-btn:hover {
+            border-color: var(--accent);
+            background: rgba(14, 165, 233, 0.06);
+            color: var(--text-primary);
+            transform: translateX(4px);
+        }
+
+        .option-btn:active {
+            transform: translateX(4px) scale(0.98);
+        }
+
+        /* Results */
+        .results-card {
+            width: 100%;
+            max-width: 520px;
+            background: var(--bg-card);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-xl);
+            padding: 40px 32px;
+            display: none;
+            animation: fadeUp 0.5s ease-out;
+        }
+
+        .results-card h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .results-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .result-item {
+            padding: 16px;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+            background: rgba(15, 23, 42, 0.4);
+            transition: all 0.2s ease;
+        }
+        .result-item:hover {
+            border-color: var(--border-hover);
+            background: rgba(15, 23, 42, 0.6);
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .result-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .result-match {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--green);
+            background: rgba(16, 185, 129, 0.1);
+            padding: 3px 10px;
+            border-radius: var(--radius-pill);
+        }
+        .result-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .result-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .restart-btn {
+            display: block;
+            margin: 24px auto 0;
+            padding: 10px 24px;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill);
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .restart-btn:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .quiz-footer {
+            margin-top: 32px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 16px; }
+            .quiz-card, .results-card { padding: 28px 20px; }
+            .quiz-card h2 { font-size: 1.1rem; }
+            .back-link { top: 12px; left: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="../" class="back-link">&larr; Back to Map</a>
+
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-text" id="progress-text">Question 1 of 5</div>
+    </div>
+
+    <div class="quiz-card" id="quiz-card">
+        <h2 id="question-title">Loading...</h2>
+        <div class="options" id="options-container"></div>
+    </div>
+
+    <div class="results-card" id="results-card">
+        <h2>Your Top Matches</h2>
+        <p class="results-subtitle">Based on your answers, these neighbourhoods fit best:</p>
+        <div id="results-list"></div>
+        <button class="restart-btn" onclick="restartQuiz()">Take Quiz Again</button>
+    </div>
+
+    <div class="quiz-footer">
+        Open source civic intelligence &middot; Built by OpenPodTech &middot; Free forever
+    </div>
+
+    <script>
+    (function() {
+        'use strict';
+
+        const questions = [
+            {
+                title: "What's your monthly rent budget?",
+                options: [
+                    { label: "Under $800", value: "budget_low" },
+                    { label: "$800 – $1,200", value: "budget_mid" },
+                    { label: "$1,200 – $1,600", value: "budget_high" },
+                    { label: "Over $1,600", value: "budget_max" }
+                ]
+            },
+            {
+                title: "Do you have school-age kids?",
+                options: [
+                    { label: "Yes", value: "kids_yes" },
+                    { label: "No", value: "kids_no" }
+                ]
+            },
+            {
+                title: "Do you own a car?",
+                options: [
+                    { label: "Yes", value: "car_yes" },
+                    { label: "No, I need transit", value: "car_no" }
+                ]
+            },
+            {
+                title: "What's your top priority?",
+                options: [
+                    { label: "Safety", value: "priority_safety" },
+                    { label: "Walkability & culture", value: "priority_walk" },
+                    { label: "Affordability", value: "priority_afford" },
+                    { label: "Quiet & peaceful", value: "priority_quiet" }
+                ]
+            },
+            {
+                title: "What home style do you prefer?",
+                options: [
+                    { label: "Character homes (older, unique)", value: "style_character" },
+                    { label: "New builds (modern)", value: "style_new" },
+                    { label: "No preference", value: "style_any" }
+                ]
+            }
+        ];
+
+        let currentQ = 0;
+        let answers = [];
+        let scoresData = null;
+        let descriptionsData = null;
+
+        // Load data
+        Promise.all([
+            fetch('../data/processed/scores.json').then(r => r.json()),
+            fetch('../data/processed/descriptions.json').then(r => r.json())
+        ]).then(([scores, descriptions]) => {
+            scoresData = scores;
+            descriptionsData = descriptions;
+            renderQuestion();
+        }).catch(err => {
+            console.error('Failed to load data:', err);
+            document.getElementById('question-title').textContent = 'Error loading neighbourhood data.';
+        });
+
+        function renderQuestion() {
+            const q = questions[currentQ];
+            const card = document.getElementById('quiz-card');
+            const title = document.getElementById('question-title');
+            const container = document.getElementById('options-container');
+            const progressFill = document.getElementById('progress-fill');
+            const progressText = document.getElementById('progress-text');
+
+            progressFill.style.width = ((currentQ) / questions.length * 100) + '%';
+            progressText.textContent = 'Question ' + (currentQ + 1) + ' of ' + questions.length;
+
+            // Animate out then in
+            card.classList.add('exit');
+            setTimeout(() => {
+                title.textContent = q.title;
+                container.innerHTML = '';
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    btn.textContent = opt.label;
+                    btn.onclick = () => selectAnswer(opt.value);
+                    container.appendChild(btn);
+                });
+                card.classList.remove('exit');
+                card.style.animation = 'none';
+                card.offsetHeight; // trigger reflow
+                card.style.animation = 'fadeUp 0.4s ease-out';
+            }, 280);
+        }
+
+        function selectAnswer(value) {
+            answers.push(value);
+            currentQ++;
+            if (currentQ < questions.length) {
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-card').style.display = 'none';
+            document.querySelector('.progress-container').style.display = 'none';
+
+            const results = scoreNeighbourhoods();
+            const container = document.getElementById('results-list');
+            container.innerHTML = '';
+
+            results.slice(0, 3).forEach((r, i) => {
+                const desc = descriptionsData[r.name] || {};
+                const div = document.createElement('div');
+                div.className = 'result-item';
+                div.innerHTML = `
+                    <div class="result-header">
+                        <span class="result-name">${i + 1}. ${r.name}</span>
+                        <span class="result-match">${r.matchPct}% match</span>
+                    </div>
+                    <div class="result-desc">${desc.description || 'A Regina neighbourhood worth exploring.'}</div>
+                    <a class="result-link" href="../neighbourhoods/#${encodeURIComponent(r.name.toLowerCase().replace(/\s+/g, '-'))}">View full profile &rarr;</a>
+                `;
+                container.appendChild(div);
+            });
+
+            document.getElementById('results-card').style.display = 'block';
+            document.getElementById('progress-fill').style.width = '100%';
+        }
+
+        function scoreNeighbourhoods() {
+            if (!scoresData || !scoresData.scores) return [];
+
+            const scored = scoresData.scores.map(hood => {
+                let score = 0;
+                let maxScore = 0;
+
+                // Budget scoring
+                const rent = descriptionsData[hood.name] ? descriptionsData[hood.name].avg_rent : '';
+                const rentLow = parseRentLow(rent);
+
+                if (answers[0] === 'budget_low') {
+                    maxScore += 25;
+                    if (rentLow <= 800) score += 25;
+                    else if (rentLow <= 1000) score += 12;
+                } else if (answers[0] === 'budget_mid') {
+                    maxScore += 25;
+                    if (rentLow >= 800 && rentLow <= 1200) score += 25;
+                    else if (rentLow <= 1400) score += 12;
+                } else if (answers[0] === 'budget_high') {
+                    maxScore += 25;
+                    if (rentLow >= 1100 && rentLow <= 1600) score += 25;
+                    else if (rentLow >= 900) score += 12;
+                } else {
+                    maxScore += 25;
+                    score += 20; // any budget
+                }
+
+                // Kids scoring
+                maxScore += 20;
+                if (answers[1] === 'kids_yes') {
+                    if (hood.schools_count >= 2) score += 20;
+                    else if (hood.schools_count >= 1) score += 12;
+                } else {
+                    score += 15; // no kids = neutral
+                }
+
+                // Car/transit scoring
+                maxScore += 20;
+                if (answers[2] === 'car_no') {
+                    if (hood.transit_stops >= 2) score += 20;
+                    else if (hood.transit_stops >= 1) score += 10;
+                } else {
+                    score += 15; // has car = neutral
+                }
+
+                // Priority scoring
+                maxScore += 30;
+                if (answers[3] === 'priority_safety') {
+                    if (hood.safety >= 90) score += 30;
+                    else if (hood.safety >= 75) score += 20;
+                    else if (hood.safety >= 50) score += 8;
+                } else if (answers[3] === 'priority_walk') {
+                    if (hood.walkability >= 35) score += 30;
+                    else if (hood.walkability >= 20) score += 15;
+                    else score += 5;
+                } else if (answers[3] === 'priority_afford') {
+                    if (rentLow <= 900) score += 30;
+                    else if (rentLow <= 1100) score += 18;
+                    else score += 5;
+                } else if (answers[3] === 'priority_quiet') {
+                    if (hood.total_crimes <= 300) score += 30;
+                    else if (hood.total_crimes <= 700) score += 18;
+                    else score += 5;
+                }
+
+                // Home style scoring
+                maxScore += 15;
+                if (answers[4] === 'style_character') {
+                    // Older neighbourhoods tend to have higher crime data (more established)
+                    if (hood.total_crimes > 0 && hood.safety >= 50) score += 15;
+                    else score += 8;
+                } else if (answers[4] === 'style_new') {
+                    // New builds = areas with 0 crime data (new developments)
+                    if (hood.total_crimes === 0) score += 15;
+                    else score += 5;
+                } else {
+                    score += 10; // no preference
+                }
+
+                const matchPct = Math.round((score / maxScore) * 100);
+                return { name: hood.name, score, matchPct };
+            });
+
+            scored.sort((a, b) => b.matchPct - a.matchPct);
+            return scored;
+        }
+
+        function parseRentLow(rentStr) {
+            if (!rentStr) return 1000; // default mid
+            const match = rentStr.match(/\$?([\d,]+)/);
+            if (match) return parseInt(match[1].replace(',', ''));
+            return 1000;
+        }
+
+        // Expose restart
+        window.restartQuiz = function() {
+            currentQ = 0;
+            answers = [];
+            document.getElementById('results-card').style.display = 'none';
+            document.getElementById('quiz-card').style.display = 'block';
+            document.querySelector('.progress-container').style.display = 'block';
+            renderQuestion();
+        };
+    })();
+    </script>
+</body>
+</html>

@@ -28,11 +28,29 @@
                 <span class="brand-mark">&#9672; OpenPod</span>
                 <span class="brand-badge">SafeMap</span>
             </div>
-            <span class="tagline">Community intelligence, open source</span>
+            <span class="tagline" data-i18n="tagline">Community intelligence, open source</span>
         </div>
         <div class="header-right">
-            <a href="neighbourhoods/" style="font-size:0.82rem;color:#64748b;font-weight:500;margin-right:4px;text-decoration:none;">Neighbourhoods</a>
-            <a href="best-for/" style="font-size:0.82rem;color:#64748b;font-weight:500;margin-right:8px;text-decoration:none;">Best For</a>
+            <a href="neighbourhoods/" style="font-size:0.82rem;color:#64748b;font-weight:500;margin-right:4px;text-decoration:none;" data-i18n="nav_neighbourhoods">Neighbourhoods</a>
+            <a href="best-for/" style="font-size:0.82rem;color:#64748b;font-weight:500;margin-right:4px;text-decoration:none;">Best For</a>
+            <a href="quiz/" style="font-size:0.82rem;color:#64748b;font-weight:500;margin-right:4px;text-decoration:none;" data-i18n="nav_quiz">Find My Area</a>
+            <a href="report/" style="font-size:0.82rem;color:#64748b;font-weight:500;margin-right:8px;text-decoration:none;">Report</a>
+            <!-- Language Selector -->
+            <div style="position:relative;display:inline-block;" id="lang-dropdown">
+                <button id="lang-btn" style="background:rgba(15,23,42,0.6);border:1px solid rgba(255,255,255,0.06);border-radius:100px;padding:6px 12px;color:#94a3b8;font-size:0.78rem;font-family:'Inter',sans-serif;cursor:pointer;display:flex;align-items:center;gap:5px;" aria-label="Change language">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+                    <span id="lang-current">EN</span>
+                </button>
+                <div id="lang-menu" style="display:none;position:absolute;top:100%;right:0;margin-top:6px;background:rgba(15,23,42,0.95);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:6px;min-width:130px;z-index:2000;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+                    <div class="lang-option" data-lang="en" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">English</div>
+                    <div class="lang-option" data-lang="pa" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">ਪੰਜਾਬੀ</div>
+                    <div class="lang-option" data-lang="hi" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">हिन्दी</div>
+                    <div class="lang-option" data-lang="tl" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">Tagalog</div>
+                    <div class="lang-option" data-lang="uk" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">Українська</div>
+                    <div class="lang-option" data-lang="ar" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">العربية</div>
+                    <div class="lang-option" data-lang="zh" style="padding:8px 12px;border-radius:6px;cursor:pointer;font-size:0.8rem;color:#94a3b8;">中文</div>
+                </div>
+            </div>
             <input type="text" id="search-input" placeholder="Search neighbourhood..." autocomplete="off" />
             <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank" class="github-link" aria-label="View on GitHub">
                 <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -43,27 +61,27 @@
     <!-- Layer Toggle Bar -->
     <div id="layer-controls">
         <button class="layer-btn active" data-layer="crime" title="Crime Heatmap">
-            <span class="layer-icon">&#128293;</span> Crime
+            <span class="layer-icon">&#128293;</span> <span data-i18n="layer_crime">Crime</span>
         </button>
         <button class="layer-btn" data-layer="schools" title="Schools">
-            <span class="layer-icon">&#127979;</span> Schools
+            <span class="layer-icon">&#127979;</span> <span data-i18n="layer_schools">Schools</span>
         </button>
         <button class="layer-btn" data-layer="transit" title="Transit Stops">
-            <span class="layer-icon">&#128652;</span> Transit
+            <span class="layer-icon">&#128652;</span> <span data-i18n="layer_transit">Transit</span>
         </button>
         <button class="layer-btn" data-layer="amenities" title="Amenities">
-            <span class="layer-icon">&#127978;</span> Amenities
+            <span class="layer-icon">&#127978;</span> <span data-i18n="layer_amenities">Amenities</span>
         </button>
         <button class="layer-btn" data-layer="parks" title="Parks">
-            <span class="layer-icon">&#127795;</span> Parks
+            <span class="layer-icon">&#127795;</span> <span data-i18n="layer_parks">Parks</span>
         </button>
     </div>
 
     <!-- Welcome Card (Empty State) -->
     <div id="welcome-card">
         <div class="welcome-brand">&#9672; Regina SafeMap</div>
-        <div class="welcome-product">Know your neighbourhood before you move.</div>
-        <div class="welcome-body">
+        <div class="welcome-product" data-i18n="welcome_title">Know your neighbourhood before you move.</div>
+        <div class="welcome-body" data-i18n="welcome_body">
             Click any area to explore safety scores, schools, transit access, and real crime data — all in one view.
         </div>
         <div class="welcome-cta">Click a neighbourhood to begin</div>
@@ -132,6 +150,11 @@
         Open source civic intelligence &middot; <a href="https://github.com/OpenPodTech" target="_blank">github.com/OpenPodTech</a>
     </div>
 
+    <!-- Floating Feedback Button -->
+    <a href="report/" id="feedback-btn" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:999;background:rgba(15,23,42,0.85);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.06);border-radius:100px;padding:8px 16px;font-size:0.78rem;color:#94a3b8;text-decoration:none;font-family:'Inter',sans-serif;font-weight:500;transition:all 0.2s;display:flex;align-items:center;gap:6px;">
+        <span style="font-size:1rem;">&#128172;</span> Feedback
+    </a>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
@@ -140,6 +163,52 @@
     <script src="js/layers.js"></script>
     <script src="js/panels.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/i18n.js"></script>
+
+    <!-- Language dropdown logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('lang-btn');
+        var menu = document.getElementById('lang-menu');
+        var current = document.getElementById('lang-current');
+        if (!btn || !menu) return;
+
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.addEventListener('click', function() {
+            menu.style.display = 'none';
+        });
+
+        menu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        var options = menu.querySelectorAll('.lang-option');
+        options.forEach(function(opt) {
+            opt.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(14,165,233,0.1)';
+                this.style.color = '#f0f6fc';
+            });
+            opt.addEventListener('mouseleave', function() {
+                this.style.background = 'transparent';
+                this.style.color = '#94a3b8';
+            });
+            opt.addEventListener('click', function() {
+                var lang = this.getAttribute('data-lang');
+                if (window.i18n) window.i18n.setLanguage(lang);
+                current.textContent = lang.toUpperCase();
+                menu.style.display = 'none';
+            });
+        });
+
+        // Set initial label from localStorage
+        var saved = localStorage.getItem('safemap_lang');
+        if (saved) current.textContent = saved.toUpperCase();
+    })();
+    </script>
 
     <!-- Bulletproof welcome card dismissal -->
     <script>
