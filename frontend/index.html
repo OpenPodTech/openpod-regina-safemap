@@ -130,5 +130,37 @@
     <script src="js/layers.js"></script>
     <script src="js/panels.js"></script>
     <script src="js/app.js"></script>
+
+    <!-- Bulletproof welcome card dismissal -->
+    <script>
+    (function() {
+        var wc = document.getElementById('welcome-card');
+        if (!wc) return;
+
+        function dismiss() {
+            wc.style.opacity = '0';
+            wc.style.transform = 'translate(-50%, -50%) scale(0.9)';
+            wc.style.pointerEvents = 'none';
+            setTimeout(function() { wc.style.display = 'none'; }, 400);
+        }
+
+        // Dismiss on any click anywhere
+        document.addEventListener('click', function handler(e) {
+            // Don't dismiss if clicking the welcome card itself (let them read it)
+            if (wc.contains(e.target)) return;
+            dismiss();
+            document.removeEventListener('click', handler);
+        });
+
+        // Dismiss on any touch (mobile)
+        document.addEventListener('touchstart', function handler() {
+            dismiss();
+            document.removeEventListener('touchstart', handler);
+        });
+
+        // Auto-dismiss after 6 seconds
+        setTimeout(dismiss, 6000);
+    })();
+    </script>
 </body>
 </html>
