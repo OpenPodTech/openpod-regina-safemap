@@ -52,13 +52,20 @@ function getNeighbourhoodStyle(feature) {
             fillColor = CONFIG.SAFETY_COLORS.high.fill;
             borderColor = CONFIG.SAFETY_COLORS.high.border;
         }
+        return {
+            fillColor: fillColor,
+            fillOpacity: 0.18,
+            color: borderColor,
+            weight: 1.5,
+        };
     }
 
+    // No crime data — neutral grey, very low opacity so it doesn't look "safe"
     return {
-        fillColor: fillColor,
-        fillOpacity: 0.18,
-        color: borderColor,
-        weight: 1.5,
+        fillColor: '#94a3b8',
+        fillOpacity: 0.05,
+        color: '#cbd5e1',
+        weight: 1,
     };
 }
 
@@ -129,8 +136,7 @@ function selectNeighbourhood(layer, feature) {
     // Update profile link
     const profileLink = document.getElementById('panel-profile-link');
     if (profileLink && feature.properties.name) {
-        const slug = feature.properties.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        profileLink.href = `neighbourhoods/${slug}.html`;
+        profileLink.href = 'neighbourhoods/neighbourhood.html?name=' + encodeURIComponent(feature.properties.name);
     }
 }
 

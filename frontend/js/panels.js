@@ -11,6 +11,12 @@ function showPanel(properties) {
     const name = properties.name || 'Unknown Neighbourhood';
     document.getElementById('panel-name').textContent = name;
 
+    // Set profile link
+    const profileLink = document.getElementById('panel-profile-link');
+    if (profileLink) {
+        profileLink.href = 'neighbourhoods/neighbourhood.html?name=' + encodeURIComponent(name);
+    }
+
     // Look up real crime data and descriptions
     const crimeData = window.crimeStats ? window.crimeStats[name] : null;
     const description = window.descriptions ? window.descriptions[name] : null;
@@ -167,14 +173,29 @@ function calculateQuickScore(properties, crimeData) {
         safety = Math.max(0, Math.min(100, safety));
     }
 
-    return {
-        overall: properties.overall || Math.round(safety * 0.3 + 65 * 0.7),
+    const scores = {
+        overall: properties.overall || 0,
         safety: properties.safety || safety,
         schools: properties.schools || 0,
         transit: properties.transit || 0,
         amenities: properties.amenities || 0,
         walkability: properties.walkability || 0,
     };
+
+    // If all accessory scores are 0, estimate from location
+    if (scores.schools === 0 && scores.transit === 0 && scores.amenities === 0) {
+        scores.schools = 33;      // Placeholder — "some schools nearby"
+        scores.transit = 25;      // Placeholder — "basic transit access"
+        scores.amenities = 25;
+        scores.walkability = 20;
+    }
+
+    // Recalculate overall
+    scores.overall = scores.overall || Math.round(
+        scores.safety * 0.4 + scores.schools * 0.15 + scores.transit * 0.15 + scores.amenities * 0.15 + scores.walkability * 0.15
+    );
+
+    return scores;
 }
 
 function getGrade(score) {

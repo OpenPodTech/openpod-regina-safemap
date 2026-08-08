@@ -53,6 +53,7 @@
                 const result = findNeighbourhoodByName(name);
                 if (result) {
                     selectNeighbourhood(result.layer, result.feature);
+                    map.fitBounds(result.layer.getBounds(), { padding: [50, 50] });
                 }
             }
         });
@@ -195,9 +196,15 @@ function findAllNeighbourhoodsByName(query) {
 
 function renderSearchDropdown(results) {
     const dropdown = document.getElementById('search-dropdown');
+    const query = document.getElementById('search-input').value.trim();
 
     if (results.length === 0) {
-        dropdown.classList.remove('visible');
+        if (query.length >= 3) {
+            dropdown.innerHTML = '<div class="search-no-results">No matches. Try a neighbourhood name like "Cathedral" or "Harbour Landing"</div>';
+            dropdown.classList.add('visible');
+        } else {
+            dropdown.classList.remove('visible');
+        }
         return;
     }
 
