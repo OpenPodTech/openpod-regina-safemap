@@ -6,215 +6,76 @@
     <title>What The Data Tells Us — Regina SafeMap Insights</title>
     <meta name="description" content="Data-driven insights about crime in Regina: safest neighbourhoods, improving areas, seasonal patterns, and what realtors don't tell you.">
     <link rel="canonical" href="https://reginasafemap.ca/insights/">
-
-    <link rel="stylesheet" href="../css/style.css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { overflow-y: auto; height: auto; min-height: 100vh; }
-
-        .insights-page {
-            padding: 100px 24px 60px;
-            max-width: 800px;
-            margin: 0 auto;
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #ffffff; --bg-subtle: #f8fafc; --bg-card: #ffffff;
+            --border: #e2e8f0; --border-hover: #cbd5e1;
+            --text: #1e293b; --text-secondary: #64748b; --text-muted: #94a3b8;
+            --accent: #0EA5E9; --accent-light: #e0f2fe;
+            --green: #10b981; --green-light: #d1fae5;
+            --yellow: #f59e0b; --yellow-light: #fef3c7;
+            --red: #ef4444; --red-light: #fee2e2;
+            --radius: 12px; --radius-sm: 8px;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08); --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
         }
-
-        .insights-header {
-            margin-bottom: 48px;
-            animation: fadeUp 0.6s ease-out;
-        }
-
-        .insights-header h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            letter-spacing: -0.03em;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
-
-        .insights-header .subtitle {
-            font-size: 1rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .insights-header .byline {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .insight-section {
-            margin-bottom: 56px;
-            animation: fadeUp 0.6s ease-out;
-        }
-
-        .insight-section h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-            line-height: 1.3;
-        }
-
-        .insight-section h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin-top: 24px;
-            margin-bottom: 10px;
-        }
-
-        .insight-section p {
-            font-size: 0.94rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        .insight-section ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 16px;
-        }
-
-        .insight-section li {
-            padding: 8px 0 8px 20px;
-            position: relative;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .insight-section li::before {
-            content: '\2022';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .callout {
-            padding: 20px 24px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            margin: 24px 0;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .callout.warning {
-            border-left-color: var(--yellow);
-        }
-
-        .callout.good {
-            border-left-color: var(--green);
-        }
-
-        .stat-inline {
-            display: inline-block;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .link-internal {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .link-internal:hover { text-decoration: underline; }
-
-        .toc {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius);
-            padding: 24px;
-            margin-bottom: 48px;
-        }
-
-        .toc h3 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 12px;
-        }
-
-        .toc a {
-            display: block;
-            padding: 6px 0;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.88rem;
-            transition: color 0.2s;
-        }
-
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-subtle); color: var(--text); min-height: 100vh; font-size: 0.9rem; line-height: 1.6; max-width: 100%; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { color: #0284c7; }
+        .site-header { background: #fff; border-bottom: 1px solid var(--border); padding: 14px 24px; position: sticky; top: 0; z-index: 100; }
+        .site-header .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .brand { font-size: 1.2rem; font-weight: 800; color: var(--accent); text-decoration: none; }
+        .site-header nav { display: flex; gap: 20px; }
+        .site-header nav a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; font-weight: 500; }
+        .site-header nav a:hover { color: var(--text); }
+        .site-header nav a.active { color: var(--accent); }
+        .page-container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+        .page-title { font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 12px; line-height: 1.2; }
+        .page-subtitle { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px; }
+        .byline { font-size: 0.78rem; color: var(--text-muted); margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); margin-bottom: 40px; }
+        .toc { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 48px; box-shadow: var(--shadow); }
+        .toc h3 { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .toc a { display: block; padding: 6px 0; color: var(--text-secondary); font-size: 0.88rem; transition: color 0.2s; }
         .toc a:hover { color: var(--accent); }
-
-        .divider {
-            border: none;
-            border-top: 1px solid var(--border-subtle);
-            margin: 48px 0;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 500;
-            margin-bottom: 24px;
-        }
-        .back-link:hover { text-decoration: underline; }
+        .insight-section { margin-bottom: 56px; }
+        .insight-section h2 { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 16px; line-height: 1.3; }
+        .insight-section h3 { font-size: 1.1rem; font-weight: 600; color: var(--accent); margin-top: 24px; margin-bottom: 10px; }
+        .insight-section p { font-size: 0.94rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+        .insight-section ul { list-style: none; padding: 0; margin-bottom: 16px; }
+        .insight-section li { padding: 8px 0 8px 20px; position: relative; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+        .insight-section li::before { content: '\2022'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .callout { padding: 20px 24px; background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 24px 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; box-shadow: var(--shadow); }
+        .callout.warning { border-left-color: var(--yellow); }
+        .callout.good { border-left-color: var(--green); }
+        .stat-inline { display: inline-block; font-weight: 700; color: var(--text); }
+        .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+        .site-footer { text-align: center; padding: 40px 24px; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 60px; }
+        .site-footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width: 560px) { .site-header nav { display: none; } .page-title { font-size: 1.6rem; } }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="app-header">
-        <div class="header-left">
-            <a href="../" style="text-decoration:none;">
-                <div class="header-brand">
-                    <span class="brand-mark">&#9672; OpenPod</span>
-                    <span class="brand-badge">SafeMap</span>
-                </div>
-            </a>
-        </div>
-        <nav class="header-nav">
-            <a href="../" class="nav-link">Dashboard</a>
-            <a href="../#map-section" class="nav-link">Map</a>
-            <a href="../neighbourhoods/" class="nav-link">Neighbourhoods</a>
-            <a href="../trends/" class="nav-link">Trends</a>
-            <a href="./" class="nav-link active">Insights</a>
-            <a href="../best-for/" class="nav-link">Best For</a>
-            <a href="../quiz/" class="nav-link">Quiz</a>
-        </nav>
-        <div class="header-right">
-            <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank" class="github-link" aria-label="View on GitHub">
-                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../" class="brand">&#9672; Regina SafeMap</a>
+            <nav>
+                <a href="../neighbourhoods/">Neighbourhoods</a>
+                <a href="../trends/">Trends</a>
+                <a href="../best-for/">Best For</a>
+                <a href="./" class="active">Insights</a>
+                <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank">GitHub</a>
+            </nav>
         </div>
     </header>
 
-    <div class="insights-page">
-        <a href="../" class="back-link">&larr; Back to Dashboard</a>
+    <main class="page-container">
+        <h1 class="page-title">What The Data Tells Us</h1>
+        <p class="page-subtitle">An honest, data-driven look at crime in Regina. No sensationalism, no sugar-coating. Just numbers and context.</p>
+        <p class="byline">By OpenPodTech &middot; Based on 12 years of police data (2007-2018) + live 2026 feeds &middot; Updated automatically</p>
 
-        <div class="insights-header">
-            <h1>What The Data Tells Us</h1>
-            <p class="subtitle">An honest, data-driven look at crime in Regina. No sensationalism, no sugar-coating. Just numbers and context.</p>
-            <p class="byline">By OpenPodTech &middot; Based on 12 years of police data (2007-2018) + live 2026 feeds &middot; Updated automatically</p>
-        </div>
-
-        <!-- Table of Contents -->
         <div class="toc">
             <h3>In This Report</h3>
             <a href="#big-picture">1. The Big Picture</a>
@@ -225,22 +86,16 @@
             <a href="#data-gap">6. The Data Gap</a>
         </div>
 
-        <!-- Section 1 -->
         <div class="insight-section" id="big-picture">
             <h2>1. The Big Picture</h2>
             <p>In 2018, Regina recorded approximately <span class="stat-inline" id="ins-2018-total">34,000</span> crime incidents across all neighbourhoods. That's roughly 150 incidents per 1,000 residents annually, making Regina one of Canada's higher-crime cities per capita.</p>
             <p>But that headline number hides enormous variation. The safest neighbourhoods see fewer than 50 incidents per year. The highest-activity areas can top 1,000+. Where you live within Regina matters more than whether you live in Regina at all.</p>
-
-            <div class="callout">
-                The gap between safest and most dangerous is roughly <strong>20x</strong>. Two neighbourhoods 10 minutes apart can have wildly different risk profiles. This is why blanket "Regina is dangerous" takes are misleading.
-            </div>
-
+            <div class="callout">The gap between safest and most dangerous is roughly <strong>20x</strong>. Two neighbourhoods 10 minutes apart can have wildly different risk profiles. This is why blanket "Regina is dangerous" takes are misleading.</div>
             <p>Property crime dominates. Theft, break-and-enter, and mischief make up roughly 70-80% of all incidents city-wide. Violent crime (assault, robbery) is heavily concentrated in a small number of core neighbourhoods.</p>
         </div>
 
         <hr class="divider">
 
-        <!-- Section 2 -->
         <div class="insight-section" id="safest-areas">
             <h2>2. The Safest Areas (And Why)</h2>
             <p>Consistently low-crime areas in Regina share common traits:</p>
@@ -251,17 +106,12 @@
                 <li><strong>Higher income:</strong> Areas with $80K+ median household income have 3-5x fewer incidents</li>
                 <li><strong>Design:</strong> Cul-de-sac layouts, limited through-traffic, fewer commercial interfaces</li>
             </ul>
-
-            <div class="callout good">
-                <strong>Best bets for newcomers:</strong> Whitmore Park, Lakeview, Hillsdale, University Park, and Harbour Landing consistently rank in the top 10 safest. They also have good school access and transit. Check their <a href="../neighbourhoods/" class="link-internal">neighbourhood profiles</a> for details.
-            </div>
-
+            <div class="callout good"><strong>Best bets for newcomers:</strong> Whitmore Park, Lakeview, Hillsdale, University Park, and Harbour Landing consistently rank in the top 10 safest. They also have good school access and transit. Check their <a href="../neighbourhoods/">neighbourhood profiles</a> for details.</div>
             <p>However: "safe" doesn't mean "zero crime." Even the safest neighbourhoods see occasional vehicle break-ins, especially in winter when cars are left running.</p>
         </div>
 
         <hr class="divider">
 
-        <!-- Section 3 -->
         <div class="insight-section" id="improving">
             <h2>3. The Improving Areas</h2>
             <p>Several neighbourhoods have shown sustained crime reduction over the 2007-2018 historical window:</p>
@@ -270,42 +120,29 @@
                 <li><strong>Transition Area:</strong> Despite its name, has seen incremental improvement with community programs</li>
                 <li><strong>Downtown:</strong> After peaking around 2011, downtown crime has stabilized with increased foot traffic from condos</li>
             </ul>
-
-            <p>These areas represent potential value for buyers. Lower home prices + improving safety trajectory = good long-term bets. But do your due diligence — check the <a href="../trends/" class="link-internal">12-year trend charts</a> before deciding.</p>
-
-            <div class="callout warning">
-                <strong>Caution:</strong> "Improving" doesn't mean "safe yet." Some areas have improved from "very high" to "high" — better, but still above average. Always check the absolute numbers, not just the trend direction.
-            </div>
+            <p>These areas represent potential value for buyers. Lower home prices + improving safety trajectory = good long-term bets. But do your due diligence — check the <a href="../trends/">12-year trend charts</a> before deciding.</p>
+            <div class="callout warning"><strong>Caution:</strong> "Improving" doesn't mean "safe yet." Some areas have improved from "very high" to "high" — better, but still above average. Always check the absolute numbers, not just the trend direction.</div>
         </div>
 
         <hr class="divider">
 
-        <!-- Section 4 -->
         <div class="insight-section" id="seasonal">
             <h2>4. Seasonal Patterns</h2>
             <p>Regina crime follows strong seasonal patterns:</p>
-
             <h3>Summer Peak (June - August)</h3>
             <p>Crime spikes 30-40% in summer months. More people outside, longer daylight hours, social gatherings, and school being out all contribute. Mischief, assault, and theft from vehicles peak during this window.</p>
-
             <h3>Winter Dip (December - February)</h3>
             <p>At -30&deg;C to -40&deg;C, nobody wants to be outside. Property crime drops. But domestic-related incidents hold steady or increase. Vehicle theft spikes when people leave cars running to warm up.</p>
-
             <h3>September Spike</h3>
             <p>Back-to-school correlates with a brief spike in theft and break-ins, possibly related to people returning from summer vacations to find homes targeted.</p>
-
-            <div class="callout">
-                <strong>Practical tip:</strong> If you're moving in fall/winter, crime stats for that period will look artificially low. Summer is when you see the true baseline. Check multiple seasons before drawing conclusions.
-            </div>
+            <div class="callout"><strong>Practical tip:</strong> If you're moving in fall/winter, crime stats for that period will look artificially low. Summer is when you see the true baseline. Check multiple seasons before drawing conclusions.</div>
         </div>
 
         <hr class="divider">
 
-        <!-- Section 5 -->
         <div class="insight-section" id="realtors">
             <h2>5. What Realtors Skip</h2>
             <p>Real estate listings highlight schools and parks. They rarely mention:</p>
-
             <ul>
                 <li><strong>Adjacent neighbourhood bleed:</strong> A "safe" block bordering a high-crime area experiences spillover. The border zones are where most conflicts happen.</li>
                 <li><strong>Commercial interface:</strong> Homes near strip malls and convenience stores see 2-3x more property crime than those in purely residential blocks.</li>
@@ -313,22 +150,16 @@
                 <li><strong>The Hawkstone illusion:</strong> Hawkstone appears high-crime in raw numbers but 90%+ is retail theft from big-box stores, not residential crime. Context matters.</li>
                 <li><strong>Rental density:</strong> Areas with 60%+ rental occupancy tend to have higher turnover and less community cohesion, correlating with slightly elevated rates.</li>
             </ul>
-
-            <div class="callout warning">
-                We're not anti-realtor. They have a job to do. But when you're choosing where to raise a family or start fresh in Canada, you deserve the complete picture. That's why this tool exists.
-            </div>
+            <div class="callout warning">We're not anti-realtor. They have a job to do. But when you're choosing where to raise a family or start fresh in Canada, you deserve the complete picture. That's why this tool exists.</div>
         </div>
 
         <hr class="divider">
 
-        <!-- Section 6 -->
         <div class="insight-section" id="data-gap">
             <h2>6. The Data Gap</h2>
             <p>Let's be transparent: we have a <strong>7-year hole</strong> in our data. Historical data covers 2007-2018 (from open datasets). Our live feed covers 2026 onward. That leaves 2019-2025 unaccounted for.</p>
-
             <h3>What happened during the gap?</h3>
             <p>COVID-19 (2020-2022) likely disrupted normal patterns significantly. Opioid crisis escalation, homelessness increases, and policing changes all occurred during this window. We can't know the specifics without data.</p>
-
             <h3>What we're doing about it</h3>
             <ul>
                 <li>FOIA request submitted to Regina Police Service for 2019-2025 incident data</li>
@@ -336,22 +167,15 @@
                 <li>Cross-referencing Statistics Canada annual reports for aggregate numbers</li>
                 <li>Accepting community submissions of local knowledge for the gap period</li>
             </ul>
-
-            <div class="callout">
-                We believe in honesty over completeness. We won't interpolate, guess, or fill in fake data. When we have the 2019-2025 records, we'll add them. Until then, the gap is clearly marked in all our charts and tools.
-            </div>
-
-            <p>Want to help? If you have access to Regina crime data from 2019-2025, <a href="../report/" class="link-internal">submit it here</a> or open a pull request on our <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank" class="link-internal">GitHub repository</a>.</p>
+            <div class="callout">We believe in honesty over completeness. We won't interpolate, guess, or fill in fake data. When we have the 2019-2025 records, we'll add them. Until then, the gap is clearly marked in all our charts and tools.</div>
+            <p>Want to help? If you have access to Regina crime data from 2019-2025, <a href="../report/">submit it here</a> or open a pull request on our <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank">GitHub repository</a>.</p>
         </div>
-    </div>
+    </main>
 
-    <!-- Footer -->
-    <footer id="app-footer">
-        <p>Open source civic intelligence &middot; Built by <a href="https://github.com/OpenPodTech" target="_blank">OpenPodTech</a> &middot; Free forever</p>
-        <p class="footer-sub">All claims backed by open data. Verify anything: <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank">full source on GitHub</a></p>
+    <footer class="site-footer">
+        <p>Live data from Regina Police Service &middot; Built by <a href="https://github.com/OpenPodTech">OpenPodTech</a> &middot; Free forever</p>
     </footer>
 
-    <!-- Populate dynamic numbers from trends.json -->
     <script>
     (function() {
         fetch('../data/processed/trends.json')

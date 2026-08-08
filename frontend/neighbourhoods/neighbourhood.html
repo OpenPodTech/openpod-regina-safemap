@@ -5,434 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loading... — Regina SafeMap</title>
     <meta name="description" content="Safety scores, crime data, and neighbourhood review for Regina, Saskatchewan.">
-    <meta property="og:title" content="Regina Neighbourhood Profile — OpenPod SafeMap">
+    <meta property="og:title" content="Regina Neighbourhood Profile — Regina SafeMap">
     <meta property="og:description" content="Safety score, crime breakdown, and honest review. Free and open source.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://reginasafemap.ca/neighbourhoods/neighbourhood.html">
-    <meta property="og:image" content="https://reginasafemap.ca/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --accent: #0EA5E9;
-            --accent-glow: rgba(14, 165, 233, 0.4);
-            --bg-deep: #0f0f23;
-            --bg-mid: #0d1117;
-            --bg-card: rgba(15, 23, 42, 0.75);
-            --border-subtle: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(255, 255, 255, 0.12);
-            --text-primary: #f0f6fc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --green: #10b981;
-            --teal: #14b8a6;
-            --yellow: #f59e0b;
-            --red: #ef4444;
-            --purple: #a78bfa;
-            --radius: 16px;
-            --radius-sm: 10px;
-            --radius-pill: 100px;
-            --glass-blur: blur(16px);
-            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.4);
+            --bg: #ffffff; --bg-subtle: #f8fafc; --bg-card: #ffffff;
+            --border: #e2e8f0; --border-hover: #cbd5e1;
+            --text: #1e293b; --text-secondary: #64748b; --text-muted: #94a3b8;
+            --accent: #0EA5E9; --accent-light: #e0f2fe;
+            --green: #10b981; --green-light: #d1fae5;
+            --yellow: #f59e0b; --yellow-light: #fef3c7;
+            --red: #ef4444; --red-light: #fee2e2;
+            --radius: 12px; --radius-sm: 8px;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08); --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
         }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #0d1117 50%, #0a1628 100%);
-            color: var(--text-secondary);
-            min-height: 100vh;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-subtle); color: var(--text); min-height: 100vh; font-size: 0.9rem; line-height: 1.6; max-width: 100%; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        /* Header */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 24px;
-            background: var(--bg-card);
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .header-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .brand-mark { font-size: 1.3rem; color: var(--accent); font-weight: 800; letter-spacing: -0.02em; }
-        .brand-badge { font-size: 0.65rem; font-weight: 600; color: var(--accent); background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.2); padding: 3px 8px; border-radius: var(--radius-pill); text-transform: uppercase; letter-spacing: 0.05em; }
-
-        .header-nav { display: flex; align-items: center; gap: 16px; }
-        .header-nav a { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; transition: color 0.2s; }
-        .header-nav a:hover { color: var(--text-primary); text-decoration: none; }
-
-        .github-link { color: var(--text-muted); display: flex; align-items: center; padding: 4px; border-radius: 6px; transition: color 0.2s; }
-        .github-link:hover { color: var(--text-primary); }
-
-        /* Page */
-        .page-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
-
-        .breadcrumb {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .breadcrumb a { color: var(--text-muted); }
+        a:hover { color: #0284c7; }
+        .site-header { background: #fff; border-bottom: 1px solid var(--border); padding: 14px 24px; position: sticky; top: 0; z-index: 100; }
+        .site-header .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .brand { font-size: 1.2rem; font-weight: 800; color: var(--accent); text-decoration: none; }
+        .site-header nav { display: flex; gap: 20px; }
+        .site-header nav a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; font-weight: 500; }
+        .site-header nav a:hover { color: var(--text); }
+        .page-container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+        .breadcrumb { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--text-secondary); }
         .breadcrumb a:hover { color: var(--accent); }
-
-        /* Profile Header */
-        .profile-header {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-            margin-bottom: 32px;
-        }
-
-        @media (max-width: 560px) {
-            .profile-header { flex-direction: column; align-items: flex-start; }
-        }
-
-        .score-ring-container {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            flex-shrink: 0;
-        }
-
-        .score-ring-container svg {
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
-        }
-
-        .ring-bg { fill: none; stroke: rgba(255, 255, 255, 0.05); stroke-width: 6; }
-        .ring-fill { fill: none; stroke: var(--accent); stroke-width: 6; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
-
-        .score-number {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -55%);
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            letter-spacing: -0.03em;
-        }
-
-        .score-grade-label {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, 70%);
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2px 10px;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--border-subtle);
-        }
-
-        .profile-title h1 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            margin-bottom: 6px;
-        }
-
-        .vibe-tag {
-            display: inline-block;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--accent);
-            background: rgba(14, 165, 233, 0.08);
-            border: 1px solid rgba(14, 165, 233, 0.15);
-            padding: 4px 12px;
-            border-radius: var(--radius-pill);
-        }
-
-        /* Glass Cards */
-        .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: var(--glass-blur);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius);
-            padding: 24px;
-            margin-bottom: 20px;
-        }
-
-        .card-title {
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 16px;
-        }
-
-        /* Description */
+        .profile-header { display: flex; gap: 24px; align-items: center; margin-bottom: 32px; }
+        .score-circle { width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; flex-shrink: 0; }
+        .score-circle .number { font-size: 2.2rem; font-weight: 800; line-height: 1; }
+        .score-circle .grade { font-size: 0.72rem; font-weight: 600; margin-top: 4px; }
+        .score-circle.green { background: var(--green-light); color: #065f46; }
+        .score-circle.yellow { background: var(--yellow-light); color: #92400e; }
+        .score-circle.red { background: var(--red-light); color: #991b1b; }
+        .profile-title h1 { font-size: 1.8rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+        .vibe-tag { display: inline-block; font-size: 0.78rem; font-weight: 600; color: var(--accent); background: var(--accent-light); border: 1px solid #bae6fd; padding: 4px 12px; border-radius: 50px; }
+        .card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 20px; box-shadow: var(--shadow); }
+        .card-title { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
         .desc-text { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
-
-        .detail-row {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 8px;
-            font-size: 0.85rem;
-        }
-
-        .detail-label { font-weight: 600; color: var(--text-muted); min-width: 90px; }
-        .detail-value { color: var(--text-secondary); }
+        .detail-row { display: flex; gap: 8px; margin-bottom: 8px; font-size: 0.85rem; }
+        .detail-label { font-weight: 600; color: var(--text-secondary); min-width: 90px; }
+        .detail-value { color: var(--text); }
         .detail-value.good { color: var(--green); }
         .detail-value.warning { color: var(--red); }
-
-        .rent-display {
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .rent-display .rent-value {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .rent-display .rent-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        /* Score Breakdown */
-        .breakdown-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .breakdown-label {
-            width: 80px;
-            font-size: 0.76rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .breakdown-bar {
-            flex: 1;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .breakdown-fill {
-            height: 100%;
-            border-radius: 4px;
-            transition: width 0.8s ease;
-        }
-
-        .fill-safety { background: linear-gradient(90deg, var(--red), #f97316); }
-        .fill-schools { background: linear-gradient(90deg, var(--purple), #c084fc); }
-        .fill-transit { background: linear-gradient(90deg, var(--accent), #38bdf8); }
-        .fill-amenities { background: linear-gradient(90deg, var(--green), #34d399); }
-        .fill-walkability { background: linear-gradient(90deg, var(--yellow), #fbbf24); }
-
-        .breakdown-value {
-            width: 32px;
-            text-align: right;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Crime Breakdown */
-        .crime-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .crime-label {
-            flex: 1;
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-        }
-
-        .crime-bar-wrap {
-            width: 120px;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .crime-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--yellow), var(--red));
-            border-radius: 3px;
-        }
-
-        .crime-count {
-            width: 40px;
-            text-align: right;
-            font-size: 0.76rem;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        .no-data {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* Action Links */
-        .action-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 24px;
-        }
-
-        .action-btn {
-            padding: 10px 20px;
-            border-radius: var(--radius-pill);
-            font-size: 0.82rem;
-            font-weight: 600;
-            border: 1px solid var(--border-subtle);
-            background: rgba(255, 255, 255, 0.03);
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
-        }
-
-        .action-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .action-btn.primary {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: #fff;
-        }
-
-        .action-btn.primary:hover {
-            background: #38bdf8;
-        }
-
-        /* Share */
-        .share-section {
-            margin-top: 8px;
-        }
-
-        .share-url {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .share-url input {
-            flex: 1;
-            padding: 8px 14px;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--border-subtle);
-            background: rgba(15, 23, 42, 0.6);
-            color: var(--text-primary);
-            font-size: 0.78rem;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-        }
-
-        .share-url button {
-            padding: 8px 14px;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--accent);
-            background: rgba(14, 165, 233, 0.1);
-            color: var(--accent);
-            font-size: 0.76rem;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
+        .rent-display { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+        .rent-display .rent-value { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+        .rent-display .rent-label { font-size: 0.75rem; color: var(--text-muted); }
+        .breakdown-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .breakdown-label { width: 80px; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); }
+        .breakdown-bar { flex: 1; height: 8px; background: var(--bg-subtle); border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+        .breakdown-fill { height: 100%; border-radius: 4px; transition: width 0.8s ease; }
+        .fill-safety { background: var(--green); }
+        .fill-schools { background: #a78bfa; }
+        .fill-transit { background: var(--accent); }
+        .fill-amenities { background: #f97316; }
+        .fill-walkability { background: #06b6d4; }
+        .breakdown-value { width: 32px; text-align: right; font-size: 0.8rem; font-weight: 700; color: var(--text); }
+        .crime-item { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .crime-label { flex: 1; font-size: 0.82rem; color: var(--text-secondary); }
+        .crime-bar-wrap { width: 120px; height: 6px; background: var(--bg-subtle); border-radius: 3px; overflow: hidden; border: 1px solid var(--border); }
+        .crime-bar-fill { height: 100%; background: linear-gradient(90deg, var(--yellow), var(--red)); border-radius: 3px; }
+        .crime-count { width: 40px; text-align: right; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); }
+        .no-data { font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
+        .action-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+        .action-btn { padding: 10px 20px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; border: 1px solid var(--border); background: #fff; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; text-decoration: none; }
+        .action-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .action-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+        .action-btn.primary:hover { background: #0284c7; }
+        .share-section { margin-top: 8px; }
+        .share-url { display: flex; gap: 8px; align-items: center; }
+        .share-url input { flex: 1; padding: 8px 14px; border-radius: 50px; border: 1px solid var(--border); background: #fff; color: var(--text); font-size: 0.8rem; font-family: 'Inter', sans-serif; outline: none; }
+        .share-url input:focus { border-color: var(--accent); }
+        .share-url button { padding: 8px 14px; border-radius: 50px; border: 1px solid var(--accent); background: var(--accent-light); color: var(--accent); font-size: 0.78rem; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; transition: all 0.2s; }
         .share-url button:hover { background: var(--accent); color: #fff; }
-
-        /* Footer */
-        .site-footer {
-            text-align: center;
-            padding: 32px 24px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .site-footer a { color: var(--text-muted); }
-        .site-footer a:hover { color: var(--accent); }
-
-        /* Loading */
+        .site-footer { text-align: center; padding: 40px 24px; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 60px; }
+        .site-footer a { color: var(--accent); text-decoration: none; }
         .loading { text-align: center; padding: 60px 0; color: var(--text-muted); }
         .not-found { text-align: center; padding: 60px 0; }
-        .not-found h2 { color: var(--text-primary); margin-bottom: 12px; }
+        .not-found h2 { color: var(--text); margin-bottom: 12px; }
+        @media (max-width: 560px) {
+            .profile-header { flex-direction: column; align-items: flex-start; }
+            .site-header nav { display: none; }
+        }
     </style>
 </head>
 <body>
     <header class="site-header">
-        <div class="header-brand">
-            <a href="../" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:10px;">
-                <span class="brand-mark">&#9672; OpenPod</span>
-                <span class="brand-badge">SafeMap</span>
-            </a>
+        <div class="header-inner">
+            <a href="../" class="brand">&#9672; Regina SafeMap</a>
+            <nav>
+                <a href="./">Neighbourhoods</a>
+                <a href="../trends/">Trends</a>
+                <a href="../best-for/">Best For</a>
+                <a href="../insights/">Insights</a>
+                <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank">GitHub</a>
+            </nav>
         </div>
-        <nav class="header-nav">
-            <a href="../">Map</a>
-            <a href="./">Neighbourhoods</a>
-            <a href="../best-for/">Best For</a>
-            <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank" class="github-link" aria-label="GitHub">
-                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
-        </nav>
     </header>
 
     <main class="page-container">
         <div class="breadcrumb">
             <a href="./">Neighbourhoods</a> / <span id="breadcrumb-name">Loading...</span>
         </div>
-
         <div id="content">
             <div class="loading">Loading neighbourhood data...</div>
         </div>
     </main>
 
     <footer class="site-footer">
-        Open source civic intelligence &middot; Built by <a href="https://github.com/OpenPodTech">OpenPodTech</a> &middot; Free forever
+        <p>Live data from Regina Police Service &middot; Built by <a href="https://github.com/OpenPodTech">OpenPodTech</a> &middot; Free forever</p>
     </footer>
 
     <script>
@@ -449,7 +137,6 @@
 
         breadcrumbName.textContent = name;
 
-        // Load data
         const [scoresResp, descResp, crimeResp] = await Promise.all([
             fetch('../data/processed/scores.json'),
             fetch('../data/processed/descriptions.json'),
@@ -462,66 +149,45 @@
 
         const neighbourhood = scoresData.scores.find(s => s.name === name);
         if (!neighbourhood) {
-            content.innerHTML = '<div class="not-found"><h2>Neighbourhood not found</h2><p>\"' + name + '\" was not found in our database.</p><p><a href="./">Browse all neighbourhoods</a></p></div>';
+            content.innerHTML = '<div class="not-found"><h2>Neighbourhood not found</h2><p>"' + name + '" was not found in our database.</p><p><a href="./">Browse all neighbourhoods</a></p></div>';
             return;
         }
 
         const desc = descriptions[name] || null;
         const crime = crimeStats[name] || null;
 
-        // Update page title and meta
         document.title = name + ' — Safety Score & Review | Regina SafeMap';
-        document.querySelector('meta[name="description"]').content = 'Safety score, crime data, and honest review for ' + name + ', Regina. ' + (desc ? desc.description.substring(0, 100) : '');
-        document.querySelector('meta[property="og:title"]').content = name + ' — Regina Neighbourhood Profile';
-        document.querySelector('meta[property="og:description"]').content = desc ? desc.description.substring(0, 150) : 'Safety score and neighbourhood data for ' + name + ', Regina.';
 
-        // Score color
         function getScoreColor(score) {
-            if (score >= 90) return 'var(--green)';
-            if (score >= 70) return 'var(--teal)';
-            if (score >= 50) return 'var(--yellow)';
-            return 'var(--red)';
+            if (score >= 70) return 'green';
+            if (score >= 50) return 'yellow';
+            return 'red';
         }
 
         const scoreColor = getScoreColor(neighbourhood.overall);
-        const circumference = 2 * Math.PI * 45;
-        const offset = circumference - (neighbourhood.overall / 100) * circumference;
 
-        // Crime breakdown — top 5
         let crimeHtml = '<p class="no-data">No detailed crime data available for this neighbourhood.</p>';
         if (crime && crime.crime_breakdown) {
             const entries = Object.entries(crime.crime_breakdown).sort((a, b) => b[1] - a[1]).slice(0, 5);
             const maxVal = entries[0][1];
             crimeHtml = entries.map(([type, count]) => {
                 const pct = (count / maxVal) * 100;
-                return `<div class="crime-item">
-                    <span class="crime-label">${type}</span>
-                    <div class="crime-bar-wrap"><div class="crime-bar-fill" style="width:${pct}%"></div></div>
-                    <span class="crime-count">${count}</span>
-                </div>`;
+                return '<div class="crime-item"><span class="crime-label">' + type + '</span><div class="crime-bar-wrap"><div class="crime-bar-fill" style="width:' + pct + '%"></div></div><span class="crime-count">' + count + '</span></div>';
             }).join('');
         }
 
-        // Trend text
         let trendHtml = '';
         if (neighbourhood.crime_trend !== 0) {
             const trendDir = neighbourhood.crime_trend < 0 ? 'decreasing' : 'increasing';
             const trendColor = neighbourhood.crime_trend < 0 ? 'var(--green)' : 'var(--red)';
-            trendHtml = `<p style="font-size:0.85rem;color:${trendColor};font-weight:600;">Crime ${trendDir} ${Math.abs(neighbourhood.crime_trend).toFixed(1)}% year-over-year</p>`;
+            trendHtml = '<p style="font-size:0.85rem;color:' + trendColor + ';font-weight:600;">Crime ' + trendDir + ' ' + Math.abs(neighbourhood.crime_trend).toFixed(1) + '% year-over-year</p>';
         }
 
-        // Build profile
         content.innerHTML = `
             <div class="profile-header">
-                <div class="score-ring-container">
-                    <svg viewBox="0 0 100 100">
-                        <circle class="ring-bg" cx="50" cy="50" r="45" />
-                        <circle class="ring-fill" cx="50" cy="50" r="45"
-                            stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"
-                            style="stroke:${scoreColor}" />
-                    </svg>
-                    <span class="score-number" style="color:${scoreColor}">${neighbourhood.overall}</span>
-                    <span class="score-grade-label">Grade ${neighbourhood.grade}</span>
+                <div class="score-circle ${scoreColor}">
+                    <span class="number">${neighbourhood.overall}</span>
+                    <span class="grade">Grade ${neighbourhood.grade}</span>
                 </div>
                 <div class="profile-title">
                     <h1>${name}</h1>
@@ -530,7 +196,7 @@
             </div>
 
             ${desc ? `
-            <div class="glass-card">
+            <div class="card">
                 <div class="card-title">About This Neighbourhood</div>
                 <p class="desc-text">${desc.description}</p>
                 <div class="detail-row"><span class="detail-label">Best for:</span><span class="detail-value good">${desc.best_for}</span></div>
@@ -542,43 +208,23 @@
             </div>
             ` : ''}
 
-            <div class="glass-card">
+            <div class="card">
                 <div class="card-title">Score Breakdown</div>
-                <div class="breakdown-row">
-                    <span class="breakdown-label">Safety</span>
-                    <div class="breakdown-bar"><div class="breakdown-fill fill-safety" style="width:${neighbourhood.safety}%"></div></div>
-                    <span class="breakdown-value">${neighbourhood.safety}</span>
-                </div>
-                <div class="breakdown-row">
-                    <span class="breakdown-label">Schools</span>
-                    <div class="breakdown-bar"><div class="breakdown-fill fill-schools" style="width:${neighbourhood.schools}%"></div></div>
-                    <span class="breakdown-value">${neighbourhood.schools}</span>
-                </div>
-                <div class="breakdown-row">
-                    <span class="breakdown-label">Transit</span>
-                    <div class="breakdown-bar"><div class="breakdown-fill fill-transit" style="width:${neighbourhood.transit}%"></div></div>
-                    <span class="breakdown-value">${neighbourhood.transit}</span>
-                </div>
-                <div class="breakdown-row">
-                    <span class="breakdown-label">Amenities</span>
-                    <div class="breakdown-bar"><div class="breakdown-fill fill-amenities" style="width:${neighbourhood.amenities}%"></div></div>
-                    <span class="breakdown-value">${neighbourhood.amenities}</span>
-                </div>
-                <div class="breakdown-row">
-                    <span class="breakdown-label">Walk</span>
-                    <div class="breakdown-bar"><div class="breakdown-fill fill-walkability" style="width:${neighbourhood.walkability}%"></div></div>
-                    <span class="breakdown-value">${neighbourhood.walkability}</span>
-                </div>
+                <div class="breakdown-row"><span class="breakdown-label">Safety</span><div class="breakdown-bar"><div class="breakdown-fill fill-safety" style="width:${neighbourhood.safety}%"></div></div><span class="breakdown-value">${neighbourhood.safety}</span></div>
+                <div class="breakdown-row"><span class="breakdown-label">Schools</span><div class="breakdown-bar"><div class="breakdown-fill fill-schools" style="width:${neighbourhood.schools}%"></div></div><span class="breakdown-value">${neighbourhood.schools}</span></div>
+                <div class="breakdown-row"><span class="breakdown-label">Transit</span><div class="breakdown-bar"><div class="breakdown-fill fill-transit" style="width:${neighbourhood.transit}%"></div></div><span class="breakdown-value">${neighbourhood.transit}</span></div>
+                <div class="breakdown-row"><span class="breakdown-label">Amenities</span><div class="breakdown-bar"><div class="breakdown-fill fill-amenities" style="width:${neighbourhood.amenities}%"></div></div><span class="breakdown-value">${neighbourhood.amenities}</span></div>
+                <div class="breakdown-row"><span class="breakdown-label">Walk</span><div class="breakdown-bar"><div class="breakdown-fill fill-walkability" style="width:${neighbourhood.walkability}%"></div></div><span class="breakdown-value">${neighbourhood.walkability}</span></div>
             </div>
 
-            <div class="glass-card">
+            <div class="card">
                 <div class="card-title">Crime Breakdown (Top 5)</div>
                 ${crimeHtml}
                 ${trendHtml}
                 <p style="font-size:0.75rem;color:var(--text-muted);margin-top:12px;">Total incidents: ${neighbourhood.total_crimes.toLocaleString()} (latest year)</p>
             </div>
 
-            <div class="glass-card">
+            <div class="card">
                 <div class="card-title">Quick Facts</div>
                 <div class="detail-row"><span class="detail-label">Schools:</span><span class="detail-value">${neighbourhood.schools_count} nearby</span></div>
                 <div class="detail-row"><span class="detail-label">Transit:</span><span class="detail-value">${neighbourhood.transit_stops} stops</span></div>
@@ -593,7 +239,7 @@
                 <a href="./" class="action-btn">All Neighbourhoods</a>
             </div>
 
-            <div class="glass-card share-section">
+            <div class="card share-section">
                 <div class="card-title">Share This Profile</div>
                 <div class="share-url">
                     <input type="text" id="share-input" readonly value="${window.location.href}" />
@@ -605,4 +251,3 @@
     </script>
 </body>
 </html>
-

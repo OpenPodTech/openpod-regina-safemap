@@ -6,281 +6,122 @@
     <title>Crime Trends — 12 Years of Data | Regina SafeMap</title>
     <meta name="description" content="Explore 12 years of Regina crime data (2007-2018) by neighbourhood. See which areas are improving, which peaked, and historical patterns.">
     <link rel="canonical" href="https://reginasafemap.ca/trends/">
-
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-
     <style>
-        body { overflow-y: auto; height: auto; min-height: 100vh; }
-
-        .trends-page {
-            padding: 100px 24px 60px;
-            max-width: 1000px;
-            margin: 0 auto;
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #ffffff; --bg-subtle: #f8fafc; --bg-card: #ffffff;
+            --border: #e2e8f0; --border-hover: #cbd5e1;
+            --text: #1e293b; --text-secondary: #64748b; --text-muted: #94a3b8;
+            --accent: #0EA5E9; --accent-light: #e0f2fe;
+            --green: #10b981; --green-light: #d1fae5;
+            --yellow: #f59e0b; --yellow-light: #fef3c7;
+            --red: #ef4444; --red-light: #fee2e2;
+            --radius: 12px; --radius-sm: 8px;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08); --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
         }
-
-        .trends-header {
-            margin-bottom: 40px;
-            animation: fadeUp 0.6s ease-out;
-        }
-
-        .trends-header h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            letter-spacing: -0.03em;
-            margin-bottom: 8px;
-        }
-
-        .trends-header p {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .data-gap-notice {
-            padding: 12px 20px;
-            background: rgba(245, 158, 11, 0.08);
-            border: 1px solid rgba(245, 158, 11, 0.15);
-            border-radius: var(--radius-sm);
-            font-size: 0.8rem;
-            color: #f59e0b;
-            margin-bottom: 32px;
-        }
-
-        .chart-controls {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-            align-items: center;
-            animation: fadeUp 0.6s ease-out 0.1s both;
-        }
-
-        .chart-controls label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .chart-controls select {
-            padding: 8px 16px;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--border-subtle);
-            background: var(--bg-card);
-            color: var(--text-primary);
-            font-size: 0.82rem;
-            font-family: 'Inter', sans-serif;
-            cursor: pointer;
-            outline: none;
-            min-width: 200px;
-        }
-
-        .chart-controls select:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
-        }
-
-        .chart-controls button {
-            padding: 8px 16px;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--accent);
-            background: rgba(14, 165, 233, 0.1);
-            color: var(--accent);
-            font-size: 0.8rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .chart-controls button:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-
-        .chart-wrapper {
-            background: var(--bg-card);
-            backdrop-filter: var(--glass-blur);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius);
-            padding: 24px;
-            margin-bottom: 32px;
-            animation: fadeUp 0.6s ease-out 0.2s both;
-        }
-
-        .chart-wrapper canvas {
-            width: 100% !important;
-            max-height: 400px;
-        }
-
-        .insight-box {
-            background: var(--bg-card);
-            backdrop-filter: var(--glass-blur);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius);
-            padding: 24px;
-            margin-bottom: 32px;
-            animation: fadeUp 0.6s ease-out 0.3s both;
-        }
-
-        .insight-box h3 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-        }
-
-        .insight-box p {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 8px;
-        }
-
-        .insight-box .insight-stat {
-            display: inline-block;
-            padding: 4px 10px;
-            background: rgba(14, 165, 233, 0.08);
-            border: 1px solid rgba(14, 165, 233, 0.15);
-            border-radius: var(--radius-pill);
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin-right: 8px;
-            margin-bottom: 6px;
-        }
-
-        .city-chart-section {
-            margin-top: 48px;
-        }
-
-        .city-chart-section h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 16px;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 500;
-            margin-bottom: 24px;
-        }
-
-        .back-link:hover { text-decoration: underline; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-subtle); color: var(--text); min-height: 100vh; font-size: 0.9rem; line-height: 1.6; max-width: 100%; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { color: #0284c7; }
+        .site-header { background: #fff; border-bottom: 1px solid var(--border); padding: 14px 24px; position: sticky; top: 0; z-index: 100; }
+        .site-header .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .site-header .brand { font-size: 1.2rem; font-weight: 800; color: var(--accent); text-decoration: none; }
+        .site-header nav { display: flex; gap: 20px; }
+        .site-header nav a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; font-weight: 500; }
+        .site-header nav a:hover { color: var(--text); }
+        .site-header nav a.active { color: var(--accent); }
+        .page-container { max-width: 1000px; margin: 0 auto; padding: 40px 24px 80px; }
+        .page-title { font-size: 2rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+        .page-subtitle { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; }
+        .data-gap-notice { padding: 12px 20px; background: var(--yellow-light); border: 1px solid #fde68a; border-radius: var(--radius-sm); font-size: 0.82rem; color: #92400e; margin-bottom: 32px; }
+        .chart-controls { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
+        .chart-controls label { font-size: 0.82rem; color: var(--text-secondary); font-weight: 500; }
+        .chart-controls select { padding: 8px 16px; border-radius: 50px; border: 1px solid var(--border); background: #fff; color: var(--text); font-size: 0.82rem; font-family: 'Inter', sans-serif; cursor: pointer; outline: none; min-width: 200px; }
+        .chart-controls select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1); }
+        .chart-controls button { padding: 8px 16px; border-radius: 50px; border: 1px solid var(--accent); background: var(--accent-light); color: var(--accent); font-size: 0.82rem; font-family: 'Inter', sans-serif; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+        .chart-controls button:hover { background: var(--accent); color: #fff; }
+        .chart-wrapper { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow); }
+        .chart-wrapper canvas { width: 100% !important; max-height: 400px; }
+        .insight-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow); }
+        .insight-box h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+        .insight-box p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 8px; }
+        .insight-box .insight-stat { display: inline-block; padding: 4px 10px; background: var(--accent-light); border: 1px solid #bae6fd; border-radius: 50px; font-size: 0.78rem; font-weight: 600; color: var(--accent); margin-right: 8px; margin-bottom: 6px; }
+        .city-chart-section { margin-top: 48px; }
+        .city-chart-section h2 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+        .site-footer { text-align: center; padding: 40px 24px; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 60px; }
+        .site-footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width: 560px) { .site-header nav { display: none; } .page-title { font-size: 1.5rem; } }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="app-header">
-        <div class="header-left">
-            <a href="../" style="text-decoration:none;">
-                <div class="header-brand">
-                    <span class="brand-mark">&#9672; OpenPod</span>
-                    <span class="brand-badge">SafeMap</span>
-                </div>
-            </a>
-        </div>
-        <nav class="header-nav">
-            <a href="../" class="nav-link">Dashboard</a>
-            <a href="../#map-section" class="nav-link">Map</a>
-            <a href="../neighbourhoods/" class="nav-link">Neighbourhoods</a>
-            <a href="./" class="nav-link active">Trends</a>
-            <a href="../insights/" class="nav-link">Insights</a>
-            <a href="../best-for/" class="nav-link">Best For</a>
-            <a href="../quiz/" class="nav-link">Quiz</a>
-        </nav>
-        <div class="header-right">
-            <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank" class="github-link" aria-label="View on GitHub">
-                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../" class="brand">&#9672; Regina SafeMap</a>
+            <nav>
+                <a href="../neighbourhoods/">Neighbourhoods</a>
+                <a href="./" class="active">Trends</a>
+                <a href="../best-for/">Best For</a>
+                <a href="../insights/">Insights</a>
+                <a href="https://github.com/OpenPodTech/openpod-regina-safemap" target="_blank">GitHub</a>
+            </nav>
         </div>
     </header>
 
-    <div class="trends-page">
-        <a href="../" class="back-link">&larr; Back to Dashboard</a>
-
-        <div class="trends-header">
-            <h1>Crime Trends: 12 Years of Data</h1>
-            <p>Explore how crime has changed across Regina neighbourhoods from 2007 to 2018, plus current 2026 data. Use the dropdown to select a neighbourhood or compare two areas side by side.</p>
-        </div>
+    <main class="page-container">
+        <h1 class="page-title">Crime Trends: 12 Years of Data</h1>
+        <p class="page-subtitle">Explore how crime has changed across Regina neighbourhoods from 2007 to 2018, plus current 2026 data. Use the dropdown to select a neighbourhood or compare two areas side by side.</p>
 
         <div class="data-gap-notice">
             &#9888; Data gap: 2019-2025 unavailable. FOIA request submitted to Regina Police Service. The chart shows a dotted line across this gap to indicate missing years.
         </div>
 
-        <!-- Controls -->
         <div class="chart-controls">
             <label for="hood-select">Neighbourhood:</label>
-            <select id="hood-select">
-                <option value="">Select a neighbourhood...</option>
-            </select>
+            <select id="hood-select"><option value="">Select a neighbourhood...</option></select>
             <label for="compare-select">Compare with:</label>
-            <select id="compare-select">
-                <option value="">None (single view)</option>
-            </select>
+            <select id="compare-select"><option value="">None (single view)</option></select>
             <button id="btn-city-wide">Show City-Wide</button>
         </div>
 
-        <!-- Chart -->
-        <div class="chart-wrapper">
-            <canvas id="trends-chart"></canvas>
-        </div>
+        <div class="chart-wrapper"><canvas id="trends-chart"></canvas></div>
 
-        <!-- Insight Box -->
         <div class="insight-box" id="insight-box">
             <h3>Select a neighbourhood to see insights</h3>
             <p>Choose from the dropdown above to explore historical crime data for any Regina area.</p>
         </div>
 
-        <!-- City-Wide Chart -->
         <div class="city-chart-section">
             <h2>City-Wide Crime Totals</h2>
-            <div class="chart-wrapper">
-                <canvas id="city-chart"></canvas>
-            </div>
+            <div class="chart-wrapper"><canvas id="city-chart"></canvas></div>
         </div>
-    </div>
+    </main>
 
-    <!-- Footer -->
-    <footer id="app-footer">
-        <p>Open source civic intelligence &middot; Built by <a href="https://github.com/OpenPodTech" target="_blank">OpenPodTech</a></p>
-        <p class="footer-sub">Data: andrewjdyck/regina-crime-data (2007-2018) &middot; Regina Police Service (2026)</p>
+    <footer class="site-footer">
+        <p>Live data from Regina Police Service &middot; Built by <a href="https://github.com/OpenPodTech">OpenPodTech</a> &middot; Free forever</p>
     </footer>
 
     <script>
     (function() {
         'use strict';
-
         var trendsData = null;
         var mainChart = null;
         var cityChart = null;
 
-        // Chart.js dark theme defaults
-        Chart.defaults.color = '#94a3b8';
-        Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+        Chart.defaults.color = '#64748b';
+        Chart.defaults.borderColor = '#e2e8f0';
         Chart.defaults.font.family = "'Inter', sans-serif";
 
         fetch('../data/processed/trends.json')
             .then(function(r) { return r.json(); })
-            .then(function(data) {
-                trendsData = data;
-                initPage();
-            })
-            .catch(function(err) {
-                document.getElementById('insight-box').innerHTML = '<h3>Error loading data</h3><p>Could not load trends.json. Make sure the trend builder has been run.</p>';
-            });
+            .then(function(data) { trendsData = data; initPage(); })
+            .catch(function() { document.getElementById('insight-box').innerHTML = '<h3>Error loading data</h3><p>Could not load trends.json.</p>'; });
 
         function initPage() {
             populateDropdowns();
             renderCityChart();
-
             document.getElementById('hood-select').addEventListener('change', renderMainChart);
             document.getElementById('compare-select').addEventListener('change', renderMainChart);
             document.getElementById('btn-city-wide').addEventListener('click', function() {
@@ -294,30 +135,15 @@
             var hoods = Object.keys(trendsData.neighbourhoods).sort();
             var select1 = document.getElementById('hood-select');
             var select2 = document.getElementById('compare-select');
-
             hoods.forEach(function(hood) {
-                var opt1 = document.createElement('option');
-                opt1.value = hood;
-                opt1.textContent = hood;
-                select1.appendChild(opt1);
-
-                var opt2 = document.createElement('option');
-                opt2.value = hood;
-                opt2.textContent = hood;
-                select2.appendChild(opt2);
+                var opt1 = document.createElement('option'); opt1.value = hood; opt1.textContent = hood; select1.appendChild(opt1);
+                var opt2 = document.createElement('option'); opt2.value = hood; opt2.textContent = hood; select2.appendChild(opt2);
             });
         }
 
         function getYearLabels() {
             var years = trendsData.metadata.years_available || [];
-            // Fill gaps
-            if (years.length > 0) {
-                var allYears = [];
-                for (var y = years[0]; y <= years[years.length - 1]; y++) {
-                    allYears.push(y);
-                }
-                return allYears;
-            }
+            if (years.length > 0) { var allYears = []; for (var y = years[0]; y <= years[years.length - 1]; y++) allYears.push(y); return allYears; }
             return years;
         }
 
@@ -325,109 +151,34 @@
             var hoodData = trendsData.neighbourhoods[hood];
             if (!hoodData) return [];
             var allYears = getYearLabels();
-            return allYears.map(function(y) {
-                var val = hoodData.yearly_totals[String(y)];
-                return val !== undefined ? val : null;
-            });
+            return allYears.map(function(y) { var val = hoodData.yearly_totals[String(y)]; return val !== undefined ? val : null; });
         }
 
         function renderMainChart() {
             var hood1 = document.getElementById('hood-select').value;
             var hood2 = document.getElementById('compare-select').value;
-
             var labels = getYearLabels();
             var datasets = [];
 
             if (hood1) {
-                datasets.push({
-                    label: hood1,
-                    data: getDataForHood(hood1),
-                    borderColor: '#0EA5E9',
-                    backgroundColor: 'rgba(14, 165, 233, 0.1)',
-                    tension: 0.3,
-                    pointRadius: 4,
-                    pointHoverRadius: 6,
-                    spanGaps: false,
-                    segment: {
-                        borderDash: function(ctx) {
-                            var prev = labels[ctx.p0DataIndex];
-                            var next = labels[ctx.p1DataIndex];
-                            if (next - prev > 1) return [5, 5];
-                            return undefined;
-                        }
-                    }
-                });
+                datasets.push({ label: hood1, data: getDataForHood(hood1), borderColor: '#0EA5E9', backgroundColor: 'rgba(14, 165, 233, 0.08)', tension: 0.3, pointRadius: 4, pointHoverRadius: 6, spanGaps: false, segment: { borderDash: function(ctx) { var prev = labels[ctx.p0DataIndex]; var next = labels[ctx.p1DataIndex]; if (next - prev > 1) return [5, 5]; return undefined; } } });
                 updateInsight(hood1);
             }
-
             if (hood2 && hood2 !== hood1) {
-                datasets.push({
-                    label: hood2,
-                    data: getDataForHood(hood2),
-                    borderColor: '#a78bfa',
-                    backgroundColor: 'rgba(167, 139, 250, 0.1)',
-                    tension: 0.3,
-                    pointRadius: 4,
-                    pointHoverRadius: 6,
-                    spanGaps: false,
-                    segment: {
-                        borderDash: function(ctx) {
-                            var prev = labels[ctx.p0DataIndex];
-                            var next = labels[ctx.p1DataIndex];
-                            if (next - prev > 1) return [5, 5];
-                            return undefined;
-                        }
-                    }
-                });
+                datasets.push({ label: hood2, data: getDataForHood(hood2), borderColor: '#a78bfa', backgroundColor: 'rgba(167, 139, 250, 0.08)', tension: 0.3, pointRadius: 4, pointHoverRadius: 6, spanGaps: false, segment: { borderDash: function(ctx) { var prev = labels[ctx.p0DataIndex]; var next = labels[ctx.p1DataIndex]; if (next - prev > 1) return [5, 5]; return undefined; } } });
             }
-
             if (!hood1 && !hood2) {
-                // Show city totals
                 var cityData = trendsData.city_summary.yearly_totals;
-                datasets.push({
-                    label: 'City-Wide Total',
-                    data: labels.map(function(y) { var v = cityData[String(y)]; return v !== undefined ? v : null; }),
-                    borderColor: '#10b981',
-                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                    tension: 0.3,
-                    pointRadius: 4,
-                    fill: true,
-                    spanGaps: false,
-                });
+                datasets.push({ label: 'City-Wide Total', data: labels.map(function(y) { var v = cityData[String(y)]; return v !== undefined ? v : null; }), borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.08)', tension: 0.3, pointRadius: 4, fill: true, spanGaps: false });
                 updateInsightCityWide();
             }
 
             if (mainChart) mainChart.destroy();
-
             var ctx = document.getElementById('trends-chart').getContext('2d');
             mainChart = new Chart(ctx, {
                 type: 'line',
                 data: { labels: labels, datasets: datasets },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    interaction: { mode: 'index', intersect: false },
-                    plugins: {
-                        legend: { position: 'top' },
-                        tooltip: {
-                            backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                            borderColor: 'rgba(255,255,255,0.06)',
-                            borderWidth: 1,
-                            titleFont: { weight: '600' },
-                        }
-                    },
-                    scales: {
-                        x: {
-                            title: { display: true, text: 'Year' },
-                            grid: { color: 'rgba(255,255,255,0.03)' }
-                        },
-                        y: {
-                            title: { display: true, text: 'Total Incidents' },
-                            grid: { color: 'rgba(255,255,255,0.03)' },
-                            beginAtZero: true
-                        }
-                    }
-                }
+                options: { responsive: true, maintainAspectRatio: true, interaction: { mode: 'index', intersect: false }, plugins: { legend: { position: 'top' }, tooltip: { backgroundColor: '#fff', titleColor: '#1e293b', bodyColor: '#64748b', borderColor: '#e2e8f0', borderWidth: 1 } }, scales: { x: { title: { display: true, text: 'Year', color: '#64748b' }, grid: { color: '#f1f5f9' } }, y: { title: { display: true, text: 'Total Incidents', color: '#64748b' }, grid: { color: '#f1f5f9' }, beginAtZero: true } } }
             });
         }
 
@@ -436,80 +187,30 @@
             var cityData = trendsData.city_summary.yearly_totals;
             var years = Object.keys(cityData).map(Number).sort(function(a,b){ return a-b; });
             var values = years.map(function(y) { return cityData[String(y)]; });
-
             var ctx = document.getElementById('city-chart').getContext('2d');
             cityChart = new Chart(ctx, {
                 type: 'bar',
-                data: {
-                    labels: years,
-                    datasets: [{
-                        label: 'Total City Incidents',
-                        data: values,
-                        backgroundColor: years.map(function(y) {
-                            if (y === 2026) return 'rgba(14, 165, 233, 0.6)';
-                            return 'rgba(16, 185, 129, 0.4)';
-                        }),
-                        borderColor: years.map(function(y) {
-                            if (y === 2026) return '#0EA5E9';
-                            return '#10b981';
-                        }),
-                        borderWidth: 1,
-                        borderRadius: 4,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                            borderColor: 'rgba(255,255,255,0.06)',
-                            borderWidth: 1,
-                        }
-                    },
-                    scales: {
-                        x: { grid: { color: 'rgba(255,255,255,0.03)' } },
-                        y: { grid: { color: 'rgba(255,255,255,0.03)' }, beginAtZero: true }
-                    }
-                }
+                data: { labels: years, datasets: [{ label: 'Total City Incidents', data: values, backgroundColor: years.map(function(y) { if (y === 2026) return 'rgba(14, 165, 233, 0.5)'; return 'rgba(16, 185, 129, 0.3)'; }), borderColor: years.map(function(y) { if (y === 2026) return '#0EA5E9'; return '#10b981'; }), borderWidth: 1, borderRadius: 4 }] },
+                options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: false }, tooltip: { backgroundColor: '#fff', titleColor: '#1e293b', bodyColor: '#64748b', borderColor: '#e2e8f0', borderWidth: 1 } }, scales: { x: { grid: { color: '#f1f5f9' } }, y: { grid: { color: '#f1f5f9' }, beginAtZero: true } } }
             });
         }
 
         function updateInsight(hood) {
             var data = trendsData.neighbourhoods[hood];
             if (!data) return;
-
             var box = document.getElementById('insight-box');
-            var trendEmoji = data.overall_trend === 'improving' ? '&#x2193; Improving' :
-                           (data.overall_trend === 'worsening' ? '&#x2191; Worsening' : '&#x2194; Stable');
-            var trendColor = data.overall_trend === 'improving' ? '#10b981' :
-                           (data.overall_trend === 'worsening' ? '#ef4444' : '#f59e0b');
-
-            box.innerHTML = '<h3>' + hood + ' — Trend Analysis</h3>' +
-                '<p><span class="insight-stat" style="color:' + trendColor + ';border-color:' + trendColor + '33;background:' + trendColor + '14">' + trendEmoji + ' (' + data.overall_change_pct + '%)</span>' +
-                '<span class="insight-stat">Peak: ' + data.peak_year + ' (' + data.peak_total.toLocaleString() + ')</span>' +
-                '<span class="insight-stat">Low: ' + data.lowest_year + ' (' + data.lowest_total.toLocaleString() + ')</span>' +
-                '<span class="insight-stat">Top crime: ' + data.dominant_crime_type + '</span></p>' +
-                '<p>Total incidents across all tracked years: <strong>' + data.total_all_years.toLocaleString() + '</strong></p>' +
-                (data.overall_trend === 'improving' ? '<p style="color:#10b981;">This area has seen a sustained decline in crime over the historical period.</p>' : '') +
-                (data.overall_trend === 'worsening' ? '<p style="color:#ef4444;">Crime has been trending upward. Consider looking at the crime breakdown for specifics.</p>' : '');
+            var trendColor = data.overall_trend === 'improving' ? '#10b981' : (data.overall_trend === 'worsening' ? '#ef4444' : '#f59e0b');
+            var trendLabel = data.overall_trend === 'improving' ? 'Improving' : (data.overall_trend === 'worsening' ? 'Worsening' : 'Stable');
+            box.innerHTML = '<h3>' + hood + ' — Trend Analysis</h3><p><span class="insight-stat" style="color:' + trendColor + ';border-color:' + trendColor + '33;background:' + trendColor + '14">' + trendLabel + ' (' + data.overall_change_pct + '%)</span><span class="insight-stat">Peak: ' + data.peak_year + ' (' + data.peak_total.toLocaleString() + ')</span><span class="insight-stat">Low: ' + data.lowest_year + ' (' + data.lowest_total.toLocaleString() + ')</span><span class="insight-stat">Top crime: ' + data.dominant_crime_type + '</span></p><p>Total incidents across all tracked years: <strong>' + data.total_all_years.toLocaleString() + '</strong></p>';
         }
 
         function updateInsightCityWide() {
             var city = trendsData.city_summary;
             var box = document.getElementById('insight-box');
-            box.innerHTML = '<h3>City-Wide Overview</h3>' +
-                '<p>Showing total crime across all neighbourhoods.</p>' +
-                '<p><span class="insight-stat">Peak year: ' + city.peak_year + ' (' + city.peak_total.toLocaleString() + ' incidents)</span>' +
-                '<span class="insight-stat">Lowest: ' + city.lowest_year + ' (' + city.lowest_total.toLocaleString() + ' incidents)</span></p>' +
-                '<p>Select a neighbourhood from the dropdown to see area-specific trends.</p>';
+            box.innerHTML = '<h3>City-Wide Overview</h3><p>Showing total crime across all neighbourhoods.</p><p><span class="insight-stat">Peak year: ' + city.peak_year + ' (' + city.peak_total.toLocaleString() + ' incidents)</span><span class="insight-stat">Lowest: ' + city.lowest_year + ' (' + city.lowest_total.toLocaleString() + ' incidents)</span></p><p>Select a neighbourhood from the dropdown to see area-specific trends.</p>';
         }
 
-        // Initial render shows city-wide
-        setTimeout(function() {
-            if (trendsData) renderMainChart();
-        }, 200);
+        setTimeout(function() { if (trendsData) renderMainChart(); }, 200);
     })();
     </script>
 </body>
