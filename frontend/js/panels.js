@@ -7,10 +7,6 @@ function showPanel(properties) {
     const panel = document.getElementById('info-panel');
     panel.classList.remove('panel-hidden');
 
-    // Hide welcome card
-    const welcome = document.getElementById('welcome-card');
-    if (welcome) welcome.classList.add('hidden');
-
     const name = properties.name || 'Unknown Neighbourhood';
     document.getElementById('panel-name').textContent = name;
 
@@ -31,9 +27,8 @@ function hidePanel() {
     const panel = document.getElementById('info-panel');
     panel.classList.add('panel-hidden');
 
-    // Show welcome card again
-    const welcome = document.getElementById('welcome-card');
-    if (welcome) welcome.classList.remove('hidden');
+    // Exit browse mode — restore header and welcome
+    exitBrowseMode();
 
     if (selectedNeighbourhood) {
         selectedNeighbourhood.setStyle(CONFIG.NEIGHBOURHOOD_STYLE.default);

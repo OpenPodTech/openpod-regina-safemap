@@ -21,9 +21,12 @@
     // Wire up panel close button
     document.getElementById('panel-close').addEventListener('click', hidePanel);
 
-    // Click on map hides welcome card if a neighbourhood was clicked
+    // Click on map hides welcome card on first interaction
     map.on('click', function() {
-        // If click is not on a neighbourhood, no-op (neighbourhoods handle their own clicks)
+        const welcome = document.getElementById('welcome-card');
+        if (welcome && !welcome.classList.contains('hidden')) {
+            welcome.classList.add('hidden');
+        }
     });
 
     // Wire up search

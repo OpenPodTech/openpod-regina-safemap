@@ -76,8 +76,43 @@ function selectNeighbourhood(layer, feature) {
     // Fit map to neighbourhood
     map.fitBounds(layer.getBounds(), { padding: [50, 400] });
 
+    // Enter browse mode — hide welcome card and collapse header
+    enterBrowseMode();
+
     // Show info panel
     showPanel(feature.properties);
+}
+
+function enterBrowseMode() {
+    // Hide welcome card immediately
+    const welcome = document.getElementById('welcome-card');
+    if (welcome) welcome.classList.add('hidden');
+
+    // Collapse header to minimal mode
+    const header = document.getElementById('app-header');
+    if (header) header.classList.add('collapsed');
+
+    // Collapse layer controls
+    const layers = document.getElementById('layer-controls');
+    if (layers) layers.classList.add('browsing');
+
+    document.body.classList.add('browse-mode');
+}
+
+function exitBrowseMode() {
+    // Show welcome card
+    const welcome = document.getElementById('welcome-card');
+    if (welcome) welcome.classList.remove('hidden');
+
+    // Expand header
+    const header = document.getElementById('app-header');
+    if (header) header.classList.remove('collapsed');
+
+    // Expand layer controls
+    const layers = document.getElementById('layer-controls');
+    if (layers) layers.classList.remove('browsing');
+
+    document.body.classList.remove('browse-mode');
 }
 
 function findNeighbourhoodByName(name) {
